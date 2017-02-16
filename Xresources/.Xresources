@@ -9,9 +9,11 @@
 !SETTINGS
 
 
-! URxvt.font: xft:Source Code Pro:style=Regular:size=10
-URxvt.font: xft:xos4 Terminess Powerline:style=Regular
-URxvt.fontbold: xft:xos4 Terminess Powerline:style=Bold
+URxvt.font: xft:SauceCodePro Nerd Font:style=Regular:size=10
+!URxvt.font: xft:Ubuntu Mono derivative Powerline:style=Regular:size=10
+!URxvt.font: xft:xos4 Terminess Powerline:style=Regular:size=10
+!URxvt.fontbold: xft:xos4 Terminess Powerline:style=Bold
+URxvt.fontbold: xft:SauceCodePro Nerd Font:style=Bold:size=10
 
 ! Disables scrollback buffer in secondary screen
 URxvt.secondaryScreen: 1
@@ -21,7 +23,7 @@ URxvt.secondaryScroll: 0
 URxvt.perl-ext-common: default,matcher,clipboard,tabbed
 URxvt.url-launcher: /usr/bin/xdg-open
 URxvt.matcher.button: 1
-URxvt.matcher.rend.0: Uline Bold color10
+URxvt.matcher.rend.0: Uline Bold foreground
 
 ! Tabs colors
 URxvt.tabbed.tabbar-fg: 2
@@ -82,19 +84,20 @@ URxvt.keysym.Shift-Control-V: perl:clipboard:paste
 
 
 ! !cursor
-*cursorColor: #FFC715
+*cursorColor: #d79921
+
 !URXVT SETTINGS
 !URxvt*dynamicColors: on
 URxvt.internalBorder: 15
-URxvt*lineSpace: 2
+URxvt*lineSpace: 1
 URxvt*scrollBar: false
 URxvt*scrollColor: #131415
 URxvt.geometry: 80x18
 URxvt*saveLines: 1000
 URxvt*cursorUnderline: false
-URxvt*cursorColor: #AADB0F
+URxvt*cursorColor: #d79921
 URxvt*cursorBlink: true
-URxvt*underlineColor: #303030
+URxvt*underlineColor: #ebdbb2
 URxvt*allow_bold: true
 
 
