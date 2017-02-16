@@ -1,1 +1,0 @@
-/home/davide/dotfiles/scripts/bsmove.sh
