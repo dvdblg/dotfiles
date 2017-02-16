@@ -15,7 +15,7 @@ super + shift + r
 	pkill -USR1 -x sxhkd
 # exit menu
 super + shift + e	
-	~/dotfiles/scripts/shutdown.sh	
+	~/scripts/shutdown.sh	
 	
 	
 
