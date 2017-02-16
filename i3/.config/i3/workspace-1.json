@@ -1,0 +1,41 @@
+// vim:ts=4:sw=4:et
+{
+    "border": "normal",
+    "current_border_width": 2,
+    "floating": "user_off",
+    "geometry": {
+       "height": 986,
+       "width": 1872,
+       "x": 1392,
+       "y": 70
+    },
+    "name": "Airblader/i3: i3-gaps – i3 with more features (forked from https://github.com/i3/i3) - Chromium",
+    "percent": 0.5,
+    "swallows": [
+       {
+        "class": "^Chromium$"
+       }
+    ],
+    "type": "con"
+}
+
+{
+    "border": "normal",
+    "current_border_width": 2,
+    "floating": "user_off",
+    "geometry": {
+       "height": 768,
+       "width": 1366,
+       "x": 0,
+       "y": 0
+    },
+    "name": "Home - Mozilla Firefox",
+    "percent": 0.5,
+    "swallows": [
+       {
+        "class": "^Firefox$"
+	   }
+    ],
+    "type": "con"
+}
+

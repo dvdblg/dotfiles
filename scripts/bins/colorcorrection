@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# last comments are newer
+
+#xcalib -c && xcalib -d :0 -s 0  -co 80.0 -red 1.1 3.5 94.0 -green 1.1 3.0 98.0 -blue 1.1 1.5 88.0 -a;
+
+#xcalib -c && xcalib -d :0 -s 0 -red 1.2 0.0 80.0 -green 1.2 0.0 79.0 -blue 1.2 0.0 55.0 -a
+
+#xcalib -c && xcalib -d :0 -s 0 -red 1.1 0.0 90.0 -green 1.1 0.0 89.0 -blue 1.1 0.0 67.0 -a
+
+#xcalib -gc 1.1 -red 1.1 0.0 87 -green 1.1 0.4 89 -blue 1.1 0.6 95 Scaricati/ColorTable/F20D0489.icm
+
+#xcalib -gc 1.15 -red 1 1 93 -green 1 1 87  -blue 1.1 1 82 ~/colorprofiles/Gamma6500K.icc
+
+xcalib -gc 1.1 -blue 1 0 90 /home/davide/colorprofiles/benq_xl2420t.icc

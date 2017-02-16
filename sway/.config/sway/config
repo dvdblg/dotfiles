@@ -1,0 +1,503 @@
+# Default config for sway
+#
+# Copy this to ~/.config/sway/config and edit it to your liking.
+#
+# Read `man 5 sway` for a complete reference.
+
+###########
+# General #
+###########
+
+set $mod Mod4
+focus_follows_mouse yes
+
+# Title bar format
+# We first set the titlebar font size to a large size to get a good padding amount.
+# We then use pango markup to force i3 to print with the desired font.
+# This gives us large titlebars with a small font. :P
+font pango:SFNS Display Regular 9
+#for_window [title=".*"] title_format "<span font='SFNS Display Regular 7'> > %title</span>"
+
+
+##########
+# Inputs #
+##########
+       
+input "2:18:FocalTechPS\/2_FocalTech_Touchpad" {
+       dwt enabled
+       tap enabled
+       natural_scroll disabled
+       middle_emulation enabled
+       scroll_method edge
+   }
+
+###########
+# Outputs #
+###########
+
+output eDP1 res 1360x768 pos 0,0
+
+
+#############
+# Variables #
+#############
+
+# Home row direction keys, like vim
+set $left h
+set $down j
+set $up k
+set $right l
+# Your preferred terminal emulator
+set $term xfce4-terminal
+# Your preferred application launcher
+set $menu dmenu_run
+
+# Set colors from Xresources
+set $fg #f0f0f0
+set $bg #232c33
+
+set $base00 #101218
+set $base01 #1f222d
+set $base02 #252936
+set $base03 #7780a1
+set $base04 #C0C5CE
+set $base05 #d1d4e0
+set $base06 #C9CCDB
+set $base07 #ffffff
+set $base08 #ee829f
+set $base09 #f99170
+set $base0A #ffefcc
+set $base0B #a5ffe1
+set $base0C #97e0ff
+set $base0D #97bbf7
+set $base0E #c0b7f9
+set $base0F #fcc09e
+
+#exec colormgr device-make-profile-default xrandr-Undefined /org/freedesktop/ColorManager/profiles/icc_982635be5da160c514a45633e521a9f6_davide_1000
+
+### Output configuration
+#
+# Default wallpaper (more resolutions are available in /usr/share/sway/)
+output * bg /home/davide/Immagini/taylor_swift.jpg fill
+#
+# Example configuration:
+#
+#   output HDMI-A-1 resolution 1920x1080 position 1920,0
+#
+# You can get the names of your outputs by running: swaymsg -t get_outputs
+
+### Input configuration
+#
+# Example configuration:
+#
+#   input "2:14:SynPS/2_Synaptics_TouchPad" {
+#       dwt enabled
+#       tap enabled
+#       natural_scroll enabled
+#       middle_emulation enabled
+#   }
+#
+# You can get the names of your inputs by running: swaymsg -t get_inputs
+# The escape symbol "\" has to be removed.
+# Read `man 5 sway-input` for more information about this section.
+
+################
+# Key Bindings #
+################
+
+#cycle between windows
+bindsym $mod+Tab focus right
+bindsym $mod+Shift+Tab focus left
+
+#Move current workspace to output to next screen
+#~ bindsym $mod+x move workspace to output right
+
+#i3lock
+i3lock -i /home/davide/Immagini/rick_morty_lockscreen_laptop.png
+#bindsym $mod+Shift+x exec i3lock --color 1f222d
+#bindsym $mod+Shift+x exec ~/dotfiles/scripts/lock.sh
+
+# Take a screenshot
+#~ bindsym $mod+p exec scr
+
+# toggle tiling / floating
+bindsym $mod+s floating toggle
+
+#rofi window switcher
+#~ bindsym $mod+a exec /home/davide/dotfiles/i3/rofiwindowstheme #rofi -show window
+
+# Center window
+bindsym $mod+c move position center
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# start a terminal
+bindsym $mod+Return exec xfce4-terminal
+
+# kill focused window
+bindsym $mod+q kill
+
+# start dmenu (a program launcher)
+bindsym $mod+d exec $menu
+# There also is the (new) i3-dmenu-desktop which only displays applications
+# shipping a .desktop file. It is a wrapper around dmenu, so you need that
+# installed.
+# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+
+# change focus
+bindsym $mod+j focus left
+bindsym $mod+k focus down
+bindsym $mod+l focus up
+bindsym $mod+ograve focus right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+Shift+j move left
+bindsym $mod+Shift+k move down
+bindsym $mod+Shift+l move up
+bindsym $mod+Shift+ograve move right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# split in horizontal orientation
+bindsym $mod+h split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+#bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+Shift+a focus parent
+
+# focus the child container
+#bindsym $mod+d focus child
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r reload
+
+# exit i3 (logs you out of your X session)
+#bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+#~ bindsym $mod+Shift+e exec /home/davide/dotfiles/scripts/i3exit
+bindsym $mod+Shift+e exit
+
+# resize mode
+bindsym $mod+r mode "resize"
+
+
+    
+##############
+# Workspaces #
+##############
+
+set $workspace1 "1: Firefox "
+set $workspace2 "2: Terminal "
+set $workspace3 "3: Documents "
+set $workspace4 "4: Matlab "
+set $workspace5 "5: Misc "
+set $workspace6 "6: Games "
+set $workspace7 "7: Movies "
+set $workspace8 "8: Misc "
+set $workspace9 "9: Music "
+set $workspace10 "10: Misc "
+
+
+#~ # set default workspace output
+#~ workspace $workspace1 output HDMI-1
+#~ workspace $workspace2 output HDMI-1
+#~ workspace $workspace3 output HDMI-1
+#~ workspace $workspace4 output HDMI-1
+#~ workspace $workspace5 output HDMI-1
+#~ workspace $workspace6 output HDMI-1
+#~ workspace $workspace7 output HDMI-1
+#~ workspace $workspace9 output eDP-1
+#~ workspace $workspace10 output HDMI-1
+
+# switch to workspace
+bindsym $mod+1 workspace $workspace1
+bindsym $mod+2 workspace $workspace2
+bindsym $mod+3 workspace $workspace3
+bindsym $mod+4 workspace $workspace4
+bindsym $mod+5 workspace $workspace5
+bindsym $mod+6 workspace $workspace6
+bindsym $mod+7 workspace $workspace7
+bindsym $mod+8 workspace $workspace8
+bindsym $mod+9 workspace $workspace9
+bindsym $mod+0 workspace $workspace10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $workspace1
+bindsym $mod+Shift+2 move container to workspace $workspace2
+bindsym $mod+Shift+3 move container to workspace $workspace3
+bindsym $mod+Shift+4 move container to workspace $workspace4
+bindsym $mod+Shift+5 move container to workspace $workspace5
+bindsym $mod+Shift+6 move container to workspace $workspace6
+bindsym $mod+Shift+7 move container to workspace $workspace7
+bindsym $mod+Shift+8 move container to workspace $workspace8
+bindsym $mod+Shift+9 move container to workspace $workspace9
+bindsym $mod+Shift+0 move container to workspace $workspace10
+
+assign [title=".*Firefox.*"] $workspace1
+assign [id="xfce4-terminal"] $workspace2
+assign [id="MATLAB R2016a"] $workspace4
+assign [id="deadbeef"] $workspace9
+assign [id="rhythmbox"] $workspace9
+assign [id="scad3.exe"] $workspace4
+assign [id="evince"] $workspace3
+assign [id="battle.net.exe"] $workspace6
+assign [id="steam"] $workspace6
+assign [id="chromium" instance="netflix.com"] $workspace7
+assign [id="chromium"] $workspace1
+
+# Float all windows by default. (or tabbed)
+#for_window [class="^.*"] floating enable 
+
+# Floaitng windows
+for_window [title="Figure [0-9]*"] floating enable
+for_window [title=".*Gestore di ile.*"] floating enable
+for_window [id="pcmanfm"] floating enable
+for_window [id="xfce4-taskmanager"] floating enable
+for_window [id="xfce4-terminal"] floating enable
+for_window [id="sun-awt-X11-XFramePeer"] floating enable
+#for_window [id="Chromium"] floating enable
+#for_window [id="Firefox"] floating enable
+#for_window [title="^Library$"] floating enable
+#~ for_window [id="rhytmbox"] floating enable
+#~ for_window [window_role="pop-up"] floating enable
+#~ for_window [window_role="bubble"] floating enable
+#~ for_window [window_role="task_dialog"] floating enable
+#~ for_window [window_role="Preferences"] floating enable
+#~ for_window [window_type="dialog"] floating enable
+#~ for_window [window_type="menu"] floating enable
+
+#~ # Layout stuff:
+#~ #
+    #~ # You can "split" the current object of your focus with
+    #~ # $mod+b or $mod+v, for horizontal and vertical splits
+    #~ # respectively.
+    #~ bindsym $mod+b splith
+    #~ bindsym $mod+v splitv
+
+    #~ # Switch the current container between different layout styles
+    #~ bindsym $mod+s layout stacking
+    #~ bindsym $mod+w layout tabbed
+    #~ bindsym $mod+e layout toggle split
+
+    #~ # Make the current focus fullscreen
+    #~ bindsym $mod+f fullscreen
+
+    #~ # Toggle the current focus between tiling and floating mode
+    #~ bindsym $mod+Shift+space floating toggle
+
+    #~ # Swap focus between the tiling area and the floating area
+    #~ bindsym $mod+space focus mode_toggle
+
+    #~ # move focus to the parent container
+    #~ bindsym $mod+a focus parent
+#~ #
+#~ # Scratchpad:
+#~ #
+    #~ # Sway has a "scratchpad", which is a bag of holding for windows.
+    #~ # You can send windows there and get them back later.
+
+    #~ # Move the currently focused window to the scratchpad
+    #~ bindsym $mod+Shift+minus move scratchpad
+
+    #~ # Show the next scratchpad window or hide the focused scratchpad window.
+    #~ # If there are multiple scratchpad windows, this command cycles through them.
+    #~ bindsym $mod+minus scratchpad show
+
+#########
+# Modes #
+#########
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym j resize shrink width 10 px or 10 ppt
+        bindsym k resize grow height 10 px or 10 ppt
+        bindsym l resize shrink height 10 px or 10 ppt
+        bindsym ograve resize grow width 10 px or 10 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+set $mode_gaps Gaps: (o) outer, (i) inner
+set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
+set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
+bindsym $mod+Shift+g mode "$mode_gaps"
+
+mode "$mode_gaps" {
+        bindsym o      mode "$mode_gaps_outer"
+        bindsym i      mode "$mode_gaps_inner"
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+mode "$mode_gaps_inner" {
+        bindsym plus  gaps inner current plus 5
+        bindsym minus gaps inner current minus 5
+        bindsym 0     gaps inner current set 0
+
+        bindsym Shift+plus  gaps inner all plus 5
+        bindsym Shift+minus gaps inner all minus 5
+        bindsym Shift+0     gaps inner all set 0
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+mode "$mode_gaps_outer" {
+        bindsym plus  gaps outer current plus 5
+        bindsym minus gaps outer current minus 5
+        bindsym 0     gaps outer current set 0
+
+        bindsym Shift+plus  gaps outer all plus 5
+        bindsym Shift+minus gaps outer all minus 5
+        bindsym Shift+0     gaps outer all set 0
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+
+##########
+# Colors #
+##########
+
+# Window Colours
+#                         border  background text    indicator
+
+#  client.focused          $base01 $base01    $base07 $base0F
+#  client.focused_inactive $base02 $base02    $base03 $base0F
+#  client.unfocused        $base02 $base02    $base03 $base0F
+#  client.urgent           $base02 $base08    $base00 $base0F
+   client.focused          $bg     $bg     $base07  $bg       $bg
+   client.focused_inactive $bg     $bg     $base03  $bg       $bg
+   client.unfocused        $bg     $bg     $base03  $bg       $bg
+   client.urgent           $bg     $bg     $base00  $bg       $bg
+   client.placeholder 	   $bg     $bg     $fg  $bg       $bg
+
+# This font is widely installed, provides lots of unicode glyphs, right-to-left
+# text rendering and scalability on retina/hidpi displays (thanks to pango).
+#font pango:DejaVu Sans Mono 8
+
+# Before i3 v4.8, we used to recommend this one as the default:
+# font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+# The font above is very space-efficient, that is, it looks good, sharp and
+# clear in small sizes. However, its unicode glyph coverage is limited, the old
+# X core fonts rendering does not support right-to-left and this being a bitmap
+# font, it doesn’t scale on retina/hidpi displays.
+
+# Set colors from Xresources
+#set_from_resource $fg i3wm.foreground #f0f0f0
+#set_from_resource $bg i3wm.background #f0f0f0
+
+
+
+
+#######
+# Bar #
+#######
+# Read `man 5 sway-bar` for more information about this section.
+
+bar {
+        #status_command i3status
+        status_command i3blocks -c ~/.config/i3/i3blocks.conf
+        font pango: Noto Sans, FontAwesome 8
+         position bottom
+         colors {
+              separator  $fg
+              background $bg
+              statusline $base05
+#                        border  background text
+              focused_workspace  $base01 $base01    $base07
+              active_workspace   $base01 $base02    $base03
+              inactive_workspace $base01 $base01    $base03
+              urgent_workspace   $base01 $base01    $base08
+	 }
+}
+
+include /etc/sway/config.d/*
+
+###################
+# Multimedia Keys #
+###################
+
+# Pulse Audio controls
+bindsym XF86AudioRaiseVolume exec vol up #--no-startup-id pactl set-sink-volume 0 +5% && pactl set-sink-volume 1 +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec vol down #--no-startup-id pactl set-sink-volume 0 -5% && pactl set-sink-volume 1 -5% #decrease sound volume
+bindsym XF86AudioMute exec vol mute #--no-startup-id pactl set-sink-mute 0 toggle # mute sound
+
+# Sreen brightness controls (doesn't work with modesetting driver)
+#bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
+#bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
+
+# Media player controls
+bindsym XF86AudioPlay exec playerctl play-pause
+#bindsym XF86AudioPause exec playerctl pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+
+# Calculator
+bindsym XF86Calculator exec speedcrunch
+
+
+###########
+# i3-Gaps #
+###########
+
+# Add a 5px border to all windows.
+#for_window [id="^.*"] border normal 2
+
+#smart_gaps on
+#smart_borders on
+gaps outer 0
+gaps inner 3
+
+
+workspace $workspace1 gaps inner 0
+workspace $workspace1 gaps outer 0
+
+workspace $workspace6 gaps inner 0
+workspace $workspace6 gaps outer 0
+
+workspace $workspace8 gaps inner 0
+workspace $workspace8 gaps outer 0

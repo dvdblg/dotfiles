@@ -1,0 +1,147 @@
+!  ██     ██                                                                        
+! ░░██   ██                                                                         
+!  ░░██ ██   ██████  █████   ██████  ██████  ██   ██ ██████  █████   █████   ██████ 
+!   ░░███   ░░██░░█ ██░░░██ ██░░░░  ██░░░░██░██  ░██░░██░░█ ██░░░██ ██░░░██ ██░░░░  
+!    ██░██   ░██ ░ ░███████░░█████ ░██   ░██░██  ░██ ░██ ░ ░██  ░░ ░███████░░█████  
+!   ██ ░░██  ░██   ░██░░░░  ░░░░░██░██   ░██░██  ░██ ░██   ░██   ██░██░░░░  ░░░░░██ 
+!  ██   ░░██░███   ░░██████ ██████ ░░██████ ░░██████░███   ░░█████ ░░██████ ██████  
+! ░░     ░░ ░░░     ░░░░░░ ░░░░░░   ░░░░░░   ░░░░░░ ░░░     ░░░░░   ░░░░░░ ░░░░░░   
+!SETTINGS
+
+
+! URxvt.font: xft:Source Code Pro:style=Regular:size=10
+URxvt.font: xft:xos4 Terminess Powerline:style=Regular
+URxvt.fontbold: xft:xos4 Terminess Powerline:style=Bold
+
+! Disables scrollback buffer in secondary screen
+URxvt.secondaryScreen: 1
+URxvt.secondaryScroll: 0
+
+! Clickable and colorful URLs
+URxvt.perl-ext-common: default,matcher,clipboard,tabbed
+URxvt.url-launcher: /usr/bin/xdg-open
+URxvt.matcher.button: 1
+URxvt.matcher.rend.0: Uline Bold color10
+
+! Tabs colors
+URxvt.tabbed.tabbar-fg: 2
+URxvt.tabbed.tabbar-bg: 0
+URxvt.tabbed.tab-fg: 3
+URxvt.tabbed.tab-bg: 0
+
+! Enables copy/paste with Ctrl-Shift-C/V
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+!URxvt.perl-ext-common: default,clipboard
+URxvt.keysym.Shift-Control-C: perl:clipboard:copy
+URxvt.keysym.Shift-Control-V: perl:clipboard:paste
+
+
+*background: #1f222d
+*foreground: #ebdbb2
+
+! Black + DarkGrey
+*color0:  #282828
+*color8:  #928374
+
+
+! DarkRed + Red
+*color1:  #cc241d
+*color9:  #fb4934
+
+
+! DarkGreen + Green
+*color2:  #98971a
+*color10: #b8bb26
+
+
+! DarkYellow + Yellow
+*color3:  #d79921
+*color11: #fabd2f
+
+
+! DarkBlue + Blue
+*color4:  #458588
+*color12: #83a598
+
+
+! DarkMagenta + Magenta
+*color5:  #b16286
+*color13: #d3869b
+
+
+! DarkCyan + Cyan
+*color6:  #689d6a
+*color14: #8ec07c
+
+
+! LightGrey + White
+*color7:  #a89984
+*color15: #ebdbb2
+
+
+
+! !cursor
+*cursorColor: #FFC715
+!URXVT SETTINGS
+!URxvt*dynamicColors: on
+URxvt.internalBorder: 15
+URxvt*lineSpace: 2
+URxvt*scrollBar: false
+URxvt*scrollColor: #131415
+URxvt.geometry: 80x18
+URxvt*saveLines: 1000
+URxvt*cursorUnderline: false
+URxvt*cursorColor: #AADB0F
+URxvt*cursorBlink: true
+URxvt*underlineColor: #303030
+URxvt*allow_bold: true
+
+
+
+
+! ----------------------!
+!		   ROFI			!
+! ----------------------!
+
+! "Enabled modi" Set from: Default
+! rofi.modi:                           window,run,ssh
+! "Window width" Set from: Commandline
+rofi.width:                          50  
+! "Number of lines" Set from: Commandline
+rofi.lines:                          10  
+! "Number of columns" Set from: Default
+! rofi.columns:                        1   
+! "Font to use" Set from: Commandline
+rofi.font:                           Roboto 14
+
+! "Color scheme for normal row" Set from: XResources
+rofi.color-normal:                   #1f222d, #ebdbb2, #1f222d, argb:85ff6200, #ebdbb2 
+! "Color scheme for urgent row" Set from: XResources
+rofi.color-urgent:                   #1f222d, #ebdbb2, #1f222d, argb:7fff6200, #fdf6e3 
+! "Color scheme for active row" Set from: XResources
+rofi.color-active:                   #1f222d, #ebdbb2, #1f222d, argb:7fff6200, #fdf6e3 
+! "Color scheme window" Set from: XResources
+rofi.color-window:                   #1f222d, #ff6200, argb:d3ff6200
+
+! "Border width" Set from: Commandline
+rofi.bw:                             3   
+! "Location on screen" Set from: Default
+! rofi.location:                       0   
+! "Padding" Set from: Commandline
+rofi.padding:                        15  
+! "Y-offset relative to location" Set from: Default
+! rofi.yoffset:                        0   
+! "X-offset relative to location" Set from: Default
+! rofi.xoffset:                        0   
+! "Always show number of lines" Set from: Default
+! rofi.fixed-num-lines:                true
+! "Terminal to use" Set from: Default
+! rofi.terminal:                       rofi-sensible-terminal
+! "Ssh client to use" Set from: Default
+! rofi.ssh-client:                     ssh
+
+rofi.separator-style:	solid
+
+
+! }}}

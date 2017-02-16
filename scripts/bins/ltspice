@@ -1,0 +1,1 @@
+cd /home/davide/Università/Secondo\ anno/Elettrotecnica/; WINEARCH=win32 WINEPREFIX=~/win32 wine '/media/davide/WindowsDisk/Program Files (x86)/LTC/LTspiceIV/scad3.exe'

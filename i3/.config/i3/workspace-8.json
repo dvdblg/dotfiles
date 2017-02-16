@@ -1,0 +1,102 @@
+// vim:ts=4:sw=4:et
+{
+    "border": "normal",
+    "current_border_width": 2,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 480,
+       "width": 640,
+       "x": 0,
+       "y": 0
+    },
+    "name": "laplace_notevoli_trasformata.png (1440x2560) 40%",
+    "percent": 0.233333333333333,
+    "swallows": [
+       {
+        "class": "^Gpicview$",
+        "instance": "^gpicview$",
+        "title": "^laplace_notevoli_trasformata\\.png\\ \\(1440x2560\\)\\ 40\\%$",
+        "transient_for": "^$"
+       }
+    ],
+    "type": "con"
+}
+
+{
+    "border": "normal",
+    "current_border_width": 2,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 480,
+       "width": 640,
+       "x": 0,
+       "y": 0
+    },
+    "name": "fourier_notevoli_trasformata.png (1192x2043) 38%",
+    "percent": 0.233333333333333,
+    "swallows": [
+       {
+        "class": "^Gpicview$",
+        "instance": "^gpicview$",
+        "title": "^fourier_notevoli_trasformata\\.png\\ \\(1192x2043\\)\\ 38\\%$",
+        "transient_for": "^$"
+       }
+    ],
+    "type": "con"
+}
+
+{
+    // splitv split container with 2 children
+    "border": "normal",
+    "floating": "auto_off",
+    "layout": "splitv",
+    "percent": 0.533333333333333,
+    "type": "con",
+    "nodes": [
+        {
+            "border": "normal",
+            "current_border_width": 2,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 480,
+               "width": 640,
+               "x": 0,
+               "y": 0
+            },
+            "name": "fourier_proprietà_trasformata.png (1440x1440) 32%",
+            "percent": 0.5,
+            "swallows": [
+               {
+                "class": "^Gpicview$",
+                "instance": "^gpicview$",
+                "title": "^fourier_proprietà_trasformata\\.png\\ \\(1440x1440\\)\\ 32\\%$",
+                "transient_for": "^$"
+               }
+            ],
+            "type": "con"
+        },
+        {
+            "border": "normal",
+            "current_border_width": 2,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 480,
+               "width": 640,
+               "x": 0,
+               "y": 0
+            },
+            "name": "laplace_proprietà_trasformata.png (1440x1762) 26%",
+            "percent": 0.5,
+            "swallows": [
+               {
+                "class": "^Gpicview$",
+                "instance": "^gpicview$",
+                "title": "^laplace_proprietà_trasformata\\.png\\ \\(1440x1762\\)\\ 26\\%$",
+                "transient_for": "^$"
+               }
+            ],
+            "type": "con"
+        }
+    ]
+}
+

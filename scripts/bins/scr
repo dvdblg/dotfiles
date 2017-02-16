@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+#
+# Take a screenshot and display a notification.
+#
+# Created by Dylan Araps.
+#
+# Depends on: imagemagick, date, libnotify (patched with id support)
+
+# Screenshot directory
+scr_dir="${HOME}/Immagini/Screenshots"
+mkdir -p "$scr_dir" || { printf "%s\n" "Error: Couldn't create screenshot directory"; exit; }
+
+# Use printf to store the current date/time as variables.
+printf -v date "%(%F)T"
+printf -v time "%(%I-%M-%S)T"
+
+# Create current date format.
+mkdir -p "${scr_dir}/${date}"
+
+# Name the screenshot
+scr="${scr_dir}/${date}/${date}-${time}.png"
+
+# Send the notification
+notify-send -r 111 "Saved screenshot as ${scr/*\/}"
+
+# Take the screenshot and crop out my second monitor.
+import -window root -gravity northwest -crop 1366x768+0+0 "$scr"  #1920x1080+1366+0 "$scr"

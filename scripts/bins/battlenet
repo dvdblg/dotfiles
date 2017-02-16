@@ -1,0 +1,3 @@
+#WINEARCH=win32 WINEPREFIX=~/win32 
+#env WINEPREFIX=~/.wine optirun -c rgb -b primus 
+wine C:\\windows\\command\\start.exe /Unix /home/davide/.wine/dosdevices/c:/users/Public/Start\ Menu/Programs/Battle.net/Battle.net.lnk
