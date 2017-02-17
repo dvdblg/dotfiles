@@ -116,7 +116,9 @@ rofi.lines:                          10
 ! "Number of columns" Set from: Default
 ! rofi.columns:                        1   
 ! "Font to use" Set from: Commandline
-rofi.font:                           Roboto 14
+!rofi.font:                           System Font Negreta 14
+rofi.font:                           System Font, Light 16
+!rofi.font:                           Roboto 14
 
 ! "Color scheme for normal row" Set from: XResources
 rofi.color-normal:                   #1f222d, #ebdbb2, #1f222d, argb:85ff6200, #ebdbb2 

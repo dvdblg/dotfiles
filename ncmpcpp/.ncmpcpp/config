@@ -13,7 +13,7 @@ song_list_format              = "$3 %t $R$4%l"
 #selected_item_prefix = " √ "
 
 song_columns_list_format = "(40)[green]{t|f}[default] (20)[yellow]{a}[default] (25)[blue]{b} (6)[cyan]{l}[default]" 
-now_playing_prefix = "$b>>>>   "
+now_playing_prefix = "$b>>>  "
 now_playing_suffix = "$/b"
 
 playlist_display_mode          = "columns" (classic/columns)
