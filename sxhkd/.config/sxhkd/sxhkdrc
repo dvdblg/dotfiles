@@ -124,7 +124,7 @@ super + alt + shift + {h,j,k,l}
 
 # move node to direction	
 super + shift + {Left,Down,Up,Right}
-	bsmove.sh {west,south,north,east}
+	/home/davide/dotfiles/scripts/scripts/bsmove.sh {west,south,north,east}
 	
 	
 	

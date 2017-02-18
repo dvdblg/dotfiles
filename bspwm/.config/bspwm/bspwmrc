@@ -43,8 +43,8 @@ bspc rule -a Screenkey manage=off
 sxhkd &
 compton -b
 $HOME/.config/polybar/launch.sh
-colorcorrection
+#colorcorrection
 feh --bg-scale '/home/davide/Immagini/Taylor Swift Wallpapers - Imgur/22 - nqvI0Jy.jpg'
 export _JAVA_AWT_WM_NONREPARENTING=1
-mpd &
+#mpd &
 nm-applet &
