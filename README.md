@@ -11,4 +11,6 @@
 * **Music player:** mpd with ncmpcpp
 * **Notifications:** dunst
 * **Display Manager:** LightDM
-
+* **PDF viewer:** zathura
+* **Editor:** vim (still learning it)
+* **Browser:** firefox (beta)
