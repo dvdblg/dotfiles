@@ -6,6 +6,7 @@
 [[ $- != *i* ]] && return
 
 export TERM=rxvt-unicode-256color
+export PATH=$PATH:$HOME/.local/bin
 
 alias ls='ls --color=auto'
 alias iotop="sudo iotop"
