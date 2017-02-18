@@ -5,6 +5,7 @@ syntax on
 syntax enable
 
 set clipboard+=unnamed
+set hlsearch
 
 noremap <Leader>y "*y
 noremap <Leader>p "*p
