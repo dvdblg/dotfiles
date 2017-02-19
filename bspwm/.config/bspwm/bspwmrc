@@ -50,6 +50,7 @@ compton -b
 $HOME/.config/polybar/launch.sh
 #colorcorrection
 feh --bg-scale '/home/davide/Immagini/Taylor Swift Wallpapers - Imgur/22 - nqvI0Jy.jpg'
-export _JAVA_AWT_WM_NONREPARENTING=1
+#export _JAVA_AWT_WM_NONREPARENTING=1
+wmname LG3D
 #mpd &
 nm-applet &

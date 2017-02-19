@@ -15,7 +15,7 @@ PS1='[\u@\h \W]\$ '
 export EDITOR=vim
 export BROWSER=firefox-beta
 
-export _JAVA_AWT_WM_NONREPARENTING=1
+#export _JAVA_AWT_WM_NONREPARENTING=1
 
 function _update_ps1() {
     PS1="$(~/repos/powerline-shell/powerline-shell.py $? 2> /dev/null)"
@@ -27,6 +27,8 @@ fi
 
 # config command to dotfiles git repo
 alias config='/usr/bin/git --git-dir=/home/davide/dotfiles/.git/ --work-tree=/home/davide/dotfiles/'
+
+alias matlab='matlab -desktop'
 
 if [ -z "$DISPLAY" ] && [ -n "$XDG_VTNR" ] && [ "$XDG_VTNR" -eq 1 ]; then
   exec startx
