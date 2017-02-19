@@ -36,12 +36,12 @@ bspc rule -a Chromium desktop=^1
 bspc rule -a Firefox desktop=^1
 bspc rule -a Clementine desktop=^4
 bspc rule -a Zathura desktop=^3 state=tiled
-bspc rule -a URxvt desktop=^2
+#bspc rule -a URxvt desktop=^2
 #bspc rule -a Xfce4-terminal desktop=^2
 bspc rule -a Gimp desktop='^8' state=floating follow=on
-bspc rule -a mplayer2 state=floating
-bspc rule -a Kupfer.py focus=on
-bspc rule -a Screenkey manage=off
+#bspc rule -a mplayer2 state=floating
+#bspc rule -a Kupfer.py focus=on
+#bspc rule -a Screenkey manage=off
 
 
 # Autostart 
