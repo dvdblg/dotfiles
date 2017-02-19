@@ -63,6 +63,14 @@ font-2 = "SFNS Display:size=10;0"
 font-3 = "FontAwesome:size=8;0"
 font-4 = "Roboto:size=4;0"
 
+[module/xwindow]
+;label-font = 0
+type = internal/xwindow
+format-underline = ${colors.orange}
+label = %title%
+label-maxlen = 30
+
+
 [module/menu0]
 type = custom/menu
 font = 3
@@ -102,13 +110,6 @@ icon-play = 
 icon-pause = 
 icon-prev = 
 icon-next = 
-
-[module/xwindow]
-label-font = 1
-type = internal/xwindow
-format-underline = ${colors.orange}
-label = %title%
-label-maxlen = 35
 
 
 [module/bspwm]
