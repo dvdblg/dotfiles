@@ -1,0 +1,19 @@
+
+#!/usr/bin/env bash
+#
+# Change dpms state and send a notification.
+#
+# Created by OrionDB5.
+#
+# Depends on: libnotify (patched with id support)
+case "$1" in
+    "on") xset s off -dpms ;;
+    "off") xset s on +dpms ;;
+    *) printf "%s\n" "Usage: ./cinemamode on, ./cinemamode off"; exit ;;
+esac
+
+current_state="$(xset q | grep 'DPMS is')"
+
+# The '-r' flag is from a patched version of 'libnotify'.
+# '-r' lets you replace notifications using the same id.
+notify-send -t 1 -r 113 " ${current_state/$'\n'*}"

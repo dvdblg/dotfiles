@@ -39,6 +39,9 @@ fi
 # Set cursor to left pointer instead of a cross
 xsetroot -cursor_name left_ptr
 
+# Set display stanby time
+xset dpms 600 1200 1800
+
 # Start the WM
 exec bspwm
 

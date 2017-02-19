@@ -16,7 +16,10 @@
 !URxvt.fontbold: xft:TerminessTTF Nerd Font:style=Bold:size=10
 
 !URxvt.font: xft:xos4 Terminess Powerline:style=Regular:size=9
-!URxvt.fontbold: xft:xos4 Terminess Powerline:style=Bold
+!URxvt.fontbold: xft:xos4 Terminess Powerline:style=Bold:size=9
+
+!URxvt.font: xft:xos4 Terminus:style=Regular:size=9
+!URxvt.fontbold: xft:xos4 Terminus:style=Bold:size=9
 
 !URxvt.font: xft:ProFontIIx Nerd Font:style=Book:size=8
 !URxvt.fontbold: xft:GohuFontMedium Nerd Font:style=Bold:size=10

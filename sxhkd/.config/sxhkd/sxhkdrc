@@ -17,7 +17,18 @@ super + shift + r
 super + shift + e	
 	~/scripts/shutdown.sh	
 	
-	
+
+#
+# dpms hotkeys	
+#
+
+# turn on cinemamode
+super + p
+	cinemamode on
+
+# turn off cinemamode
+super + shift + p
+	cinemamode off
 
 #
 # bspwm hotkeys

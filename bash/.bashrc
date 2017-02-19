@@ -12,7 +12,7 @@ alias ls='ls --color=auto'
 alias iotop="sudo iotop"
 PS1='[\u@\h \W]\$ '
 
-export EDITOR=nano
+export EDITOR=vim
 export BROWSER=firefox-beta
 
 export _JAVA_AWT_WM_NONREPARENTING=1
