@@ -13,8 +13,10 @@ case "$1" in
     *) printf "%s\n" "Usage: ./vol up, ./vol down"; exit ;;
 esac
 
-current_vol="$(amixer sget Master | grep -o -E "[[:digit:]]+%")"
+#current_vol="$(amixer sget Master | grep -o -E "[[:digit:]]+%")"
 
 # The '-r' flag is from a patched version of 'libnotify'.
 # '-r' lets you replace notifications using the same id.
-notify-send -t 1 -r 112 "Volume: ${current_vol/$'\n'*}"
+#notify-send -t 1 -r 112 "Volume: ${current_vol/$'\n'*}"
+#notify-send -t 1 -r 112 "Volume: $(pamixer --get-volume)%\n"
+notify-send -t 1 -r 112 "Volume: $(amixer sget Master | grep -o -E "[[:digit:]]+%" | sed -n 1p)"
