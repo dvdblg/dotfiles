@@ -119,18 +119,18 @@ label-focused = %icon%
 label-focused-background = ${colors.background-alt}
 ;label-focused-underline= ${colors.primary}
 label-focused-underline= #FF6200
-label-focused-padding = 2
+label-focused-padding = 1
 
 label-occupied = %icon%
-label-occupied-padding = 2
+label-occupied-padding = 1
 
 label-urgent = %icon%!
 label-urgent-background = ${colors.alert}
-label-urgent-padding = 2
+label-urgent-padding = 1
 
 label-empty = %icon%
 label-empty-foreground = ${colors.foreground-alt}
-label-empty-padding = 2
+label-empty-padding = 1
 
 ws-icon-0 = 1;
 ws-icon-1 = 2;
