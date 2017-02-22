@@ -5,7 +5,8 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-export TERM=rxvt-unicode-256color
+#export TERM=rxvt-unicode-256color
+export TERM=xterm-termite
 export PATH=$PATH:$HOME/.local/bin
 
 alias ls='ls --color=auto'

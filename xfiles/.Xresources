@@ -6,14 +6,18 @@
 !   ██ ░░██  ░██   ░██░░░░  ░░░░░██░██   ░██░██  ░██ ░██   ░██   ██░██░░░░  ░░░░░██ 
 !  ██   ░░██░███   ░░██████ ██████ ░░██████ ░░██████░███   ░░█████ ░░██████ ██████  
 ! ░░     ░░ ░░░     ░░░░░░ ░░░░░░   ░░░░░░   ░░░░░░ ░░░     ░░░░░   ░░░░░░ ░░░░░░   
+
 !SETTINGS
 
+!
+! URXVT
+!
 
-!URxvt.font: xft:SauceCodePro Nerd Font:style=Regular:size=10
-!URxvt.fontbold: xft:SauceCodePro Nerd Font:style=Bold:size=10
+!URxvt.font: xft:SauceCodePro Nerd Font:style=Regular:size=9:antialias=false
+!URxvt.fontbold: xft:SauceCodePro Nerd Font:style=Bold:size=9:antialias=false
 
-!URxvt.font: xft:TerminessTTF Nerd Font:style=Medium:size=10
-!URxvt.fontbold: xft:TerminessTTF Nerd Font:style=Bold:size=10
+!URxvt.font: xft:TerminessTTF Nerd Font:style=Medium:size=9:antialias=false
+!URxvt.fontbold: xft:TerminessTTF Nerd Font:style=Bold:size=9:antialias=false
 
 !URxvt.font: xft:xos4 Terminess Powerline:style=Regular:size=9
 !URxvt.fontbold: xft:xos4 Terminess Powerline:style=Bold:size=9
@@ -24,8 +28,8 @@
 !URxvt.font: xft:ProFontIIx Nerd Font:style=Book:size=8
 !URxvt.fontbold: xft:GohuFontMedium Nerd Font:style=Bold:size=10
 
-URxvt.font: xft:Knack Nerd Font:style=Regular:size=9
-URxvt.fontbold: xft:Knack Nerd Font:style=Bold:size=9
+URxvt.font: xft:Knack Nerd Font:style=Regular:size=9:antialias=false
+URxvt.fontbold: xft:Knack Nerd Font:style=Bold:size=9:antialias=false
 
 !URxvt.font: xft:MesloLGM Nerd Font:style=RegularForPowerline:size=10
 !URxvt.fontbold: xft:GohuFontMedium Nerd Font:style=Bold:size=10
@@ -33,7 +37,19 @@ URxvt.fontbold: xft:Knack Nerd Font:style=Bold:size=9
 !URxvt.font: xft:FantasqueSansMono Nerd Font:style=Regular:size=10
 !URxvt.fontbold: xft:FantasqueSansMono Nerd Font:style=Bold:size=10
 
-
+! URxvt settings
+!URxvt*dynamicColors: on
+URxvt.internalBorder: 15
+URxvt*lineSpace: 1
+URxvt*scrollBar: false
+URxvt*scrollColor: #131415
+URxvt.geometry: 80x18
+URxvt*saveLines: 1000
+URxvt*cursorUnderline: false
+URxvt*cursorColor: #d79921
+URxvt*cursorBlink: true
+URxvt*underlineColor: #ebdbb2
+URxvt*allow_bold: true
 
 
 ! Disables scrollback buffer in secondary screen
@@ -44,7 +60,7 @@ URxvt.secondaryScroll: 0
 URxvt.perl-ext-common: default,matcher,clipboard,tabbed
 URxvt.url-launcher: /usr/bin/xdg-open
 URxvt.matcher.button: 1
-URxvt.matcher.rend.0: Uline Bold foreground
+URxvt.matcher.rend.0: Uline Bold fg16
 
 ! Tabs colors
 URxvt.tabbed.tabbar-fg: 2
@@ -60,6 +76,16 @@ URxvt.keysym.Shift-Control-C: perl:clipboard:copy
 URxvt.keysym.Shift-Control-V: perl:clipboard:paste
 
 
+! Xterm settings
+
+xterm*faceName: xos4 Terminess Powerline:style=Regular:size=10
+xterm*VT100.Translations: #override Ctrl Shift <Key>V: insert-selection(CLIPBOARD) \n Ctrl Shift <Key>C: copy-selection(CLIPBOARD)
+
+
+
+!
+! Colors
+!
 *background: #1f222d
 *foreground: #ebdbb2
 
@@ -67,60 +93,40 @@ URxvt.keysym.Shift-Control-V: perl:clipboard:paste
 *color0:  #282828
 *color8:  #928374
 
-
 ! DarkRed + Red
 *color1:  #cc241d
 *color9:  #fb4934
-
 
 ! DarkGreen + Green
 *color2:  #98971a
 *color10: #b8bb26
 
-
 ! DarkYellow + Yellow
 *color3:  #d79921
 *color11: #fabd2f
-
 
 ! DarkBlue + Blue
 *color4:  #458588
 *color12: #83a598
 
-
 ! DarkMagenta + Magenta
 *color5:  #b16286
 *color13: #d3869b
-
 
 ! DarkCyan + Cyan
 *color6:  #689d6a
 *color14: #8ec07c
 
-
 ! LightGrey + White
 *color7:  #a89984
 *color15: #ebdbb2
+
 
 ! Cursor theme
 Xcursor.theme: OSX-ElCap
 
 ! !cursor
 *cursorColor: #d79921
-
-!URXVT SETTINGS
-!URxvt*dynamicColors: on
-URxvt.internalBorder: 15
-URxvt*lineSpace: 1
-URxvt*scrollBar: false
-URxvt*scrollColor: #131415
-URxvt.geometry: 80x18
-URxvt*saveLines: 1000
-URxvt*cursorUnderline: false
-URxvt*cursorColor: #d79921
-URxvt*cursorBlink: true
-URxvt*underlineColor: #ebdbb2
-URxvt*allow_bold: true
 
 
 

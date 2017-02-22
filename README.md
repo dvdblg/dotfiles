@@ -7,7 +7,7 @@
 * **Bar:** polybar
 * **Theme:** Arc-Dark
 * **Icons:** Arc
-* **Terminal:** urxvt
+* **Terminal:** termite 
 * **Music player:** mpd with ncmpcpp
 * **Notifications:** dunst
 * **Display Manager:** LightDM

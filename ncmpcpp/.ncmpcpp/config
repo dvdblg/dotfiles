@@ -24,8 +24,8 @@ playlist_separate_albums       = "no"
 
 # BARS
 song_status_format             = "$b$8%a $4%t $5%b {(Disc %d) } $1"
-#progressbar_look               = "─●─" 
-progressbar_look               = "◾◾◽" 
+progressbar_look               = "─●─" 
+#progressbar_look               = "◾◾◽" 
 progressbar_boldness 	       = "yes"
 titles_visibility              = "no"
 statusbar_visibility           = "yes"
