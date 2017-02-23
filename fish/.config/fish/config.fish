@@ -7,3 +7,9 @@ end
 
 # set PATH
 set PATH /home/davide/.local/bin/ $PATH
+
+# set EDITOR and BROWSER
+set EDITOR vim
+set BROWSER firefox-beta
+
+ alias config "/usr/bin/git --git-dir=/home/davide/dotfiles/.git/ --work-tree=/home/davide/dotfiles/"
