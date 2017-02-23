@@ -45,6 +45,9 @@ numlockx on
 # Set display stanby time
 xset dpms 600 1200 1800
 
+# Set dpi
+xrandr --dpi 100.45
+
 # Start the WM
 exec bspwm
 

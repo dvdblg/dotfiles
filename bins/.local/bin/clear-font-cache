@@ -1,0 +1,1 @@
+fc-cache -fv ~/.local/share/fonts/ && fc-cache-32 -fv ~/.local/share/fonts/

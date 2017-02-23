@@ -7,7 +7,10 @@ allow_bold = true
 dynamic_title = true
 urgent_on_bell = true
 clickable_url = true
-font = xos4 Terminus 9
+
+;font = Input Mono 9
+font = xos4 Terminus 9 
+
 scrollback_lines = 10000
 search_wrap = true
 #icon_name = terminal
@@ -89,4 +92,4 @@ color15 = #ebdbb2
 #border_width = 0.5
 #roundness = 2.0
 
-#vim: ft=dosini cms=#%s
+# vim: ft=dosini cms=#%s
