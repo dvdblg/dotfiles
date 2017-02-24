@@ -185,7 +185,7 @@ format-volume-underline = ${colors.orange}
 label-volume = %percentage%%
 #label-volume-foreground = ${color.white}
 
-label-muted =  mute
+label-muted =  mute
 #label-muted-foreground = ${colors.gray}
 
 ramp-volume-0 = 

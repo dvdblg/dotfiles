@@ -7,13 +7,17 @@
 # ░░░   ░░  ░░░░░  ░░░  ░░  ░░ ░░       ░░░░░  ░░      ░░      
 
 
+# UI
+user_interface = alternative
+
+
 # PLAYLIST
 song_list_format              = "$3 %t $R$4%l"
 #now_playing_prefix             = "$3^√ $b$1"
 #selected_item_prefix = " √ "
 
-alternative_header_first_line_format = $b$1$aqqu$/a$5 {%t}|{%f} $1$atqq$/a$9$/b
-alternative_header_second_line_format = {{$2$b%a$/b$9}{ - $(167)%b$9}{ ($4%y$9)}}|{%D}
+alternative_header_first_line_format = $b$1$aqqu$/a$3 {%t}|{%f} $1$atqq$/a$9$/b
+alternative_header_second_line_format = {{$4$b%a$/b$9}{ $(167)-$9 $5%b$9}{ $(167)-$9 $7%y$9}}|{%D}
 song_columns_list_format = "(40)[green]{t|f}[default] (20)[yellow]{a}[default] (25)[blue]{b} (6)[cyan]{l}[default]" 
 #now_playing_prefix = "$b>>>  "
 #now_playing_prefix = "$b$8▶ "
@@ -22,6 +26,8 @@ now_playing_suffix = "$/b"
 
 playlist_display_mode          = "columns" (classic/columns)
 playlist_separate_albums       = "no"
+
+
 
 # BARS
 song_status_format             = "$b$8%a $4%t $5%b {(Disc %d) } $1"
@@ -34,9 +40,13 @@ statusbar_visibility           = "yes"
 header_visibility              = "yes"
 display_bitrate                = "no"
 
+
+
 # BROWSER
 browser_playlist_prefix        = "- $b$5Playlist$9$/b "
 browser_display_mode           = "columns" (classic/columns)
+
+
 
 # VISUALIZER
 visualizer_fifo_path           = "/tmp/mpd.fifo"
@@ -44,6 +54,8 @@ visualizer_output_name         = "my_fifo"
 visualizer_type                = "spectrum" (spectrum/wave)
 #visualizer_look                = "┃┃"
 visualizer_look                = "●▮"
+
+
 
 # COLORS
 #header_window_color            = black
@@ -61,6 +73,8 @@ visualizer_look                = "●▮"
 #statusbar_color   	       = red
 #active_column_color            = green
 #visualizer_color = blue, cyan, green, yellow, magenta, green
+
+
 
 # OTHER SETTINGS
 mpd_music_dir                  = "/home/davide/Musica"
