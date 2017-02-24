@@ -117,6 +117,7 @@ type = internal/bspwm
 format = <label-state> <label-mode>
 
 label-focused = %icon%
+label-focused-font = 1
 label-focused-background = ${colors.background-alt}
 ;label-focused-underline= ${colors.primary}
 label-focused-underline= #FF6200

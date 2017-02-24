@@ -9,9 +9,12 @@ urgent_on_bell = true
 clickable_url = true
 fullscreen = false
 
-
-;font = Roboto Mono 9
-font = xos4 Terminus 9 
+;font = Input Mono 9
+;font = Knack Nerd Font 9
+font = Cousine 9
+;font = UbuntuMonoDerivativePowerline Nerd Font 10 
+;font = MesloLGM Nerd Font 9 
+;font = xos4 Terminus 9 
 
 scrollback_lines = 10000
 search_wrap = true
