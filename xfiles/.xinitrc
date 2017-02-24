@@ -49,5 +49,5 @@ xset dpms 600 1200 1800
 xrandr --dpi 100.45
 
 # Start the WM
-exec bspwm
+exec dbus-launch bspwm
 

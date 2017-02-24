@@ -1,8 +1,7 @@
 # dotfiles
 ##Current setup:
 * **OS:** Arch Linux
-* **Kernel:** 4.9.8-1-ARCH 
-* **Shell:** bash
+* **Shell:** zsh 
 * **WM:** bspwm 
 * **Bar:** polybar
 * **Theme:** Arc-Dark
