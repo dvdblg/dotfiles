@@ -1,3 +1,17 @@
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.histfile
+HISTSIZE=10000
+SAVEHIST=1000
+setopt autocd
+bindkey -v
+# End of lines configured by zsh-newuser-install
+# The following lines were added by compinstall
+zstyle :compinstall filename '/home/davide/.zshrc'
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
+
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/.local/bin:/usr/local/bin:$PATH
 #export TERM=xterm-termite
@@ -46,7 +60,7 @@ DISABLE_AUTO_UPDATE="true"
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
 # The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# HIST_STAMPS="mm/dd/yyyy"
+HIST_STAMPS="dd.mm.yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
@@ -101,19 +115,7 @@ fi
 
 source $ZSH/oh-my-zsh.sh
 
-# Lines configured by zsh-newuser-install
-HISTFILE=~/.histfile
-HISTSIZE=10000
-SAVEHIST=1000
-setopt autocd
-bindkey -v
-# End of lines configured by zsh-newuser-install
-# The following lines were added by compinstall
-zstyle :compinstall filename '/home/davide/.zshrc'
 
-autoload -Uz compinit
-compinit
-# End of lines added by compinstall
 
 #PROMPT='%F{red}%n%f@%F{blue}%m%f %F{yellow}%1~%f %# '
 #RPROMPT='[%F{yellow}%?%f]'
