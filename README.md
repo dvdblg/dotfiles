@@ -3,6 +3,7 @@
 * **OS:** `Arch Linux`
 * **Shell:** `zsh`
 * **WM:** `bspwm`
+* **Compositor:** `compton`
 * **Bar:** `polybar`
 * **Theme:** `Arc-Dark`
 * **Icons:** `Arc`
