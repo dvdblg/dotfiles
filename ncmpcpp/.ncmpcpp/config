@@ -16,7 +16,8 @@ alternative_header_first_line_format = $b$1$aqqu$/a$5 {%t}|{%f} $1$atqq$/a$9$/b
 alternative_header_second_line_format = {{$2$b%a$/b$9}{ - $(167)%b$9}{ ($4%y$9)}}|{%D}
 song_columns_list_format = "(40)[green]{t|f}[default] (20)[yellow]{a}[default] (25)[blue]{b} (6)[cyan]{l}[default]" 
 #now_playing_prefix = "$b>>>  "
-now_playing_prefix = "$b$8▶ "
+#now_playing_prefix = "$b$8▶ "
+now_playing_prefix = "$b$8 "
 now_playing_suffix = "$/b"
 
 playlist_display_mode          = "columns" (classic/columns)
@@ -24,8 +25,9 @@ playlist_separate_albums       = "no"
 
 # BARS
 song_status_format             = "$b$8%a $4%t $5%b {(Disc %d) } $1"
-progressbar_look               = "─●─" 
-#progressbar_look               = "◾◾◽" 
+progressbar_look               = "" 
+#progressbar_look               = "" # works also with fontconfig (vte terminals)
+#progressbar_look               = "◾◾◽" # wokrs only with xft based terminals
 progressbar_boldness 	       = "yes"
 titles_visibility              = "no"
 statusbar_visibility           = "yes"
