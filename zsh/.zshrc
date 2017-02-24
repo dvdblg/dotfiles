@@ -55,7 +55,7 @@ DISABLE_AUTO_UPDATE="true"
 # # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git archlinux compleat)
 
 
 # User configuration
@@ -125,6 +125,11 @@ compinit
 #history-beginning-search-backward
 #bindkey "^[[6;5~" down-line-or-history
 #history-beginning-search-forward
+
+export KEYTIMEOUT=1
+
+bindkey -r "^["
+#bindkey "^[" send-break
 
 autoload zkbd
 source ~/.zkbd/xterm-termite-:0
