@@ -154,13 +154,16 @@ XF86AudioMute
 	vol mute
 	
 XF86AudioPlay
-	mpc toggle	
+	mpc toggle
 	
 XF86AudioNext
 	mpc next
 
 XF86AudioPrev
 	mpc prev
+
+XF86AudioStop
+	mpc stop
 	
 XF86Calculator
 	speedcrunch
