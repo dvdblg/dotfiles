@@ -6,7 +6,8 @@ margin-bottom = 2
 
 
 [colors]
-orange = #FF6200
+;orange = #FF6200
+orange = #d65d0e
 white = #d1d1d1
 gray = #585858
 black = #090909

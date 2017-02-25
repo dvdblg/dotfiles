@@ -86,7 +86,14 @@ xterm*VT100.Translations: #override Ctrl Shift <Key>V: insert-selection(CLIPBOAR
 !
 ! Colors
 !
-*background: #1f222d
+
+! arc blue background
+!*background: #1f222d
+
+! hard contrast: *background: #1d2021
+! soft contrast: *background: #32302f
+
+*background: #282828
 *foreground: #ebdbb2
 
 ! Black + DarkGrey
@@ -137,53 +144,5 @@ Xft.hintstyle:  hintslight
 Xft.hinting: 1
 Xft.antialias: 1
 Xft.rgba: rgb
-
-
-! ----------------------!
-!		   ROFI			!
-! ----------------------!
-
-! "Enabled modi" Set from: Default
-! rofi.modi:                           window,run,ssh
-! "Window width" Set from: Commandline
-rofi.width:                          50  
-! "Number of lines" Set from: Commandline
-rofi.lines:                          10  
-! "Number of columns" Set from: Default
-! rofi.columns:                        1   
-! "Font to use" Set from: Commandline
-!rofi.font:                           Knack Nerd Font 16
-!rofi.font:                           System Font 16
-!rofi.font:                           Roboto 16
-rofi.font:                           Arimo 16
-
-! "Color scheme for normal row" Set from: XResources
-rofi.color-normal:                   #1f222d, #ebdbb2, #1f222d, argb:85ff6200, #ebdbb2 
-! "Color scheme for urgent row" Set from: XResources
-rofi.color-urgent:                   #1f222d, #ebdbb2, #1f222d, argb:7fff6200, #fdf6e3 
-! "Color scheme for active row" Set from: XResources
-rofi.color-active:                   #1f222d, #ebdbb2, #1f222d, argb:7fff6200, #fdf6e3 
-! "Color scheme window" Set from: XResources
-rofi.color-window:                   #1f222d, #ff6200, argb:d3ff6200
-
-! "Border width" Set from: Commandline
-rofi.bw:                             3   
-! "Location on screen" Set from: Default
-! rofi.location:                       0   
-! "Padding" Set from: Commandline
-rofi.padding:                        15  
-! "Y-offset relative to location" Set from: Default
-! rofi.yoffset:                        0   
-! "X-offset relative to location" Set from: Default
-! rofi.xoffset:                        0   
-! "Always show number of lines" Set from: Default
-! rofi.fixed-num-lines:                true
-! "Terminal to use" Set from: Default
-! rofi.terminal:                       rofi-sensible-terminal
-! "Ssh client to use" Set from: Default
-! rofi.ssh-client:                     ssh
-
-rofi.separator-style:	solid
-
 
 ! }}}

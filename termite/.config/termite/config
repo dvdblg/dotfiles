@@ -10,8 +10,11 @@ clickable_url = true
 fullscreen = false
 
 ;font = Input Mono 9
-;font = Knack Nerd Font 9
-font = Cousine 9
+font = Knack Nerd Font 9
+;font = SauceCodePro Nerd Font 9
+;font = InconsolataForPowerline Nerd Font 10 
+;font = Cousine 9
+;font = FantasqueSansMono Nerd Font 9
 ;font = Monaco for Powerline 9
 ;font = UbuntuMonoDerivativePowerline Nerd Font 10 
 ;font = MesloLGM Nerd Font 9 
@@ -52,8 +55,15 @@ filter_unmatched_urls = true
 #
 # Colors
 #
-background = #1f222d
+
+#background = #1f222d	# arc blue background
+
+# hard contrast: background = #1d2021
+# soft contrast: background = #32302f
+
+background = #282828
 foreground = #ebdbb2
+foreground_bold = #ebdbb2
 
 # Black + DarkGrey
 color0 = #282828
