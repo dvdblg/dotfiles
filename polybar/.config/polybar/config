@@ -56,15 +56,14 @@ tray-offset-y = 0
 tray-maxsize = 16
 tray-padding = 0
 
-;font-0 = "Artwiz Lemon:size=10;0"
 font-0 = "xos4 Terminus:size=8;0"
 font-1 = "FontAwesome:size=10;0"
-font-2 = "SFNS Display:size=10;0"
-font-3 = "FontAwesome:size=8;0"
+font-2 = "Cousine:size=8;0"
+font-3 = "Artwiz Lemon:size=10;0"
 font-4 = "Roboto:size=4;0"
 
 [module/xwindow]
-;label-font = 0
+;label-font = 3 
 type = internal/xwindow
 format-underline = ${colors.orange}
 label = %title%
@@ -220,7 +219,9 @@ format-charging = <animation-charging> <label-charging>
 format-charging-underline = ${colors.gray}
 format-charging-padding = 1
 
-format-discharging = <ramp-capacity> <label-discharging>
+time-format = %H:%M
+label-discharging = %percentage%% - %time%
+format-discharging = <ramp-capacity> <label-discharging> 
 format-discharging-underline = ${colors.yellow}
 format-discharging-padding = 1
 

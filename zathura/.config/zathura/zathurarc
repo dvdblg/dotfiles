@@ -8,5 +8,5 @@ set scroll-full-overlap 0.01
 set scroll-step 100
 
 # Open document in fit-width mode by default
-set adjust-open "best-fit"
+set adjust-open "width"
 
