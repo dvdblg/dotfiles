@@ -173,3 +173,8 @@ XF86MonBrightnessUp
 	
 XF86MonBrightnessDown
 	light down
+
+# take a screenshot
+Print
+	scr
+	
