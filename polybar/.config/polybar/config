@@ -216,7 +216,7 @@ adapter = AC
 full-at = 98
 
 format-charging = <animation-charging> <label-charging>
-format-charging-underline = ${colors.gray}
+format-charging-underline = ${colors.orange}
 format-charging-padding = 1
 
 time-format = %H:%M
@@ -241,7 +241,7 @@ animation-charging-1 = 
 animation-charging-2 = 
 animation-charging-3 = 
 animation-charging-4 = 
-animation-charging-foreground = ${colors.white}
+animation-charging-foreground = ${colors.foreground}
 animation-charging-framerate = 500
 
 
