@@ -53,7 +53,9 @@ visualizer_fifo_path           = "/tmp/mpd.fifo"
 visualizer_output_name         = "my_fifo"
 visualizer_type                = "spectrum" (spectrum/wave)
 #visualizer_look                = "┃┃"
-visualizer_look                = "●▮"
+visualizer_look                = "●▋"
+#visualizer_look                = "●❚"
+#visualizer_look                = "●▮"
 
 
 
