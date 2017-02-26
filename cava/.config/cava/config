@@ -53,8 +53,8 @@
 ; method = alsa  
 ; source = default #hw:1,0 
 
- #method = fifo
- #source = /tmp/mpd.fifo
+ method = fifo
+ source = /tmp/mpd.fifo
 
 
 

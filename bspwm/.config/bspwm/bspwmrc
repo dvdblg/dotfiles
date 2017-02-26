@@ -33,6 +33,7 @@ bspc config gapless_monocle      true
 # Rules
 bspc rule -a Atom desktop=^3
 bspc rule -a Chromium desktop=^1
+bspc rule -a Google-chrome:www.netflix.com desktop=^6
 bspc rule -a Firefox desktop=^1
 bspc rule -a Clementine desktop=^4
 bspc rule -a Zathura desktop=^3 state=tiled
