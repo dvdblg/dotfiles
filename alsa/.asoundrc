@@ -1,1 +1,2 @@
+# enhance audio quality, alternative is 'speexrate_best' but it's not worth the extra cpu load
 defaults.pcm.rate_converter "speexrate_medium"
