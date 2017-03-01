@@ -9,8 +9,9 @@ urgent_on_bell = true
 clickable_url = true
 fullscreen = false
 
-;font = Input Mono 9
-font = Knack Nerd Font 9
+;font = Input Mono Condensed,InputMonoCondensed Regular 9
+;font = Knack Nerd Font 9
+font = Iosevka Term 9
 ;font = SauceCodePro Nerd Font 9
 ;font = InconsolataForPowerline Nerd Font 10 
 ;font = Cousine 9
@@ -19,6 +20,7 @@ font = Knack Nerd Font 9
 ;font = UbuntuMonoDerivativePowerline Nerd Font 10 
 ;font = MesloLGM Nerd Font 9 
 ;font = xos4 Terminus 9 
+;font = xos4 Terminess Powerline 9 
 
 scrollback_lines = 10000
 search_wrap = true
