@@ -42,6 +42,9 @@ xsetroot -cursor_name left_ptr
 # numlock on by default
 numlockx on
 
+# set keyboard layout
+setxkbmap it
+
 # Set display stanby time
 xset dpms 600 1200 1800
 

@@ -38,6 +38,7 @@ POWERLEVEL9K_TIME_FORMAT='%D{%H:%M}'
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 if [ "$TERM" != "linux" ]; then
 	ZSH_THEME="powerlevel9k/powerlevel9k"
+	#ZSH_THEME="agnoster"
 else
 	ZSH_THEME="agnoster"
 fi
@@ -127,7 +128,7 @@ plugins=(git archlinux compleat)
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 export EDITOR='vim'
-export BROWSER='firefox-beta'
+export BROWSER='firefox'
 
 # config command to dotfiles git repo
 alias config='/usr/bin/git --git-dir=/home/davide/dotfiles/.git/ --work-tree=/home/davide/dotfiles/'
