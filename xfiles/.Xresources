@@ -88,7 +88,6 @@ xterm*faceName: xos4 Terminess Powerline:style=Regular:size=10
 xterm*VT100.Translations: #override Ctrl Shift <Key>V: insert-selection(CLIPBOARD) \n Ctrl Shift <Key>C: copy-selection(CLIPBOARD)
 
 
-
 !
 ! Colors
 !
