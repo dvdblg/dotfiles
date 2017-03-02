@@ -19,8 +19,14 @@
 !URxvt.font: xft:TerminessTTF Nerd Font:style=Medium:size=9:antialias=false
 !URxvt.fontbold: xft:TerminessTTF Nerd Font:style=Bold:size=9:antialias=false
 
-URxvt.font: xft:xos4 Terminess Powerline:style=Regular:size=9
-URxvt.fontbold: xft:xos4 Terminess Powerline:style=Bold:size=9
+!URxvt.font: xft:xos4 Terminess Powerline:style=Regular:size=9
+!URxvt.fontbold: xft:xos4 Terminess Powerline:style=Bold:size=9
+
+URxvt.font: xft:Knack Nerd Font:style=Regualr:size=9
+URxvt.fontbold: xft:Knack Nerd Font:style=Bold:size=9
+
+!URxvt.font: xft:Iosevka Term:style=Regualr:size=9
+!URxvt.fontbold: xft:Iosevka Term:style=Bold:size=9
 
 !URxvt.font: xft:xos4 Terminus:style=Regular:size=9
 !URxvt.fontbold: xft:xos4 Terminus:style=Bold:size=9

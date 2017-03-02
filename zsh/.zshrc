@@ -128,7 +128,8 @@ plugins=(git archlinux compleat)
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 export EDITOR='vim'
-export BROWSER='firefox'
+export BROWSER='firefox-beta'
+export TERMINAL='terminator'
 
 # config command to dotfiles git repo
 alias config='/usr/bin/git --git-dir=/home/davide/dotfiles/.git/ --work-tree=/home/davide/dotfiles/'

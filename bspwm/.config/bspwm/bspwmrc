@@ -42,6 +42,7 @@ bspc rule -a Zathura desktop=^3 state=tiled
 bspc rule -a Gimp desktop='^6' state=floating follow=on
 bspc rule -a Ristretto state=floating
 bspc rule -a feh state=floating
+bspc rule -a VirtualBox desktop=^5 state=floating
 #bspc rule -a mplayer2 state=floating
 #bspc rule -a Kupfer.py focus=on
 #bspc rule -a Screenkey manage=off

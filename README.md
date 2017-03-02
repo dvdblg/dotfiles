@@ -7,7 +7,7 @@
 * **Bar:** `polybar`
 * **Theme:** `Arc-Dark`
 * **Icons:** `Arc`
-* **Terminal:** `termite`
+* **Terminal:** `terminator`
 * **Music player:** `mpd with ncmpcpp`
 * **Notifications:** `dunst`
 * **Display Manager:** `LightDM`
