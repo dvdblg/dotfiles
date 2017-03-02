@@ -4,7 +4,7 @@
 
 # terminal emulator
 super + Return
-	terminator
+	termite
 
 # program launcher
 super + d
