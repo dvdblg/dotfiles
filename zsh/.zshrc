@@ -14,7 +14,7 @@ compinit
 
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/.local/bin:/usr/local/bin:$PATH
-#export TERM=xterm-termite
+export TERM=xterm-termite
 
 alias ls='ls --color=auto'
 alias iotop="sudo iotop"
@@ -126,10 +126,6 @@ plugins=(git archlinux compleat)
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
-export EDITOR='vim'
-export BROWSER='firefox-beta'
-export TERMINAL='terminator'
 
 # config command to dotfiles git repo
 alias config='/usr/bin/git --git-dir=/home/davide/dotfiles/.git/ --work-tree=/home/davide/dotfiles/'
