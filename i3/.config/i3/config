@@ -9,8 +9,8 @@ focus_follows_mouse yes
 # We first set the titlebar font size to a large size to get a good padding amount.
 # We then use pango markup to force i3 to print with the desired font.
 # This gives us large titlebars with a small font. :P
-font pango:Noto Sans 10
-for_window [class=".*"] title_format "<span font='Artwiz Lemon 7'> > %title</span>"
+#font pango:Noto Sans 10
+#for_window [class=".*"] title_format "<span font='Artwiz Lemon 7'> > %title</span>"
 
 
 
@@ -22,6 +22,7 @@ for_window [class=".*"] title_format "<span font='Artwiz Lemon 7'> > %title</spa
 set_from_resource $fg i3wm.foreground #f0f0f0
 set_from_resource $bg i3wm.background #f0f0f0
 
+set $orange #d65d0e
 set $base00 #101218
 set $base01 #1f222d
 set $base02 #252936
@@ -52,12 +53,12 @@ set $base0F #fcc09e
 #  client.focused_inactive $base02 $base02    $base03 $base0F
 #  client.unfocused        $base02 $base02    $base03 $base0F
 #  client.urgent           $base02 $base08    $base00 $base0F
-   client.focused          $bg     $bg     $fg      $bg       $bg
+   client.focused          $bg     $bg     $fg      $bg       $orange
    client.focused_inactive $bg     $bg     $fg      $bg       $bg
    client.unfocused        $bg     $bg     $fg      $bg       $bg
    client.urgent           $bg     $bg     $fg 	    $bg       $bg
    client.placeholder 	   $bg     $bg     $fg      $bg       $bg
-
+   client.background $bg	
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 #font pango:DejaVu Sans Mono 8
@@ -399,7 +400,7 @@ bindsym XF86Calculator exec --no-startup-id speedcrunch
 ###########
 
 # Add a 5px border to all windows.
-for_window [class="^.*"] border normal 2
+for_window [class="^.*"] border pixel 2
 
 #smart_gaps on
 smart_borders on
