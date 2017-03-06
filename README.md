@@ -2,15 +2,15 @@
 ##Current setup:
 * **OS:** `Arch Linux`
 * **Shell:** `zsh`
-* **WM:** `bspwm`
+* **WM:** `i3`
 * **Compositor:** `compton`
 * **Bar:** `polybar`
-* **Theme:** `Arc-Dark`
-* **Icons:** `Arc`
+* **Theme:** `oomox`
+* **Icons:** `Vertex`
 * **Terminal:** `termite`
 * **Music player:** `mpd with ncmpcpp`
 * **Notifications:** `dunst`
-* **Display Manager:** `LightDM`
+* **Display Manager:** `none`
 * **PDF viewer:** `zathura`
 * **Editor:** `vim (still learning it)`
 * **Browser:** `firefox (beta)`
