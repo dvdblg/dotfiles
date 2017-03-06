@@ -10,8 +10,8 @@ clickable_url = true
 fullscreen = false
 
 ;font = Input Mono Condensed,InputMonoCondensed Regular 9
-;font = Knack Nerd Font 9
-font = Hack 10
+font = Knack Nerd Font 10
+;font = Hack 10
 ;font = Iosevka Term 9
 ;font = SauceCodePro Nerd Font 9
 ;font = InconsolataForPowerline Nerd Font 10 

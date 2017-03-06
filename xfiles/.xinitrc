@@ -51,6 +51,8 @@ xset dpms 600 1200 1800
 # Set dpi
 xrandr --dpi 100.45
 
+# Set modmap
+xmodmap ~/.Xmodmap
 
 # D-bus
 if which dbus-launch >/dev/null && test -z "$DBUS_SESSION_BUS_ADDRESS"; then
@@ -58,5 +60,6 @@ if which dbus-launch >/dev/null && test -z "$DBUS_SESSION_BUS_ADDRESS"; then
 fi
 
 # Start the WM
-exec bspwm
-
+#exec bspwm
+exec i3
+#exec openbox-session

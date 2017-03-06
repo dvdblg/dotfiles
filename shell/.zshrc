@@ -1,3 +1,5 @@
+. $HOME/.profile
+
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
 HISTSIZE=10000
@@ -13,11 +15,9 @@ compinit
 # End of lines added by compinstall
 
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/.local/bin:/usr/local/bin:$PATH
-export TERM=xterm-termite
+#export PATH=$HOME/.local/bin:/usr/local/bin:$PATH
+#export TERM=xterm-256color
 
-alias ls='ls --color=auto'
-alias iotop="sudo iotop"
 
 # Path to your oh-my-zsh installation.
 ZSH=/usr/share/oh-my-zsh/
@@ -127,18 +127,12 @@ plugins=(git archlinux compleat)
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# config command to dotfiles git repo
-alias config='/usr/bin/git --git-dir=/home/davide/dotfiles/.git/ --work-tree=/home/davide/dotfiles/'
-alias matlab='matlab -desktop'
-
 ZSH_CACHE_DIR=$HOME/.oh-my-zsh-cache
 if [[ ! -d $ZSH_CACHE_DIR ]]; then
   mkdir $ZSH_CACHE_DIR
 fi
 
 source $ZSH/oh-my-zsh.sh
-
-
 
 #PROMPT='%F{red}%n%f@%F{blue}%m%f %F{yellow}%1~%f %# '
 #RPROMPT='[%F{yellow}%?%f]'

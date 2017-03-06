@@ -30,7 +30,10 @@ monitor = eDP-1
 bottom = false
 wm-restack = bspwm
 width = 100%
-height = 22
+height = 24
+offset-x = 0
+offset-y = 0
+
 
 enable-ipc = true
 
@@ -42,7 +45,7 @@ module-margin-left = 0
 
 modules-right = mpd volume battery date menu0
 modules-center = 
-modules-left = bspwm xwindow
+modules-left = i3 bspwm xwindow
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -342,45 +345,45 @@ animation-charging-framerate = 500
 #~ label-disconnected = 
 #~ label-disconnected-foreground = ${colors.gray}
 
-;[module/i3]
-;type = internal/i3
-;format = <label-state> <label-mode>
-;index-sort = false
-;wrapping-scroll = false
-;strip-wsnumbers = true
-;pin-workspaces = true
+[module/i3]
+type = internal/i3
+format = <label-state> <label-mode>
+index-sort = false
+wrapping-scroll = false
+strip-wsnumbers = true
+pin-workspaces = true
 
-;label-mode-padding = 2
-;label-mode-foreground = #000
-;label-mode-background = ${colors.primary}
+label-mode-padding = 2
+label-mode-foreground = #000
+label-mode-background = ${colors.primary}
 
-;label-focused = %name%
-;label-focused-background = ${module/bspwm.label-focused-background}
-;label-focused-underline = ${module/bspwm.label-focused-underline}
-;label-focused-padding = ${module/bspwm.label-focused-padding}
+label-focused = %name%
+label-focused-background = ${module/bspwm.label-focused-background}
+label-focused-underline = ${module/bspwm.label-focused-underline}
+label-focused-padding = ${module/bspwm.label-focused-padding}
 
-;label-unfocused = %name%
-;label-unfocused-padding = ${module/bspwm.label-occupied-padding}
+label-unfocused = %name%
+label-unfocused-padding = ${module/bspwm.label-occupied-padding}
 
-;label-urgent = %name%!
-;label-urgent-background = ${module/bspwm.label-urgent-background}
-;label-urgent-padding = ${module/bspwm.label-urgent-padding}
+label-urgent = %name%!
+label-urgent-background = ${module/bspwm.label-urgent-background}
+label-urgent-padding = ${module/bspwm.label-urgent-padding}
 
-;label-visible = %name%
-;label-visible-background = ${self.label-focused-background}
-;label-visible-underline = ${self.label-focused-underline}
-;label-visible-padding = ${self.label-focused-padding}
+label-visible = %name%
+label-visible-background = ${self.label-focused-background}
+label-visible-underline = ${self.label-focused-underline}
+label-visible-padding = ${self.label-focused-padding}
 
-;ws-icon-0 = 1;
-;ws-icon-1 = 2;
-;ws-icon-2 = 3;
-;ws-icon-3 = 4;
-;ws-icon-4 = 5;
-;ws-icon-5 = 6;
-;ws-icon-6 = 7;
-;ws-icon-7 = 8;
-;ws-icon-8 = 9;
-;ws-icon-9 = 10;
+ws-icon-0 = 1;
+ws-icon-1 = 2;
+ws-icon-2 = 3;
+ws-icon-3 = 4;
+ws-icon-4 = 5;
+ws-icon-5 = 6;
+ws-icon-6 = 7;
+ws-icon-7 = 8;
+ws-icon-8 = 9;
+ws-icon-9 = 10;
 
 
 ;[module/filesystem]

@@ -81,6 +81,9 @@ URxvt.iso14755_52: false
 URxvt.keysym.Shift-Control-C: perl:clipboard:copy
 URxvt.keysym.Shift-Control-V: perl:clipboard:paste
 
+! xst settings
+st.shell: /usr/bin/zsh
+st.font: Knack Nerd Font:size=10
 
 ! Xterm settings
 
