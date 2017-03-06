@@ -186,16 +186,27 @@ bindsym $mod+r mode "resize"
 # Workspaces #
 ##############
 
-set $workspace1 "1: Firefox "
-set $workspace2 "2: Terminal "
-set $workspace3 "3: Documents "
-set $workspace4 "4: Matlab "
-set $workspace5 "5: Misc "
-set $workspace6 "6: Games "
-set $workspace7 "7: Movies "
-set $workspace8 "8: Misc "
-set $workspace9 "9: Music "
-set $workspace10 "10: Misc "
+set $workspace1 ""
+set $workspace2 ""
+set $workspace3 ""
+set $workspace4 ""
+set $workspace5 ""
+set $workspace6 ""
+set $workspace7 ""
+set $workspace8 ""
+set $workspace9 ""
+set $workspace10 ""
+
+#set $workspace1 "1: Firefox "
+#set $workspace2 "2: Terminal "
+#set $workspace3 "3: Documents "
+#set $workspace4 "4: Music "
+#set $workspace5 "5: Games "
+#set $workspace6 "6: Movies "
+#set $workspace7 "7: Matlab "
+#set $workspace8 "8: Misc "
+#set $workspace9 "9: Misc "
+#set $workspace10 "10: Misc "
 
 
 # set default workspace output
