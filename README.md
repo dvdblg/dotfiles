@@ -2,9 +2,9 @@
 ##Current setup:
 * **OS:** `Arch Linux`
 * **Shell:** `zsh`
-* **WM:** `i3`
+* **WM:** `openbox`
 * **Compositor:** `compton`
-* **Bar:** `polybar`
+* **Bar:** `tint2`
 * **Theme:** `oomox`
 * **Icons:** `Vertex`
 * **Terminal:** `termite`

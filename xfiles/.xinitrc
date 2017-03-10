@@ -59,7 +59,10 @@ if which dbus-launch >/dev/null && test -z "$DBUS_SESSION_BUS_ADDRESS"; then
        eval "$(dbus-launch --sh-syntax --exit-with-session)"
 fi
 
+xrandr --setprovideroutputsource modesetting NVIDIA-0
+xrandr --auto
+
 # Start the WM
 #exec bspwm
-exec i3
-#exec openbox-session
+#exec i3
+exec openbox-session

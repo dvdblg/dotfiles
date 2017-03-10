@@ -20,7 +20,8 @@ compinit
 
 
 # Path to your oh-my-zsh installation.
-ZSH=/usr/share/oh-my-zsh/
+#ZSH=/usr/share/oh-my-zsh/
+ZSH=$HOME/.oh-my-zsh/
 
 # set custom omz path
 ZSH_CUSTOM=$HOME/.oh-my-zsh/

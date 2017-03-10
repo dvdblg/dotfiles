@@ -25,6 +25,7 @@ PATH=$HOME/.local/bin:/usr/local/bin:$PATH
 #export TERMINAL='terminator'
 export EDITOR='vim'
 export BROWSER='firefox-beta'
+export TERMINAL='xterm-256color'
 
 # aliases
 steam() {
