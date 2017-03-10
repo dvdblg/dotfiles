@@ -1,4 +1,6 @@
+# vim ft:conf
+
 tint2 &
 nm-applet&
 feh --bg-scale '/home/davide/Immagini/bonsai.jpg'
-compton -b
+#compton -b

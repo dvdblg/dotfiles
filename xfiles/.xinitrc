@@ -62,6 +62,8 @@ fi
 xrandr --setprovideroutputsource modesetting NVIDIA-0
 xrandr --auto
 
+compton -b
+
 # Start the WM
 #exec bspwm
 #exec i3
