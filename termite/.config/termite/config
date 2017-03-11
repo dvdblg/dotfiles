@@ -47,58 +47,45 @@ filter_unmatched_urls = true
 #modify_other_keys = false
 
 [colors]
-#cursor = #d79921 
-#cursor_foreground = #dcdccc
-# 20% background transparency (requires a compositor)
-#background = rgba(63, 63, 63, 0.8)
 
-# if unset, will reverse foreground and background
-#highlight = #2f2f2f
+# special
+foreground      = #d7d0c7
+foreground_bold = #d7d0c7
+cursor          = #d7d0c7
+background      = #1f222d
 
-#
-# Colors
-#
+# black
+color0  = #101010
+color8  = #404040
 
-#background = #1f222d	# arc blue background
+# red
+color1  = #e84f4f
+color9  = #d23d3d
 
-# hard contrast: background = #1d2021
-# soft contrast: background = #32302f
+# green
+color2  = #b8d68c
+color10 = #a0cf5d
 
-background = #282828
-foreground = #ebdbb2
-foreground_bold = #ebdbb2
+# yellow
+color3  = #e1aa5d
+color11 = #f39d21
 
-# Black + DarkGrey
-color0 = #282828
-color8 = #928374
+# blue
+color4  = #7dc1cf
+color12 = #4e9fb1
 
-# DarkRed + Red
-color1 = #CC241D
-color9 = #FB4934
+# magenta
+color5  = #9b64fb
+color13 = #8542ff
 
-# DarkGreen + Green
-color2 = #98971A
-color10 = #B8BB26
+# cyan
+color6  = #6d878d
+color14 = #42717b
 
-# DarkYellow + Yellow
-color3 = #D79921
-color11 = #FABD2F
+# white
+color7  = #dddddd
+color15 = #dddddd
 
-# DarkBlue + Blue
-color4 = #458588
-color12 = #83a598
-
-# DarkMagenta + Magenta
-color5 = #b16286
-color13 = #d3869b
-
-# DarkCyan + Cyan
-color6 = #689d6a
-color14 = #8ec07c
-
-# LightGrey + White
-color7 = #a89984
-color15 = #ebdbb2
 
 #[hints]
 #font = xos4 Terminus 9

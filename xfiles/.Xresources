@@ -69,10 +69,10 @@ URxvt.matcher.button: 1
 URxvt.matcher.rend.0: Uline Bold fg16
 
 ! Tabs colors
-URxvt.tabbed.tabbar-fg: 2
-URxvt.tabbed.tabbar-bg: 0
-URxvt.tabbed.tab-fg: 3
-URxvt.tabbed.tab-bg: 0
+!URxvt.tabbed.tabbar-fg: 2
+!URxvt.tabbed.tabbar-bg: 0
+!URxvt.tabbed.tab-fg: 3
+!URxvt.tabbed.tab-bg: 0
 
 ! Enables copy/paste with Ctrl-Shift-C/V
 URxvt.iso14755: false
@@ -91,64 +91,26 @@ xterm*faceName: xos4 Terminess Powerline:style=Regular:size=10
 xterm*VT100.Translations: #override Ctrl Shift <Key>V: insert-selection(CLIPBOARD) \n Ctrl Shift <Key>C: copy-selection(CLIPBOARD)
 
 
-!
+
 ! Colors
-!
 
-! arc blue background
-!*background: #1f222d
+#include ".colors/arcblue"
 
-! hard contrast: *background: #1d2021
-! soft contrast: *background: #32302f
-
-*background: #282828
-*foreground: #ebdbb2
-
-! Black + DarkGrey
-*color0:  #282828
-*color8:  #928374
-
-! DarkRed + Red
-*color1:  #cc241d
-*color9:  #fb4934
-
-! DarkGreen + Green
-*color2:  #98971a
-*color10: #b8bb26
-
-! DarkYellow + Yellow
-*color3:  #d79921
-*color11: #fabd2f
-
-! DarkBlue + Blue
-*color4:  #458588
-*color12: #83a598
-
-! DarkMagenta + Magenta
-*color5:  #b16286
-*color13: #d3869b
-
-! DarkCyan + Cyan
-*color6:  #689d6a
-*color14: #8ec07c
-
-! LightGrey + White
-*color7:  #a89984
-*color15: #ebdbb2
 
 
 ! Cursor theme
 Xcursor.theme: OSX-ElCap
 
 ! !cursor
-*cursorColor: #d79921
+!*cursorColor: #d79921
 
 ! Xft settings
-Xft.dpi: 100
+!Xft.dpi: 100
+Xft.dpi: 96
 Xft.autohint: 0
 Xft.lcdfilter:  lcddefault
 !Xft.lcdfilter:  lcdlight
-Xft.hintstyle:  hintslight
+Xft.hintstyle:  hintfull
 Xft.hinting: 1
 Xft.antialias: 1
 Xft.rgba: rgb

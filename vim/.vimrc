@@ -1,7 +1,7 @@
 call plug#begin('~/.vim/plugged')
 
 Plug 'scrooloose/nerdcommenter'
-Plug 'morhetz/gruvbox'
+"Plug 'morhetz/gruvbox'
 
 call plug#end()
 
@@ -11,7 +11,7 @@ set number
 syntax on
 syntax enable
 
-colorscheme gruvbox
+"colorscheme gruvbox
 set background=dark
 
 set clipboard+=unnamed
