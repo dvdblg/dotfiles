@@ -1,4 +1,5 @@
-#include "/usr/share/rofi/themes//gruvbox-dark.theme"
+# vim: ft=xdefaults
+! #include "/usr/share/rofi/themes//gruvbox-dark.theme"
 
 ! "Enabled modi" Set from: Default
 ! rofi.modi:                           window,run,ssh
@@ -9,19 +10,21 @@ rofi.lines:                          10
 ! "Number of columns" Set from: Default
 ! rofi.columns:                        1   
 ! "Font to use" Set from: Commandline
-rofi.font:                           Knack Nerd Font 16
+!rofi.font:                           Knack Nerd Font 16
 !rofi.font:                           System Font 16
 !rofi.font:                           Roboto 16
+rofi.font:                           Droid Sans 16
 !rofi.font:                           Arimo 16
 
-! "Color scheme for normal row" Set from: XResources
-!rofi.color-normal:                   #1f222d, #ebdbb2, #1f222d, argb:85ff6200, #ebdbb2 
-! "Color scheme for urgent row" Set from: XResources
-!rofi.color-urgent:                   #1f222d, #ebdbb2, #1f222d, argb:7fff6200, #fdf6e3 
-! "Color scheme for active row" Set from: XResources
-!rofi.color-active:                   #1f222d, #ebdbb2, #1f222d, argb:7fff6200, #fdf6e3 
-! "Color scheme window" Set from: XResources
-!rofi.color-window:                   #1f222d, #ff6200, argb:d3ff6200
+rofi.color-window: #1f222d, #7dc1cf, argb:d37dc1cf
+rofi.color-normal: #1f222d, #d7d0c7, #1f222d, argb:857dc1cf, #d7d0c7
+rofi.color-active: #1f222d, #d7d0c7, #1f222d, argb:7f7dc1cf, #d7d0c7
+rofi.color-urgent: #1f222d, #d7d0c7, #1f222d, argb:7f7dc1cf, #d7d0c7
+
+!rofi.color-window: #1f222d, #f39d21, argb:d3f39d21
+!rofi.color-normal: #1f222d, #d7d0c7, #1f222d, argb:85f39d21, #d7d0c7
+!rofi.color-active: #1f222d, #d7d0c7, #1f222d, argb:7ff39d21, #d7d0c7
+!rofi.color-urgent: #1f222d, #d7d0c7, #1f222d, argb:7ff39d21, #d7d0c7
 
 ! "Border width" Set from: Commandline
 rofi.bw:                             2
