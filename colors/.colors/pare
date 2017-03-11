@@ -1,0 +1,42 @@
+!=======================================================================
+!                  Author: mohabaks
+!                  Github: https://github.com/mohabaks/dotfiles/
+!                  Description: pare colorscheme
+!=======================================================================
+
+! special
+*.foreground:   #817d71
+*.background:   #0A0908
+*.cursorColor:  #817d71
+
+! black
+*.color0:       #0A0908
+*.color8:       #414e54
+
+! red
+*.color1:       #573627
+*.color9:       #573627
+
+! green
+*.color2:       #474131
+*.color10:      #474131
+
+! yellow
+*.color3:       #ca814c
+*.color11:      #ca814c
+
+! blue
+*.color4:       #44392f
+*.color12:      #44392f
+
+! magenta
+*.color5:       #35332b
+*.color13:      #35332b
+
+! cyan
+*.color6:       #595548
+*.color14:      #595548
+
+! white
+*.color7:       #817d71
+*.color15:      #817d71
