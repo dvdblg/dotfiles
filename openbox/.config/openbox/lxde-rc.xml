@@ -1,4 +1,3 @@
-<?xml version="1.0"?>
 <openbox_config xmlns="http://openbox.org/3.4/rc" xmlns:xi="http://www.w3.org/2001/XInclude">
   <resistance>
     <strength>10</strength>
@@ -302,7 +301,7 @@
       <action name="DirectionalFocusSouth"/>
     </keybind>
     <keybind key="W-Left">
-      <action name="DirectionalFocusEast"/>
+      <action name="DirectionalFocusWest"/>
     </keybind>
     <keybind key="W-Right">
       <action name="DirectionalFocusEast">
