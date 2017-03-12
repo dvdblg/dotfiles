@@ -2,7 +2,8 @@
 
 [global]
     #font = xos4 Terminus Bold 10
-    font = Knack Nerd Font Bold 10
+    #font = Knack Nerd Font Bold 10
+    font = Envy Code R Bold 10
 
     # Allow a small subset of html markup in notifications and formats:
     #   <b>bold</b>

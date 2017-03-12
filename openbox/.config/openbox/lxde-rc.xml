@@ -55,7 +55,7 @@
     <keepBorder>yes</keepBorder>
     <animateIconify>yes</animateIconify>
     <font place="ActiveWindow">
-      <name>Droid Sans</name>
+      <name>Envy Code R</name>
       <size>10</size>
       <!-- font size in points -->
       <weight>Bold</weight>
@@ -64,7 +64,7 @@
       <!-- 'italic' or 'normal' -->
     </font>
     <font place="InactiveWindow">
-      <name>Droid Sans</name>
+      <name>Envy Code R</name>
       <size>10</size>
       <!-- font size in points -->
       <weight>Normal</weight>
@@ -351,11 +351,6 @@
     <keybind key="W-S-Down">
       <action name="DirectionalCycleWindows"/>
     </keybind>
-    <keybind key="Print">
-      <action name="Execute">
-        <command>scrot</command>
-      </action>
-    </keybind>
     <keybind key="XF86AudioRaiseVolume">
       <action name="Execute">
         <command>vol up</command>
@@ -405,9 +400,9 @@
     <application class="qterminal">
       <desktop>2</desktop>
     </application>
-    <application class="Xfce4-terminal">
-      <desktop>2</desktop>
-    </application>
+    <!--<application class="Xfce4-terminal">-->
+    <!--<desktop>2</desktop>-->
+    <!--</application>-->
     <application class="Rhythmbox">
       <desktop>4</desktop>
     </application>
