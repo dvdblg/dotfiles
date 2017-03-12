@@ -54,7 +54,7 @@
     <keepBorder>yes</keepBorder>
     <animateIconify>yes</animateIconify>
     <font place="ActiveWindow">
-      <name>Envy Code R</name>
+      <name>Noto Sans UI</name>
       <size>10</size>
       <!-- font size in points -->
       <weight>Bold</weight>
@@ -63,7 +63,7 @@
       <!-- 'italic' or 'normal' -->
     </font>
     <font place="InactiveWindow">
-      <name>Envy Code R</name>
+      <name>Noto Sans UI</name>
       <size>10</size>
       <!-- font size in points -->
       <weight>Normal</weight>
@@ -72,7 +72,7 @@
       <!-- 'italic' or 'normal' -->
     </font>
     <font place="MenuHeader">
-      <name>Ubuntu</name>
+      <name>Noto Sans UI</name>
       <size>9</size>
       <!-- font size in points -->
       <weight>Normal</weight>
@@ -81,7 +81,7 @@
       <!-- 'italic' or 'normal' -->
     </font>
     <font place="MenuItem">
-      <name>Ubuntu</name>
+      <name>Noto Sans UI</name>
       <size>9</size>
       <!-- font size in points -->
       <weight>Normal</weight>
@@ -90,7 +90,7 @@
       <!-- 'italic' or 'normal' -->
     </font>
     <font place="ActiveOnScreenDisplay">
-      <name>Ubuntu</name>
+      <name>Noto Sans UI</name>
       <size>9</size>
       <!-- font size in points -->
       <weight>Normal</weight>
@@ -99,7 +99,7 @@
       <!-- 'italic' or 'normal' -->
     </font>
     <font place="InactiveOnScreenDisplay">
-      <name>Ubuntu</name>
+      <name>Noto Sans UI</name>
       <size>9</size>
       <!-- font size in points -->
       <weight>Normal</weight>
@@ -120,10 +120,10 @@
     <number>4</number>
     <firstdesk>1</firstdesk>
     <names>
-      <name>Firefox</name>
-      <name>Docuements &amp; Terminals</name>
-      <name>Misc</name>
-      <name>Music</name>
+      <name> Firefox</name>
+      <name> Terminals</name>
+      <name> Misc</name>
+      <name> Music</name>
     </names>
     <popupTime>875</popupTime>
     <!-- The number of milliseconds to show the popup for when switching
@@ -270,7 +270,7 @@
     </keybind>
     <keybind key="W-Return">
       <action name="Execute">
-        <command>termite</command>
+        <command>gnome-terminal</command>
       </action>
     </keybind>
     <keybind key="S-W-e">
@@ -284,8 +284,9 @@
       </action>
     </keybind>
     <keybind key="S-W-r">
+      <action name="Desktop"/>
       <action name="Execute">
-        <command>openbox --replace</command>
+        <command>openbox --reconfigure</command>
       </action>
     </keybind>
     <keybind key="W-S-d">
@@ -387,6 +388,9 @@
     </keybind>
   </keyboard>
   <applications>
+    <application class="KeePass2">
+      <desktop>4</desktop>
+    </application>
     <application class="Firefox">
       <desktop>1</desktop>
     </application>

@@ -10,8 +10,8 @@ clickable_url = true
 fullscreen = false
 
 ;font = Input Mono Condensed,InputMonoCondensed Regular 9
-font = Envy Code R 10
-;font = Knack Nerd Font 10
+;font = Envy Code R 10
+font = Knack Nerd Font 10
 ;font = Hack 10
 ;font = Iosevka Term 9
 ;font = SauceCodePro Nerd Font 9
@@ -52,7 +52,7 @@ filter_unmatched_urls = true
 # special
 foreground      = #d7d0c7
 foreground_bold = #d7d0c7
-cursor          = #d7d0c7
+cursor          = #ff8939
 background      = #1f222d
 
 # black

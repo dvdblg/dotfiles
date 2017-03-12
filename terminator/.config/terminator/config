@@ -1,16 +1,14 @@
 [global_config]
-  focus = mouse
-  title_inactive_bg_color = "#282828"
-  title_inactive_fg_color = "#ebdbb2"
-  title_receive_bg_color = "#282828"
-  title_receive_fg_color = "#ebdbb2"
-  title_transmit_bg_color = "#282828"
-  title_transmit_fg_color = "#ebdbb2"
+  title_inactive_bg_color = "#404040"
+  title_inactive_fg_color = "#d7d0c7"
+  title_transmit_bg_color = "#101010"
+  title_transmit_fg_color = "#d7d0c7"
 [keybindings]
 [layouts]
   [[default]]
     [[[child1]]]
       parent = window0
+      profile = default
       type = Terminal
     [[[window0]]]
       parent = ""
@@ -18,10 +16,12 @@
 [plugins]
 [profiles]
   [[default]]
-    background_color = "#282828"
-    cursor_color = "#aaaaaa"
-    font = Hack 10
-    foreground_color = "#ebdbb2"
-    palette = "#282828:#cc241d:#98971a:#d79921:#458588:#b16286:#689d6a:#a89984:#928374:#fb4934:#b8bb26:#fabd2f:#83a598:#d3869b:#8ec07c:#ebdbb2"
+    background_color = "#1f222d"
+    copy_on_selection = True
+    cursor_color = "#ff8939"
+    cursor_color_fg = False
+    font = Knack Nerd Font 10
+    foreground_color = "#d7d0c7"
+    palette = "#101010:#e84f4f:#b8d68c:#e1aa5d:#7dc1cf:#9b64fb:#6d878d:#dddddd:#404040:#d23d3d:#a0cf5d:#f39d21:#4e9fb1:#8542ff:#42717b:#dddddd"
     show_titlebar = False
     use_system_font = False

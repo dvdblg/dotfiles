@@ -10,11 +10,11 @@ rofi.lines:                          10
 ! "Number of columns" Set from: Default
 ! rofi.columns:                        1   
 ! "Font to use" Set from: Commandline
-!rofi.font:                           Knack Nerd Font 16
+rofi.font:                           Knack Nerd Font 14
 !rofi.font:                           System Font 16
 !rofi.font:                           Roboto 16
 !rofi.font:                           Droid Sans 16
-rofi.font:                           Envy Code R 16
+!rofi.font:                           Envy Code R 16
 !rofi.font:                           Arimo 16
 
 rofi.color-window: #1f222d, #7dc1cf, argb:d37dc1cf

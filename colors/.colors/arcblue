@@ -30,6 +30,9 @@
 *color7:     #dddddd
 *color15:    #dddddd
 
+
+*cursorColor:        #ff8939
+
 URxvt*borderColor:        #151515
 URxvt*colorBD:            #ffffff
 URxvt*cursorColor:        #ff8939

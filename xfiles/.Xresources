@@ -25,6 +25,9 @@
 URxvt.font: xft:Knack Nerd Font:style=Regualr:size=9
 URxvt.fontbold: xft:Knack Nerd Font:style=Bold:size=9
 
+!URxvt.font: xft:Envy Code R:style=Regualr:size=9
+!URxvt.fontbold: xft:Envy Code R:style=Bold:size=9
+
 !URxvt.font: xft:Iosevka Term:style=Regualr:size=9
 !URxvt.fontbold: xft:Iosevka Term:style=Bold:size=9
 
@@ -48,11 +51,11 @@ URxvt.fontbold: xft:Knack Nerd Font:style=Bold:size=9
 URxvt.internalBorder: 15
 URxvt*lineSpace: 1
 URxvt*scrollBar: false
-URxvt*scrollColor: #131415
+!URxvt*scrollColor: #131415
 URxvt.geometry: 80x18
 URxvt*saveLines: 1000
 URxvt*cursorUnderline: false
-URxvt*cursorColor: #d79921
+!URxvt*cursorColor: #d79921
 URxvt*cursorBlink: true
 URxvt*underlineColor: #ebdbb2
 URxvt*allow_bold: true
@@ -63,10 +66,10 @@ URxvt.secondaryScreen: 1
 URxvt.secondaryScroll: 0
 
 ! Clickable and colorful URLs
-URxvt.perl-ext-common: default,matcher,clipboard,tabbed
+URxvt.perl-ext-common: default,matcher,clipboard
 URxvt.url-launcher: /usr/bin/xdg-open
 URxvt.matcher.button: 1
-URxvt.matcher.rend.0: Uline Bold fg16
+!URxvt.matcher.rend.0: Uline Bold fg16
 
 ! Tabs colors
 !URxvt.tabbed.tabbar-fg: 2
@@ -83,7 +86,7 @@ URxvt.keysym.Shift-Control-V: perl:clipboard:paste
 
 ! xst settings
 st.shell: /usr/bin/zsh
-st.font: Knack Nerd Font:size=10
+st.font: Envy Code R:size=10
 
 ! Xterm settings
 
