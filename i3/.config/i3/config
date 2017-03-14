@@ -397,8 +397,8 @@ exec_always --no-startup-id --no-startup-id feh --bg-scale '/home/davide/Immagin
 exec --no-startup-id compton -b #-cCG --backend glx --vsync opengl & #compton -b
 exec --no-startup-id colorcorrection
 exec --no-startup-id hotplug_monitor.sh
-exec --no-startup-id /home/davide/repos/i3-alternating-layout/alternating_layouts.py
-exec_always--no-startup-id ~/.config/polybar/launch.sh
+exec_always --no-startup-id /home/davide/repos/i3-alternating-layout/alternating_layouts.py
+exec_always --no-startup-id ~/.config/polybar/launch.sh
 
 ##################
 

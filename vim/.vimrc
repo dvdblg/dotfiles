@@ -14,7 +14,8 @@ syntax enable
 "colorscheme gruvbox
 set background=dark
 
-set clipboard+=unnamed
+"set clipboard+=unnamed
+set clipboard=unnamedplus
 set hlsearch
 
 noremap <Leader>y "*y
