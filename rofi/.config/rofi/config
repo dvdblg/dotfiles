@@ -17,10 +17,15 @@ rofi.font:                           Knack Nerd Font 14
 !rofi.font:                           Envy Code R 16
 !rofi.font:                           Arimo 16
 
-rofi.color-window: #1f222d, #7dc1cf, argb:d37dc1cf
-rofi.color-normal: #1f222d, #d7d0c7, #1f222d, argb:857dc1cf, #d7d0c7
-rofi.color-active: #1f222d, #d7d0c7, #1f222d, argb:7f7dc1cf, #d7d0c7
-rofi.color-urgent: #1f222d, #d7d0c7, #1f222d, argb:7f7dc1cf, #d7d0c7
+
+#include "Arc-Blue.theme"
+
+
+! ARCBLUE COLORSCHEME
+!rofi.color-window: #1f222d, #7dc1cf, argb:d37dc1cf
+!rofi.color-normal: #1f222d, #d7d0c7, #1f222d, argb:857dc1cf, #d7d0c7
+!rofi.color-active: #1f222d, #d7d0c7, #1f222d, argb:7f7dc1cf, #d7d0c7
+!rofi.color-urgent: #1f222d, #d7d0c7, #1f222d, argb:7f7dc1cf, #d7d0c7
 
 !rofi.color-window: #1f222d, #f39d21, argb:d3f39d21
 !rofi.color-normal: #1f222d, #d7d0c7, #1f222d, argb:85f39d21, #d7d0c7

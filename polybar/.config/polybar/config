@@ -80,7 +80,7 @@ label-maxlen = 30
 
 [module/menu0]
 type = custom/menu
-font = 3
+;font = 3
 
 format = <label-toggle> <menu>
 format-underline = ${colors.orange}
@@ -167,7 +167,7 @@ type = internal/bspwm
 format = <label-state> <label-mode>
 
 label-focused = %icon%
-label-focused-font = 1
+;label-focused-font = 1
 label-focused-background = ${colors.background-alt}
 ;label-focused-underline= ${colors.primary}
 label-focused-underline= #FF6200
@@ -205,12 +205,12 @@ label = 
 bar-width = 8
 bar-indicator = 
 bar-indicator-foreground = #ff
-bar-indicator-font = 2
+;bar-indicator-font = 2
 bar-fill = ─
-bar-fill-font = 2
+;bar-fill-font = 2
 bar-fill-foreground = ${colors.orange}
 bar-empty = ─
-bar-empty-font = 2
+;bar-empty-font = 2
 bar-empty-foreground = #55
 
 
@@ -251,12 +251,12 @@ bar-volume-foreground-4 = ${colors.orange}
 bar-volume-foreground-5 = ${colors.orange}
 bar-volume-gradient = false
 bar-volume-indicator = 
-bar-volume-indicator-font = 4
+;bar-volume-indicator-font = 4
 bar-volume-indicator-foreground = ${colors.white}
 bar-volume-fill = 
-bar-volume-fill-font = 4
+;bar-volume-fill-font = 4
 bar-volume-empty = 
-bar-volume-empty-font = 4
+;bar-volume-empty-font = 4
 bar-volume-empty-foreground = ${colors.gray}
 
 
