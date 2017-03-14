@@ -48,50 +48,30 @@ filter_unmatched_urls = true
 #modify_other_keys = false
 
 [colors]
+foreground = #D8DEE9
+background = #2E3440
+foreground_bold = #D8DEE9
+cursor = #D8DEE9
+cursor_foreground = #2E3440
+highlight = #4C566A
 
-# special
-foreground      = #d7d0c7
-foreground_bold = #d7d0c7
-cursor          = #ff8939
-background      = #1f222d
+color0  = #3B4252
+color1  = #BF616A
+color2  = #A3BE8C
+color3  = #EBCB8B
+color4  = #81A1C1
+color5  = #B48EAD
+color6  = #88C0D0
+color7  = #E5E9F0
+color8  = #4C566A
+color9  = #BF616A
+color10 = #A3BE8C
+color11 = #EBCB8B
+color12 = #81A1C1
+color13 = #B48EAD
+color14 = #8FBCBB
+color15 = #ECEFF4
 
-# black
-color0  = #101010
-color8  = #404040
-
-# red
-color1  = #e84f4f
-color9  = #d23d3d
-
-# green
-color2  = #b8d68c
-color10 = #a0cf5d
-
-# yellow
-color3  = #e1aa5d
-color11 = #f39d21
-
-# blue
-color4  = #7dc1cf
-color12 = #4e9fb1
-
-# magenta
-color5  = #9b64fb
-color13 = #8542ff
-
-# cyan
-color6  = #6d878d
-color14 = #42717b
-
-# white
-color7  = #dddddd
-color15 = #dddddd
-
-
-#[hints]
-#font = xos4 Terminus 9
-#background = #1f222d
-#foreground = #ebdbb2
 #active_foreground = #e68080
 #active_background = #3f3f3f
 #padding = 2

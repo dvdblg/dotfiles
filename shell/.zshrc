@@ -38,8 +38,8 @@ POWERLEVEL9K_TIME_FORMAT='%D{%H:%M}'
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 if [ "$TERM" != "linux" ]; then
-	ZSH_THEME="powerlevel9k/powerlevel9k"
-	#ZSH_THEME="agnoster"
+	#ZSH_THEME="powerlevel9k/powerlevel9k"
+	ZSH_THEME="agnoster"
 else
 	ZSH_THEME="agnoster"
 fi

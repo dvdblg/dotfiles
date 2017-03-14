@@ -29,12 +29,13 @@ alert = #bd2c40
 [bar/bar]
 monitor = eDP-1
 bottom = false
-wm-restack = bspwm
+wm-restack = i3
 width = 100%
 height = 24
 offset-x = 0
 offset-y = 0
 
+;override-redirect = true
 
 enable-ipc = true
 

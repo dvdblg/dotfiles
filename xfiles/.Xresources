@@ -13,38 +13,8 @@
 ! URXVT
 !
 
-!URxvt.font: xft:SauceCodePro Nerd Font:style=Regular:size=9:antialias=false
-!URxvt.fontbold: xft:SauceCodePro Nerd Font:style=Bold:size=9:antialias=false
-
-!URxvt.font: xft:TerminessTTF Nerd Font:style=Medium:size=9:antialias=false
-!URxvt.fontbold: xft:TerminessTTF Nerd Font:style=Bold:size=9:antialias=false
-
-!URxvt.font: xft:xos4 Terminess Powerline:style=Regular:size=9
-!URxvt.fontbold: xft:xos4 Terminess Powerline:style=Bold:size=9
-
-URxvt.font: xft:Knack Nerd Font:style=Regualr:size=9
-URxvt.fontbold: xft:Knack Nerd Font:style=Bold:size=9
-
-!URxvt.font: xft:Envy Code R:style=Regualr:size=9
-!URxvt.fontbold: xft:Envy Code R:style=Bold:size=9
-
-!URxvt.font: xft:Iosevka Term:style=Regualr:size=9
-!URxvt.fontbold: xft:Iosevka Term:style=Bold:size=9
-
-!URxvt.font: xft:xos4 Terminus:style=Regular:size=9
-!URxvt.fontbold: xft:xos4 Terminus:style=Bold:size=9
-
-!URxvt.font: xft:ProFontIIx Nerd Font:style=Book:size=8
-!URxvt.fontbold: xft:GohuFontMedium Nerd Font:style=Bold:size=10
-
-!URxvt.font: xft:Knack Nerd Font:style=Regular:size=9:antialias=false
-!URxvt.fontbold: xft:Knack Nerd Font:style=Bold:size=9:antialias=false
-
-!URxvt.font: xft:Input Mono:style=Regular:size=9
-!URxvt.fontbold: xft:GohuFontMedium Nerd Font:style=Bold:size=10
-
-!URxvt.font: xft:FantasqueSansMono Nerd Font:style=Regular:size=10
-!URxvt.fontbold: xft:FantasqueSansMono Nerd Font:style=Bold:size=10
+URxvt.font: xft:Knack Nerd Font:style=Regualr:size=10
+URxvt.fontbold: xft:Knack Nerd Font:style=Bold:size=10
 
 ! URxvt settings
 !URxvt*dynamicColors: on
@@ -59,7 +29,7 @@ URxvt*cursorUnderline: false
 URxvt*cursorBlink: true
 URxvt*underlineColor: #ebdbb2
 URxvt*allow_bold: true
-
+URxvt*termName: rxvt-unicode
 
 ! Disables scrollback buffer in secondary screen
 URxvt.secondaryScreen: 1
@@ -97,7 +67,7 @@ xterm*VT100.Translations: #override Ctrl Shift <Key>V: insert-selection(CLIPBOAR
 
 ! Colors
 
-#include ".colors/arcblue"
+#include ".colors/nord"
 
 
 

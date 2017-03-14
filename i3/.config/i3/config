@@ -103,7 +103,7 @@ bindsym $mod+c move position center
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec --no-startup-id st
+bindsym $mod+Return exec --no-startup-id i3-sensible-terminal
 
 
 # kill focused window
