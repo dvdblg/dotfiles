@@ -7,8 +7,9 @@ margin-bottom = 2
 
 [colors]
 ;orange = #FF6200
-orange = #d65d0e
+;orange = #d65d0e
 darkgray = ${xrdb:color8}
+orange = ${xrdb:color9}
 white = #d1d1d1
 gray = #585858
 black = #090909
@@ -35,6 +36,8 @@ height = 24
 offset-x = 0
 offset-y = 0
 
+locale = it_IT.UTF-8
+
 ;override-redirect = true
 
 enable-ipc = true
@@ -45,7 +48,7 @@ padding-right = 0
 module-margin-right = 1
 module-margin-left = 0
 
-modules-right = mpd volume battery date menu0
+modules-right = mpd volume battery date
 modules-center = 
 modules-left = i3 bspwm xwindow
 
@@ -59,9 +62,10 @@ tray-detached = false
 tray-position = right
 tray-offset-x = 0
 tray-offset-y = 0
-tray-maxsize = 16
+;tray-maxsize = 16
 tray-padding = 0
-
+tray-transparent = false
+tray-scale = 1.0
 
 ;font-0 = "Source Sans Pro:size=8;0"
 font-0 = "xos4 Terminus:size=8;0"
@@ -132,9 +136,9 @@ label-mode-foreground = #000
 label-mode-background = ${colors.primary}
 
 label-focused = %name%
-label-focused-background =${colors.gray}  
+label-focused-background =${colors.darkgray}  
 #${module/bspwm.label-focused-background}
-label-focused-underline = ${module/bspwm.label-focused-underline}
+label-focused-underline = ${colors.orange}
 label-focused-padding = ${module/bspwm.label-focused-padding}
 
 label-unfocused = %name%
@@ -296,115 +300,6 @@ animation-charging-3 = 
 animation-charging-4 = 
 animation-charging-foreground = ${colors.foreground}
 animation-charging-framerate = 500
-
-
-;[module/temperature]
-;type = internal/temperature
-;thermal-zone = 0
-;warn-temperature = 65
-
-;format = <label>
-;format-underline = ${colors.white}
-;format-warn = <label-warn>
-;format-warn-underline = ${colors.red}
-
-;format-padding = 1
-;format-warn-padidng = 1
-
-;label =  %temperature%
-;label-warn =  %temperature%
-
-;ramp-0 = 
-;ramp-1 = 
-;ramp-2 = 
-;ramp-foreground = #55
-
-;[module/music]
-;type = custom/script
-;interval = 2
-;format-underline = ${colors.orange}
-
-;label = %output:0:45:...%
-;label-foreground = ${colors.foreground}
-;exec = ~/.config/polybar/mpris.sh
-
-;[module/cpu]
-;format-label = internal/cpu
-
-;format = <label>
-
-;ramp-coreload-0 = ▁
-;ramp-coreload-1 = ▂
-;ramp-coreload-2 = ▃
-;ramp-coreload-3 = ▄
-;ramp-coreload-4 = ▅
-;ramp-coreload-5 = ▆
-;ramp-coreload-6 = ▇
-;ramp-coreload-7 = █
-;ramp-coreload-underline = ${colors.white}
-
-;type = internal/cpu
-;interval = 2
-;label = %{F${colors.white}  %percentage% %{F-}
-;label-underline = ${colors.orange}
-;padding= 2
-
-
-;[module/memory]
-;type = internal/memory
-;interval = 2
-
-;label = %{F${colors.white}  %percentage_used% %{F-}
-;label-underline = ${colors.orange}
-;label-foreground = ${colors.orange}
-
-;[module/wlan]
-;type = internal/network
-;interface = wlp3s0f0
-;interval = 3.0
-
-;format-connected-padding = 1
-;format-disconnected-padding = 1
-
-;format-connected = <label-connected>
-;format-connected-underline = ${colors.orange}
-;format-disconnected-underline = ${colors.gray}
-
-;label-connected = %essid%
-;label-disconnected = 
-;label-disconnected-foreground = ${colors.gray}
-
-
-#~ [module/eth]
-#~ type = internal/network
-#~ interface = enp9s0
-#~ interval = 3.0
-
-#~ format-connected-padding = 1
-#~ format-disconnected-padding = 1
-
-#~ format-connected-underline = ${colors.white}
-#~ format-disconnected-underline = ${colors.gray}
-
-#~ label-connected =  
-#~ label-disconnected = 
-#~ label-disconnected-foreground = ${colors.gray}
-
-
-;[module/filesystem]
-;type = internal/fs
-;interval = 25
-
-;;mount-0 = /
-;mount-0 = /home
-;;mount-2 = /invalid/mountpoint
-
-;label-mounted =  %free%
-;label-mounted-underline = ${colors.orange}
-;label-mounted-padding = 1
-
-;label-unmounted =
-;label-unmounted-foreground = ${colors.black}
 
 
 ; vim:ft=dosini

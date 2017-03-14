@@ -22,6 +22,21 @@ focus_follows_mouse yes
 set_from_resource $fg i3wm.foreground #f0f0f0
 set_from_resource $bg i3wm.background #f0f0f0
 
+set_from_resource $darkred     color1  #000000
+set_from_resource $red         color9  #000000
+set_from_resource $darkgreen   color2  #000000
+set_from_resource $green       color10 #000000
+set_from_resource $darkyellow  color3  #000000
+set_from_resource $yellow      color11 #000000
+set_from_resource $darkblue    color4  #000000
+set_from_resource $blue        color12 #000000
+set_from_resource $darkmagenta color5  #000000
+set_from_resource $magenta     color13 #000000
+set_from_resource $darkcyan    color6  #000000
+set_from_resource $cyan        color14 #000000
+set_from_resource $darkwhite   color7  #000000
+set_from_resource $white color15 #000000
+
 set $orange #d65d0e
 set $base00 #101218
 set $base01 #1f222d
@@ -53,7 +68,7 @@ set $base0F #fcc09e
 #  client.focused_inactive $base02 $base02    $base03 $base0F
 #  client.unfocused        $base02 $base02    $base03 $base0F
 #  client.urgent           $base02 $base08    $base00 $base0F
-   client.focused          $bg     $bg     $fg      $bg       $orange
+   client.focused          $bg     $bg     $fg      $bg       $red
    client.focused_inactive $bg     $bg     $fg      $bg       $bg
    client.unfocused        $bg     $bg     $fg      $bg       $bg
    client.urgent           $bg     $bg     $fg 	    $bg       $bg
