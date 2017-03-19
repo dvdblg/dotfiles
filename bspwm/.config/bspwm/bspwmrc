@@ -6,6 +6,8 @@ activeOutput1=$(xrandr | grep -E "connected" | sed -e "s/\([A-Z0-9]\+\) connecte
 # Get second monitor name
 activeOutput2=$(xrandr | grep -E "connected" | sed -e "s/\([A-Z0-9]\+\) connected.*/\1/" | sed -n 2p)
 
+
+
 # Pointer settings
 bspc config click_to_focus on
 bspc config focus_follows_pointer on
@@ -19,13 +21,31 @@ bspc monitor $activeOutput2 -d 7 8 9 0
 bspc config border_width         2
 bspc config window_gap          5
 
+BG=$(xrdb -query | grep "*.background:" | awk '{print $2}')
+FG=$(xrdb -query | grep "*.foreground:" | awk '{print $2}')
+COLOR0=$(xrdb -query | grep "*.color0:" | awk '{print $2}')
+COLOR1=$(xrdb -query | grep "*.color1:" | awk '{print $2}')
+COLOR2=$(xrdb -query | grep "*.color2:" | awk '{print $2}')
+COLOR3=$(xrdb -query | grep "*.color3:" | awk '{print $2}')
+COLOR4=$(xrdb -query | grep "*.color4:" | awk '{print $2}')
+COLOR5=$(xrdb -query | grep "*.color5:" | awk '{print $2}')
+COLOR6=$(xrdb -query | grep "*.color6:" | awk '{print $2}')
+COLOR7=$(xrdb -query | grep "*.color7:" | awk '{print $2}')
+COLOR8=$(xrdb -query | grep "*.color8:" | awk '{print $2}')
+COLOR9=$(xrdb -query | grep "*.color9:" | awk '{print $2}')
+COLOR10=$(xrdb -query | grep "*.color10:" | awk '{print $2}')
+COLOR11=$(xrdb -query | grep "*.color11:" | awk '{print $2}')
+COLOR12=$(xrdb -query | grep "*.color12:" | awk '{print $2}')
+COLOR13=$(xrdb -query | grep "*.color13:" | awk '{print $2}')
+COLOR14=$(xrdb -query | grep "*.color14:" | awk '{print $2}')
+COLOR15=$(xrdb -query | grep "*.color15:" | awk '{print $2}')
 
 # Colors
-bspc config active_border_color '#282828'
-bspc config normal_border_color '#282828'
-bspc config focused_border_color '#d65d0e'
+bspc config active_border_color $BG
+bspc config normal_border_color $BG
+bspc config focused_border_color $COLOR9
 
-bspc config split_ratio          0.5
+#bspc config split_ratio          0.5
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 

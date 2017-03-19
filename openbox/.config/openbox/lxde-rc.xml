@@ -270,7 +270,7 @@
     </keybind>
     <keybind key="W-Return">
       <action name="Execute">
-        <command>gnome-terminal</command>
+        <command>i3-sensible-terminal</command>
       </action>
     </keybind>
     <keybind key="S-W-e">

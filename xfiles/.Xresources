@@ -13,8 +13,11 @@
 ! URXVT
 !
 
-URxvt.font: xft:Knack Nerd Font:style=Regualr:size=10
-URxvt.fontbold: xft:Knack Nerd Font:style=Bold:size=10
+!URxvt.font: xft:Knack Nerd Font:style=Regualr:size=10
+!URxvt.fontbold: xft:Knack Nerd Font:style=Bold:size=10
+
+URxvt.font: xft:LiterationMonoPowerline Nerd Font:style=Book:size=10
+URxvt.fontbold: xft:Liberation Mono:style=Bold:size=10
 
 ! URxvt settings
 !URxvt*dynamicColors: on
@@ -22,7 +25,7 @@ URxvt.internalBorder: 15
 URxvt*lineSpace: 1
 URxvt*scrollBar: false
 !URxvt*scrollColor: #131415
-URxvt.geometry: 80x18
+URxvt.geometry: 80x24
 URxvt*saveLines: 1000
 URxvt*cursorUnderline: false
 !URxvt*cursorColor: #d79921

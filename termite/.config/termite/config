@@ -11,7 +11,8 @@ fullscreen = false
 
 ;font = Input Mono Condensed,InputMonoCondensed Regular 9
 ;font = Envy Code R 10
-font = Knack Nerd Font 10
+;font = Knack Nerd Font 10
+font = LiterationMonoPowerline Nerd Font 10
 ;font = Hack 10
 ;font = Iosevka Term 9
 ;font = SauceCodePro Nerd Font 9

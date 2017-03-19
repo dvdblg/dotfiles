@@ -1,8 +1,10 @@
 # vim ft=conf
 
+
 [global]
     #font = xos4 Terminus Bold 10
-    font = Knack Nerd Font Bold 10
+    #font = Knack Nerd Font Bold 10
+    font = Noto Sans UI Bold 10
     #font = Envy Code R Bold 10
 
     # Allow a small subset of html markup in notifications and formats:
@@ -160,7 +162,7 @@
 
 [frame]
     width = 1
-    color = "#f39d21"
+    color = #BF616A
 [shortcuts]
 
     # Shortcuts are specified as [modifier+][modifier+]...key
@@ -182,8 +184,8 @@
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
-    background = "#1f222d"
-    foreground = "#d7d0c7"
+    background = "#2E3440"
+    foreground = "#D8DEE9"
     timeout = 10
 
 [urgency_normal]

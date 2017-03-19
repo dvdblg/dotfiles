@@ -27,13 +27,6 @@ ZSH=$HOME/.oh-my-zsh/
 ZSH_CUSTOM=$HOME/.oh-my-zsh/
 
 
-# powerlevel9k theme variables
-POWERLEVEL9K_MODE='awesome-fontconfig'
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs)
-POWERLEVEL9K_CONTEXT_DEFAULT_FOREGROUND='foreground'
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status time)
-POWERLEVEL9K_TIME_FORMAT='%D{%H:%M}'
-
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
@@ -43,15 +36,6 @@ if [ "$TERM" != "linux" ]; then
 else
 	ZSH_THEME="agnoster"
 fi
-
-
-# powerline theme variables
-#POWERLINE_PATH="short"
-#POWERLINE_NO_BLANK_LINE="true"
-#POWERLINE_SHORT_HOST_NAME="true"
-#POWERLINE_HIDE_HOST_NAME="true"
-#POWERLINE_RIGHT_A="date"
-#POWERLINE_TIME_FORMAT="%T{%H-%M}"
 
 
 # Uncomment the following line to use case-sensitive completion.

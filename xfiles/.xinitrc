@@ -66,6 +66,7 @@ compton -b
 
 # Start the WM
 #exec bspwm
+#exec mate-session
 exec i3
 #exec openbox-session
 #exec gnome-session
