@@ -22,11 +22,10 @@ PATH=$HOME/.local/bin:/usr/local/bin:$PATH
 
 
 # variables to export
-#export TERMINAL='terminator'
+export TERMINAL=termite
 export LANGUAGE="en_US.UTF-8"
 export EDITOR='vim'
 export BROWSER='firefox-beta'
-#export TERMINAL='xterm-256color'
 #export TERM='xterm-256color'
 
 # aliases

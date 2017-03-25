@@ -282,6 +282,7 @@ for_window [class="VirtualBox"] floating enable
 for_window [class="Pcmanfm"] floating enable
 for_window [class="Xfce4-taskmanager"] floating enable
 for_window [class="URxvt"] floating enable
+for_window [class="Termite"] floating enable
 for_window [class="st-256color"] floating enable
 for_window [class="sun-awt-X11-XFramePeer"] floating enable
 #for_window [class="Chromium"] floating enable
@@ -293,6 +294,7 @@ for_window [window_role="task_dialog"] floating enable
 for_window [window_role="Preferences"] floating enable
 for_window [window_type="dialog"] floating enable
 for_window [window_type="menu"] floating enable
+for_window [class="Lxappearance"] floating enable
 
 
 #########
@@ -420,6 +422,9 @@ bindsym XF86AudioStop exec --no-startup-id mpc stop
 # Calculator
 bindsym XF86Calculator exec --no-startup-id speedcrunch
 
+# Cinema mode
+bindsym $mod+o exec cinemamode on
+bindsym $mod+shift+o exec cinemamode off
 
 
 ###########
