@@ -40,6 +40,7 @@ alias ls='ls --color=auto'
 alias iotop="sudo iotop"
 alias pacman="pacman --color=always"
 alias pacaur="pacaur --color=always"
+alias pactot="pacaur -Syyu --devel --needed"
 alias aurinsd="pacaur -S --asdeps"
 extract() {      # Handy Extract Program
     if [ -f $1 ] ; then

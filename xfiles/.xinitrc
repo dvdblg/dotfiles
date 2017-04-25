@@ -54,7 +54,7 @@ xrandr --dpi 100.45
 # Set modmap
 xmodmap ~/.Xmodmap
 
-# D-bus
+ D-bus
 if which dbus-launch >/dev/null && test -z "$DBUS_SESSION_BUS_ADDRESS"; then
        eval "$(dbus-launch --sh-syntax --exit-with-session)"
 fi
@@ -68,5 +68,6 @@ compton -b
 #exec bspwm
 #exec mate-session
 #exec i3
-exec openbox-session
+#startxfce4
+#exec openbox-session
 #exec gnome-session

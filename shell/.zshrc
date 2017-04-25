@@ -122,8 +122,8 @@ source $ZSH/oh-my-zsh.sh
 #PROMPT='%F{red}%n%f@%F{blue}%m%f %F{yellow}%1~%f %# '
 #RPROMPT='[%F{yellow}%?%f]'
 
-
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+#source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 
 #bindkey "${terminfo[khome]}" beginning-of-line
