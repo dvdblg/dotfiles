@@ -1,5 +1,5 @@
 # dotfiles
-##Current setup:
+## Current setup:
 * **OS:** `Arch Linux`
 * **Shell:** `zsh`
 * **WM:** `openbox`
