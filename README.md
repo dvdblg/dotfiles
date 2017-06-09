@@ -17,5 +17,5 @@
 
 ## stow /etc files (NetworkManager, xorg etc.)
 `sudo stow -t \ [name-of-the-folder-here]`
-
-e.g. `sudo stow -t \ NetworkManager` 
+e.g.: `sudo stow -t \ NetworkManager`
+ 
