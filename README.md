@@ -15,7 +15,6 @@
 * **Editor:** `vim (still learning it)`
 * **Browser:** `firefox (beta)`
 
-## stow /etc files (NetworkManager, xorg etc.)
-`sudo stow -t \ [name-of-the-folder-here]`
-e.g.: `sudo stow -t \ NetworkManager`
- 
+## stow / files (NetworkManager, xorg etc.)
+`sudo stow -t \ [name-of-the-folder-here]`  
+e.g.: `sudo stow -t \ NetworkManager` 
