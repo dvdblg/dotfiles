@@ -1,0 +1,2 @@
+#!/bin/bash
+PRIMUS_SYNC=1 WINEPREFIX=~/.wine32 WINEARCH=win32 optirun --bridge primus wine $HOME/.wine32/drive_c/Program\ Files/GOG\ Galaxy/GalaxyClient.exe -no-cef-sandbox
