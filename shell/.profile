@@ -22,7 +22,7 @@ PATH=$HOME/.local/bin:/usr/local/bin:$PATH
 
 
 # variables to export
-export TERMINAL=termite
+#export TERMINAL=termite
 export LANGUAGE="en_US.UTF-8"
 export EDITOR='vim'
 export BROWSER='firefox-beta'
@@ -42,6 +42,7 @@ alias pacman="pacman --color=always"
 alias pacaur="pacaur --color=always"
 alias pactot="pacaur -Syyu --devel --needed"
 alias aurinsd="pacaur -S --asdeps"
+alias nvidia-smi="LD_PRELOAD=/usr/lib64/nvidia-bumblebee/libnvidia-ml.so nvidia-smi"
 extract() {      # Handy Extract Program
     if [ -f $1 ] ; then
         case $1 in
