@@ -2,9 +2,6 @@
 /mpd/.config/mpd/pid
 /mpd/.config/mpd/state
 /scripts/
-<<<<<<< HEAD
 .DS_Store
-=======
 /startpage/
 /tint2/.config/tint2/tint2rc.backup.*
->>>>>>> d216eebcc55dec7d4d6cd9f8e639a3cf3c1afc7d
