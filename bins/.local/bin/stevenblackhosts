@@ -1,2 +1,0 @@
-#! /bin/bash
-curl https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-gambling/hosts | gsed -E -e 's/#.*//g' -e 's/[0-9]*\.0\.0\.[0-9]\s*(local.*)?\s*//g' -e 's/255\..*//g' -e 's/(fe80)?::.*//g' -e '/^\s*$/d' | gsed -E -e ':a;N;$!ba;s/\n/, /g' > hosts.txt

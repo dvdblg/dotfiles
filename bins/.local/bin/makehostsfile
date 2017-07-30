@@ -1,0 +1,18 @@
+#! /bin/bash
+
+# Add this to insert a ", " between hosts
+# | gsed -E -e ':a;N;$!ba;s/\n/, /g'
+
+SOURCE=""
+
+case $1 in
+	-sb)
+		SOURCE="https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts"
+		;;
+	-dp)
+		SOURCE="http://someonewhocares.org/hosts/hosts"
+		;;
+esac
+
+curl $SOURCE | gsed -E -e 's/#.*//g' -e 's/[0-9]*\.0\.0\.[0-9]\s*(local.*)?\s*//g' -e 's/255\..*//g' -e 's/(fe80)?::.*//g' -e '/^\s*$/d' > $HOME/dotfiles/hosts/hosts/hosts.txt
+
