@@ -14,5 +14,7 @@ case $1 in
 		;;
 esac
 
-curl $SOURCE | gsed -E -e 's/#.*//g' -e 's/[0-9]*\.0\.0\.[0-9]\s*(local.*)?\s*//g' -e 's/255\..*//g' -e 's/(fe80)?::.*//g' -e '/^\s*$/d' > $HOME/dotfiles/hosts/hosts/hosts.txt
+curl $SOURCE | gsed -E -e 's/#.*//g' -e 's/[0-9]*\.0\.0\.[0-9]\s*(local.*)?\s*//g' -e 's/255\..*//g' -e 's/(fe80)?::.*//g' -e '/^\s*$/d' > $HOME/dotfiles/hosts/hosts.txt
 
+gist -u 6345e4ad6b354fc771aa8065e82c4c0d $HOME/dotfiles/hosts/hosts.txt
+ 
