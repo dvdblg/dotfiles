@@ -3747,6 +3747,7 @@ RUSpolice.com
 RUSpolice.net
 USApolice.com
 a-ads.com
+a-blog.eu
 a.0day.kiev.ua
 a.1nimo.com
 a.ad.playstation.net
@@ -3805,6 +3806,7 @@ aax-us-east.amazon-adsystem.com
 aax-us-pdx.amazon-adsystem.com
 aax.amazon-adsystem.com
 ab-gb.mgid.com
+ab913aa797e78b3.com
 abcnews.footprint.net
 abrogatesdv.info
 abseckw.adtlgc.com
@@ -6570,6 +6572,7 @@ c6.zedo.com
 c7.zedo.com
 c8.zedo.com
 ca.adserver.yahoo.com
+ca4.revieworbit.com
 cache-dev.addthis.com
 cache.addthis.com
 cache.addthiscdn.com
@@ -7478,6 +7481,7 @@ gifts-flowers-rewardpath.com
 gimg.baidu.com
 gimmethatreward.com
 gingert.net
+giu9aab.bid
 global-promotions.internationalredirects.com
 global.msmtrakk03a.com
 global.ymtrack.com
@@ -7663,6 +7667,7 @@ ibis.lgappstv.com
 icanoptout.com
 icon.clickthru.net
 id11938.luxup.ru
+id3103.com
 id5576.al21.luxup.ru
 idearc.tt.omtrdc.net
 idpix.media6degrees.com
@@ -7747,6 +7752,7 @@ imp.adsmogo.com
 imp.partner2profit.com
 impact.cossette-webpact.com
 impbe.tradedoubler.com
+import.globalsources.com
 imppl.tradedoubler.com
 impressionaffiliate.com
 impressionaffiliate.mobi
@@ -7804,6 +7810,7 @@ intelliads.com
 intensedigital.adk2x.com
 interia.adsearch.adkontekst.pl
 internet.billboard.cz
+interyield.td573.com
 intnet-offer.com
 intrack.pl
 inv-nets.admixer.net
@@ -8159,6 +8166,7 @@ media.nk-net.pl
 media.ontarionorth.com
 media.popmarker.com
 media.popuptraffic.com
+media.primalforce.net
 media.trafficfactory.biz
 media.trafficjunky.net
 media.ventivmedia.com
@@ -8408,6 +8416,7 @@ nothing-but-value.com
 noticiasftpsrv.com
 novafinanza.com
 novem.onet.pl
+nowcheck.seethisamazinguogradeswinmacawesome.win
 nowinstallupgrade.clickforultimateandbest2updatingpc.top
 nowruzbakher.com
 nowtestpc.updatenewfresh4u.top
@@ -9527,6 +9536,7 @@ subtracts.userplane.com
 successful-marketing-now.com
 suchaslowmac.tech
 sudokuwhiz.com
+suhprdfb.bid
 sumome.com
 sunmaker.com
 superbrewards.com
@@ -9571,6 +9581,7 @@ t.frtyg.com
 t.mdn2015x1.com
 t.silvinst.com
 t1.adserver.com
+t2.junbi-tracker.com
 t4.liverail.com
 t8t7frium3.s.ad6media.fr
 tag.admeld.com
@@ -9652,6 +9663,7 @@ tmsads.tribune.com
 tmx.technoratimedia.com
 tn.adserve.com
 toads.osdn.com
+todayresearch.com
 tommysbookmarks.com
 tommysbookmarks.net
 tongji.baidu.com
@@ -9724,6 +9736,7 @@ tradearabia.advertserve.com
 tradefx.advertserve.com
 tradem.com
 traffic.adxprts.com
+traffic.focuusing.com
 traffic.getmyads.com
 traffic.outbrain.com
 trafficbee.com
@@ -10229,6 +10242,7 @@ www.algocashmaster.net
 www.allosponsor.com
 www.amazing-opportunities.info
 www.annuaire-autosurf.com
+www.appafile.com
 www.apparel-offer.com
 www.apparelncs.com
 www.applelounge.com
