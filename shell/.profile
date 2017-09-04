@@ -19,7 +19,7 @@ fi
 
 # set PATH so it includes user's private bin directories
 PATH=$HOME/.local/bin:/usr/local/bin:$PATH
-
+#PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
 
 # variables to export
 #export TERMINAL=termite
@@ -62,4 +62,10 @@ extract() {      # Handy Extract Program
     else
         echo "'$1' is not a valid file!"
     fi
+
 }
+
+ #Setting the GEM_PATH and GEM_HOME variables may not be necessary, check 'gem env' output to verify whether both variables already exist
+ GEM_HOME=$(ls -t -U | ruby -e 'puts Gem.user_dir')
+ GEM_PATH=$GEM_HOME
+ export PATH=$PATH:$GEM_HOME/bin

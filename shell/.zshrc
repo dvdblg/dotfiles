@@ -30,12 +30,12 @@ ZSH_CUSTOM=$HOME/.oh-my-zsh/
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-if [ "$TERM" != "linux" ]; then
+#if [ "$TERM" != "linux" ]; then
 	#ZSH_THEME="powerlevel9k/powerlevel9k"
-	ZSH_THEME="agnoster"
-else
-	ZSH_THEME="agnoster"
-fi
+	#ZSH_THEME="agnoster"
+#else
+	#ZSH_THEME="agnoster"
+#fi
 
 
 # Uncomment the following line to use case-sensitive completion.
@@ -176,4 +176,5 @@ source ~/.zkbd/xterm-termite-:0
 [[ -n "$key[PageUp]"    ]] && bindkey -- "$key[PageUp]"        up-line-or-history
 [[ -n "$key[PageDown]"  ]] && bindkey -- "$key[PageDown]"      down-line-or-history
 
-
+autoload -U promptinit; promptinit
+prompt pure

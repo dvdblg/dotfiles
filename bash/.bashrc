@@ -110,6 +110,6 @@ alias config='/usr/bin/git --git-dir=/home/davide/dotfiles/.git/ --work-tree=/ho
 
 alias matlab='matlab -desktop'
 
-if [ -z "$DISPLAY" ] && [ -n "$XDG_VTNR" ] && [ "$XDG_VTNR" -eq 1 ]; then
-  exec startx
-fi
+#if [ -z "$DISPLAY" ] && [ -n "$XDG_VTNR" ] && [ "$XDG_VTNR" -eq 1 ]; then
+  #exec startx
+#fi
