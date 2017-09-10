@@ -18,14 +18,16 @@ fi
 
 
 # set PATH so it includes user's private bin directories
-PATH=$HOME/.local/bin:/usr/local/bin:$PATH
+PATH=$HOME/.local/bin:/usr/local/bin:$HOME/bin:$PATH
 #PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
 
 # variables to export
 #export TERMINAL=termite
-export LANGUAGE="en_US.UTF-8"
+#export LANGUAGE="en_US.UTF-8"
+export LANGUAGE="it_IT.UTF-8"
 export EDITOR='vim'
-export BROWSER='firefox-beta'
+export BROWSER='chromium'
+export TERMINFO=~/.terminfo
 #export TERM='xterm-256color'
 
 # aliases

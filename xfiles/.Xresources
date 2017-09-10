@@ -81,8 +81,8 @@ Xcursor.theme: OSX-ElCap
 !*cursorColor: #d79921
 
 ! Xft settings
-Xft.dpi: 101
-!Xft.dpi: 96
+!Xft.dpi: 101
+Xft.dpi: 96
 Xft.autohint: 0
 Xft.lcdfilter:  lcddefault
 !Xft.lcdfilter:  lcdlight

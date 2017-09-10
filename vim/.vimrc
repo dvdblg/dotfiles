@@ -2,6 +2,7 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'scrooloose/nerdcommenter'
 Plug 'arcticicestudio/nord-vim'
+Plug 'chriskempson/base16-vim'
 
 call plug#end()
 
@@ -11,7 +12,7 @@ set number
 syntax on
 syntax enable
 
-colorscheme nord
+colorscheme base16-default-dark
 set background=dark
 
 "set clipboard+=unnamed

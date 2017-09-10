@@ -1,0 +1,1 @@
+/home/davide/repos/pure.fish/fish_prompt.fish

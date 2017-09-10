@@ -1,0 +1,44 @@
+#
+# ~/.bashrc
+#
+
+# Colors
+RED="$(tput setaf 1)"
+GREEN="$(tput setaf 2)"
+YELLOW="$(tput setaf 3)"
+BLUE="$(tput setaf 4)"
+MAGENTA="$(tput setaf 5)"
+CYAN="$(tput setaf 6)"
+WHITE="$(tput setaf 7)"
+GRAY="$(tput setaf 8)"
+BOLD="$(tput bold)"
+UNDERLINE="$(tput sgr 0 1)"
+INVERT="$(tput sgr 1 0)"
+NOCOLOR="$(tput sgr0)"
+
+# Hide user
+local_username="davidebelgenio"
+
+# Symbols
+prompt_symbol="❯"
+prompt_clean_symbol="☀ "
+prompt_dirty_symbol="☂ "
+prompt_venv_symbol="☁ "
+
+
+function prompt_command() {
+	# Format prompt
+	first_line="$user_prompt$host_prompt$login_delimiter$WHITE\w$NOCOLOR$git_prompt$venv_prompt"
+	# Text (commands) inside \[...\] does not impact line length calculation which fixes stange bug when looking through the history
+	# $? is a status of last command, should be processed every time prompt prints
+	second_line="\`if [ \$? = 0 ]; then echo \[\$CYAN\]; else echo \[\$RED\]; fi\`\$prompt_symbol\[\$NOCOLOR\] "
+	PS1="\n$first_line\n$second_line"
+
+	# Multiline command
+	PS2="\[$CYAN\]$prompt_symbol\[$NOCOLOR\] "
+
+	# Terminal title
+	local title="$(basename "$PWD")"
+	[ -n "$remote" ] && title="$title \xE2\x80\x94 $HOSTNAME"
+	echo -ne "\033]0;$title"; echo -ne "\007"
+}
