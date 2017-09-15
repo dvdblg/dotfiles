@@ -12,12 +12,13 @@ if [[ -s ${ZIM_HOME}/init.zsh ]]; then
   source ${ZIM_HOME}/init.zsh
 fi
 
+
 # Lines configured by zsh-newuser-install
+#HISTFILE=~/.zsh_history
 HISTFILE=~/.histfile
 HISTSIZE=10000
 SAVEHIST=1000
 setopt autocd
-bindkey -v
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
 #zstyle :compinstall filename '/home/davide/.zshrc'
@@ -28,10 +29,12 @@ bindkey -v
 
 export KEYTIMEOUT=1
 
-bindkey -r "^["
+#bindkey -r "^["
 #bindkey "^[" send-break
-
+#bindkey "${terminfo[kcuu1]}" history-substring-search-up
+#bindkey "${terminfo[kcud1]}" history-substring-search-down
 
 #autoload -U promptinit; promptinit
 #prompt pure
+
 

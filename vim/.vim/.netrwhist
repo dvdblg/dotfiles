@@ -1,3 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =1
+let g:netrw_dirhist_cnt =4
 let g:netrw_dirhist_1='/Users/davidebelgenio/.vim'
+let g:netrw_dirhist_2='/Users/davidebelgenio/.zim/modules/history-substring-search'
+let g:netrw_dirhist_3='/Users/davidebelgenio/.zim/modules/history-substring-search/external'
+let g:netrw_dirhist_4='/Users/davidebelgenio/.zim/modules/history-substring-search'
