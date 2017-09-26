@@ -5,3 +5,4 @@
 .DS_Store
 /startpage/
 /tint2/.config/tint2/tint2rc.backup.*
+/vim/.vim/plugged

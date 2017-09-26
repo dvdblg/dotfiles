@@ -18,6 +18,8 @@ set background=dark
 "set clipboard+=unnamed
 set clipboard=unnamedplus
 set hlsearch
+set autoindent
+set smartindent
 
 noremap <Leader>y "*y
 noremap <Leader>p "*p

@@ -27,7 +27,7 @@ PATH=$HOME/.local/bin:/usr/local/bin:$HOME/bin:$PATH
 export LANGUAGE="it_IT.UTF-8"
 export EDITOR='vim'
 export BROWSER='chromium'
-export TERMINFO=~/.terminfo
+#export TERMINFO=~/.terminfo
 #export TERM='xterm-256color'
 
 # aliases
