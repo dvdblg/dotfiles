@@ -12,7 +12,8 @@ set number
 syntax on
 syntax enable
 
-colorscheme base16-default-dark
+"colorscheme nord
+colorscheme base16-ocean
 set background=dark
 
 "set clipboard+=unnamed
