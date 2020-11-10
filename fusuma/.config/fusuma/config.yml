@@ -1,0 +1,38 @@
+swipe:
+  3:
+    left:
+      sendkey: "LEFTALT+RIGHT" # History forward 
+    right:
+      sendkey: "LEFTALT+LEFT" # History back
+    up:
+      sendkey: "LEFTMETA+M" # Maximize
+    down:
+      sendkey: "LEFTMETA+H" # Minimize
+  4:
+    left:
+      #sendkey: "LEFTCTRL+LEFTALT+RIGHT" # Switch to next workspace
+      sendkey: "LEFTMETA+LEFTCTRL+DOWN" # Switch to next workspace
+    right:
+      #sendkey: "LEFTCTRL+LEFTALT+LEFT" # Switch to previous workspace
+      sendkey: "LEFTMETA+LEFTCTRL+UP" # Switch to previous workspace
+    up:
+      sendkey: "LEFTMETA+TAB" # Expose
+    down:
+      sendkey: "ESC" # Switch to previous workspace
+pinch:
+  #2:
+    in:
+      command: "xdotool keydown ctrl click 4 keyup ctrl" # Zoom in
+      #sendkey: "LEFTCTRL+RIGHTBRACE"
+    out:
+      command: "xdotool keydown ctrl click 5 keyup ctrl" # Zoom out
+      #sendkey: "LEFTCTRL+SLASH"
+
+threshold:
+  swipe: 0.5
+  pinch: 0.4
+
+interval:
+  swipe: 0.9
+  pinch: 0.4
+

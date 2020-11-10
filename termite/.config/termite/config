@@ -1,83 +1,65 @@
+## Modified By Aditya Shakya ...
+
 [options]
+
+allow_bold = true
+audible_bell = false
+browser = xdg-open
+clickable_url = true
+cursor_blink = system
+cursor_shape = block
+dynamic_title = true
+filter_unmatched_urls = true
+font = SF Mono Regular 12
+geometry = 480x280
+icon_name = terminal
+modify_other_keys = false
+mouse_autohide = false
 scroll_on_output = false
 scroll_on_keystroke = true
-audible_bell = true
-mouse_autohide = false
-allow_bold = true
-dynamic_title = true
-urgent_on_bell = true
-clickable_url = true
-fullscreen = false
-
-;font = Input Mono Condensed,InputMonoCondensed Regular 9
-;font = Envy Code R 10
-;font = Knack Nerd Font 10
-font = LiterationMonoPowerline Nerd Font 10
-;font = Hack 10
-;font = Iosevka Term 9
-;font = SauceCodePro Nerd Font 9
-;font = InconsolataForPowerline Nerd Font 10 
-;font = Cousine 9
-;font = FantasqueSansMono Nerd Font 9
-;font = Monaco for Powerline 9
-;font = UbuntuMonoDerivativePowerline Nerd Font 10 
-;font = MesloLGM Nerd Font 9 
-;font = xos4 Terminus 9 
-;font = xos4 Terminess Powerline 9 
-
-scrollback_lines = 10000
+scrollback_lines = 15000
+size_hints = false
 search_wrap = true
-#icon_name = terminal
-#geometry = 640x480
-
-# "system", "on" or "off"
-cursor_blink = system
-
-# "block", "underline" or "ibeam"
-cursor_shape = block
-
-# $BROWSER is used by default if set, with xdg-open as a fallback
-#browser = xdg-open
-
-# set size hints for the window
-#size_hints = true
-
-# Hide links that are no longer valid in url select overlay mode
-filter_unmatched_urls = true
-
-# emit escape sequences for extra modified keys
-#modify_other_keys = false
+urgent_on_bell = true
+highlight = #30343e
+#internalBorder:	10
 
 [colors]
-foreground = #D8DEE9
-background = #2E3440
-foreground_bold = #D8DEE9
-cursor = #D8DEE9
-cursor_foreground = #2E3440
-highlight = #4C566A
 
-color0  = #3B4252
-color1  = #BF616A
-color2  = #A3BE8C
-color3  = #EBCB8B
-color4  = #81A1C1
-color5  = #B48EAD
-color6  = #88C0D0
-color7  = #E5E9F0
-color8  = #4C566A
-color9  = #BF616A
-color10 = #A3BE8C
-color11 = #EBCB8B
-color12 = #81A1C1
-color13 = #B48EAD
-color14 = #8FBCBB
-color15 = #ECEFF4
+foreground = #FFFFFF
+background = #1F1F1F
+foreground_bold = #A9ABB0
+cursor = #01B58A
+cursor_foreground = #01B58A
 
-#active_foreground = #e68080
-#active_background = #3f3f3f
-#padding = 2
-#border = #3f3f3f
-#border_width = 0.5
-#roundness = 2.0
+# black
+color0  = #4b5262
+color8  = #434a5a
 
-# vim: ft=dosini cms=#%s
+# red
+color1  = #bf616a
+color9  = #b3555e
+
+# green
+color2  = #01B58A
+color10 = #01B58A
+
+# yellow
+color3  = #ebcb8b
+color11 = #dbbb7b
+
+# blue
+color4  = #81a1c1
+color12 = #7191b1
+
+# magenta
+color5  = #b48ead
+color13 = #a6809f
+
+# cyan
+color6  = #88c0d0
+color14 = #76aebe
+
+# white
+color7  = #e5e9f0
+color15 = #d1d5dc
