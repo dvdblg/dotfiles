@@ -1,7 +1,12 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =5
+let g:netrw_dirhistcnt =1
+let g:netrw_dirhist_1='/home/davide/.config/autostart'
+let g:netrw_dirhist_0='/home/davide/.local/bin'
+let g:netrw_dirhist_9='/home/davide/.dotfiles/i3/.config/i3'
+let g:netrw_dirhist_8='/home/davide/.dotfiles/i3/.config'
+let g:netrw_dirhist_7='/home/davide/.dotfiles/i3'
+let g:netrw_dirhist_6='/home/davide/.config/herbstluftwm'
 let g:netrw_dirhist_5='/home/davide/.config/yay'
 let g:netrw_dirhist_4='/home/davide/.config/autostart-scripts'
 let g:netrw_dirhist_3='/home/davide/.config/dunst'
 let g:netrw_dirhist_2='/home/davide/.oh-my-zsh/themes'
-let g:netrw_dirhist_1='/etc/xdg/autostart'

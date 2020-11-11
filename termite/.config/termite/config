@@ -10,7 +10,7 @@ cursor_blink = system
 cursor_shape = block
 dynamic_title = true
 filter_unmatched_urls = true
-font = SF Mono Regular 12
+font = MesloLGS NF 12
 geometry = 480x280
 icon_name = terminal
 modify_other_keys = false
@@ -26,40 +26,40 @@ highlight = #30343e
 
 [colors]
 
-foreground = #FFFFFF
-background = #1F1F1F
+foreground = ${xrdb:foreground}
+background = ${xrdb:background}
 foreground_bold = #A9ABB0
 cursor = #01B58A
 cursor_foreground = #01B58A
 
 # black
-color0  = #4b5262
-color8  = #434a5a
+color0  = ${xrdb:color0}
+color8  = ${xrdb:color8} 
 
 # red
-color1  = #bf616a
-color9  = #b3555e
+color1  = ${xrdb:color1} 
+color9  = ${xrdb:color9} 
 
 # green
-color2  = #01B58A
-color10 = #01B58A
+color2  = ${xrdb:color2} 
+color10 = ${xrdb:color10} 
 
 # yellow
-color3  = #ebcb8b
-color11 = #dbbb7b
+color3  = ${xrdb:color3} 
+color11 = ${xrdb:color11} 
 
 # blue
-color4  = #81a1c1
-color12 = #7191b1
+color4  = ${xrdb:color4} 
+color12 = ${xrdb:color12} 
 
 # magenta
-color5  = #b48ead
-color13 = #a6809f
+color5  = ${xrdb:color5} 
+color13 = ${xrdb:color13} 
 
 # cyan
-color6  = #88c0d0
-color14 = #76aebe
+color6  = ${xrdb:color6} 
+color14 = ${xrdb:color14} 
 
 # white
-color7  = #e5e9f0
-color15 = #d1d5dc
+color7  = ${xrdb:color7} 
+color15 = ${xrdb:color15} 

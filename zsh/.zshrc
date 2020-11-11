@@ -97,6 +97,19 @@ source $ZSH/oh-my-zsh.sh
 #   export EDITOR='mvim'
 # fi
 
+export EDITOR='vim'
+
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/bin" ] ; then
+    PATH="$HOME/bin:$PATH"
+fi
+
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/.local/bin" ] ; then
+    PATH="$HOME/.local/bin:$PATH"
+fi
+
+
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
@@ -110,7 +123,6 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
 compdef _pacman powerpill=pacman
-
 
 # ls
 alias l='ls -lh'
@@ -133,11 +145,27 @@ mkmv() {
 }
 
 mvdotfile() {
-    mkdir -p -- ~/.dotfiles/$1/.config
-    mv ~/.config/$1 ~/.dotfiles/$1/.config/ 
+    mkdir -p -- $HOME/.dotfiles/$1/.config
+    mv ~/.config/$1 $HOME/.dotfiles/$1/.config/ 
     stow -d ~/.dotfiles $1
 }
-compdef "_files -W /home/$USER/.config/" mvdotfile
+
+confedit() { 
+    CONF="$HOME/.config/$1/config.in"
+    if [[ -r $CONF ]]; then
+        $EDITOR $CONF
+   elif [[ -r $HOME/.config/$1/config ]]; then
+        $EDITOR $HOME/.config/$1/config 
+   elif [[ -r $HOME/.config/$1/$1.conf ]]; then
+        $EDITOR $HOME/.config/$1/$1.conf
+   elif [[ -r $HOME/.config/$1/autostart ]]; then
+        $EDITOR $HOME/.config/$1/autostart
+   elif [[ -r $HOME/.config/$1/config.ini ]]; then
+        $EDITOR $HOME/.config/$1/config.ini 
+    fi
+}
+
+compdef "_files -W $HOME/.config/" mvdotfile confedit
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

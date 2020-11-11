@@ -1,312 +1,363 @@
-;:set syn=dosini
+include-file = ~/.config/polybar/colors.ini
+#include-file = ~/.config/polybar/modules.ini
+#include-file = ~/.config/polybar/user_modules.ini
 
-[global/wm]
-margin-top = 5
-margin-bottom = 2
-
+;-------------------------------------------------------------------------------
+; COLORS                                                                       ;
+;-------------------------------------------------------------------------------
 
 [colors]
-;orange = #FF6200
-;orange = #d65d0e
-darkgray = ${xrdb:color8}
-orange = ${xrdb:color9}
-white = #d1d1d1
-gray = #585858
-black = #090909
-red = #c795ae
-blue = #95aec7
-yellow = #c7ae95
-green = #aec795
-#background = #1f222d
-background = ${xrdb:background}
-background-alt = #40545E
-#foreground = #dfdfdf
-foreground = ${xrdb:foreground}
-foreground-alt = #55
-primary = #1f222d
-secondary = #FF6200
-alert = #bd2c40
+background = "#292a30"
+foreground = "#dfdfe0"
+primary = "#dfdfe0"
+alert = "#ff8170"
+mb = "4c4f61"
 
+;-------------------------------------------------------------------------------
+; BOTTOM BAR                                                                   ;
+;-------------------------------------------------------------------------------
 
-
-
-[bar/bar]
-monitor = eDP-1
-bottom = false
-wm-restack = bspwm
-width = 100%
-height = 24
-offset-x = 0
-offset-y = 0
-
-locale = it_IT.UTF-8
-
-;override-redirect = true
-
+[bar/bottom]
 enable-ipc = true
+monitor = eDP-1
+monitor-fallback = eDP-1
 
-padding-left = 0
-padding-right = 0
-
-module-margin-right = 1
-module-margin-left = 0
-
-modules-right = mpd volume battery date
-modules-center = 
-modules-left = i3 bspwm xwindow
+bottom = true
+width = 100%
+height = 36
 
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-underline-size = 2
-underline-color = ${colors.white}
+underline-color = ${colors.alert}
+underline-size = 3
+overline-color = ${colors.alert}
+overline-size = 3
 
-tray-detached = false
+border-size = 0
+
+border-color = ${colors.alert}
+
+;padding = 2
+padding-left = 2
+padding-right = 2
+
+module-margin-left = 1
+module-margin-right = 1
+
+modules-left = launcher xwindow
+modules-center = workspaces 
+modules-right =checknetwork backlight volume battery date powermenu
+
+font-0 = "menu:size=10;1"
+font-1 = "FontAwesome:size=10;2"
+
 tray-position = right
+tray-detached = false
+tray-maxsize = 20
+tray-background = ${colors.background}
 tray-offset-x = 0
 tray-offset-y = 0
-;tray-maxsize = 16
-tray-padding = 0
-tray-transparent = false
+tray-padding = 1
 tray-scale = 1.0
-
-;font-0 = "Liberation Sans:size=9;0"
-font-0 = "xos4 Terminus:size=8;0"
-;font-0 = "Hack:size=8;0"
-font-1 = "FontAwesome:size=10;0"
-font-2 = "Cousine:size=8;0"
-font-3 = "Artwiz Lemon:size=20;0"
-font-4 = "Roboto:size=4;0"
-
-[module/xwindow]
-;label-font = 3 
-type = internal/xwindow
-format-underline = ${colors.orange}
-label = %title%
-label-maxlen = 30
-
-
-[module/menu0]
-type = custom/menu
-;font = 3
-
-format = <label-toggle> <menu>
-format-underline = ${colors.orange}
-format-padding = 1
-;label-separator = |
-
-menu-0-0 =  shutdown
-menu-0-0-exec = systemctl poweroff
-menu-0-1 =  reboot
-menu-0-1-exec = systemctl reboot
-menu-0-2 =  logout
-menu-0-2-exec = bspc quit
-menu-0-3 =  suspend
-menu-0-3-exec = i3lock -i /home/davide/Immagini/rick_morty_lockscreen_laptop.png && systemctl suspend
-menu-0-4 =  cancel
-
-label-open =   
-label-close =
-
-
-
-[module/mpd]
-type = internal/mpd
-host = 127.0.0.1
-port = 6600
-format-online = <icon-prev>   <toggle>   <icon-next>   <label-song>
-format-online-underline = ${colors.orange}
-format-online-padding = 1
-
-#label-song-font = 4
-label-song = %artist% - %title% 
-label-offline = 
-icon-play =  
-icon-pause = 
-icon-prev = 
-icon-next = 
-
-
-[module/i3]
-type = internal/i3
-format = <label-state> <label-mode>
-index-sort = true
-wrapping-scroll = true
-strip-wsnumbers = true
-pin-workspaces = true
-enable-click = true
-
-label-mode-padding = 2
-label-mode-foreground = ${colors.foreground}
-label-mode-background = ${colors.background}
-
-label-focused = "%name%"
-label-focused-background =${colors.darkgray}  
-#${module/bspwm.label-focused-background}
-label-focused-underline = ${colors.orange}
-label-focused-padding = ${module/bspwm.label-focused-padding}
-
-label-unfocused = "%name%"
-label-unfocused-padding = ${module/bspwm.label-occupied-padding}
-label-unfocused-underline = ${colors.background}
-
-
-label-urgent = %name%!
-label-urgent-background = ${module/bspwm.label-urgent-background}
-label-urgent-padding = ${module/bspwm.label-urgent-padding}
-
-label-visible = %name%
-label-visible-background = ${self.label-focused-background}
-label-visible-underline = ${self.label-focused-underline}
-label-visible-padding = ${self.label-focused-padding}
-
-ws-icon-0 = 1;
-ws-icon-1 = 2;
-ws-icon-2 = 3;
-ws-icon-3 = 4;
-ws-icon-4 = 5;
-ws-icon-5 = 6;
-ws-icon-6 = 7;
-ws-icon-7 = 8;
-ws-icon-8 = 9;
-ws-icon-9 = 10;
-
-
-
-[module/bspwm]
-type = internal/bspwm
-format = <label-state> <label-mode>
-
-label-focused = %icon%
-;label-focused-font = 1
-label-focused-background = ${colors.background-alt}
-;label-focused-underline= ${colors.primary}
-label-focused-underline= ${colors.orange}
-label-focused-padding = 1
-
-label-occupied = %icon%
-label-occupied-padding = 1
-
-label-urgent = %icon%!
-label-urgent-background = ${colors.alert}
-label-urgent-padding = 1
-
-label-empty = %icon%
-label-empty-foreground = ${colors.foreground-alt}
-label-empty-padding = 1
-
-ws-icon-0 = 1;
-ws-icon-1 = 2;
-ws-icon-2 = 3;
-ws-icon-3 = 4;
-ws-icon-4 = 5;
-ws-icon-5 = 6;
-ws-icon-default = x
-
-
-
-[module/backlight]
-type = internal/backlight
-card = intel_backlight
-
-format = <label> <bar> 
-format-underline = ${colors.orange}
-label = 
-
-bar-width = 8
-bar-indicator = 
-bar-indicator-foreground = #ff
-;bar-indicator-font = 2
-bar-fill = ─
-;bar-fill-font = 2
-bar-fill-foreground = ${colors.orange}
-bar-empty = ─
-;bar-empty-font = 2
-bar-empty-foreground = #55
-
+;-------------------------------------------------------------------------------
+; CALENDAR DATE                                                                ;
+;-------------------------------------------------------------------------------
 
 [module/date]
 type = internal/date
-#date-alt =   %A %H:%M 
-date =  %A %d %b  %H:%M
-interval = 5
-format-underline = ${colors.orange}
-;format-background = ${colors.black}
+
+interval = 1.0
+
+time =  %H:%M
+time-alt = %d-%m-%Y%
+
+format = <label>
 format-foreground = ${colors.foreground}
-format-padding = 1
+label = %time%
 
+format-padding = 2
+;-------------------------------------------------------------------------------
+; WORKSPACES                                                                   ;
+;-------------------------------------------------------------------------------
 
-[module/volume]
-type = internal/volume
+[module/workspaces]
+type = internal/xworkspaces
 
-format-volume = <ramp-volume> <label-volume> 
+pin-workspaces = false
 
-format-volume-underline = ${colors.orange}
+enable-click = true
+enable-scroll = false
 
-label-volume = %percentage%%
-#label-volume-foreground = ${color.white}
+format = "<label-state>"
 
-label-muted =  mute
-#label-muted-foreground = ${colors.gray}
+label-active = " "
+label-active-padding-right = 0
+label-active-padding-left = 0
 
-ramp-volume-0 = 
-ramp-volume-1 = 
-ramp-volume-2 = 
+label-empty = " "
+label-empty-padding-right = 0
+label-empty-padding-left = 0
 
-bar-volume-width = 5
-bar-volume-foreground-0 = ${colors.orange}
-bar-volume-foreground-1 = ${colors.orange}
-bar-volume-foreground-2 = ${colors.orange}
-bar-volume-foreground-3 = ${colors.orange}
-bar-volume-foreground-4 = ${colors.orange}
-bar-volume-foreground-5 = ${colors.orange}
-bar-volume-gradient = false
-bar-volume-indicator = 
-;bar-volume-indicator-font = 4
-bar-volume-indicator-foreground = ${colors.white}
-bar-volume-fill = 
-;bar-volume-fill-font = 4
-bar-volume-empty = 
-;bar-volume-empty-font = 4
-bar-volume-empty-foreground = ${colors.gray}
+;-------------------------------------------------------------------------------
+; WINDOW TITLE                                                                 ;
+;-------------------------------------------------------------------------------
 
+[module/xwindow]
+type = internal/xwindow
+label = "%title:0:50:...%"
+format-background = ${colors.mb}
+format-underline = ${colors.background}
+format-overline = ${colors.background}
+format-padding = 2
+
+;-------------------------------------------------------------------------------
+; NETWORK INFO                                                                 ;
+;-------------------------------------------------------------------------------
+
+[module/network]
+type = internal/network
+interface = wlan1
+
+format-connected =  <label-connected>
+label-connected = "%essid%"
+
+format-disconnected = 
+format-disconnected-foreground = ${colors.alert}
+
+[module/checknetwork]
+type = custom/script
+
+; Available tokens:
+;   %counter%
+; Command to be executed (using "/usr/bin/env sh -c [command]")
+exec = ~/.config/polybar/scripts/check-network
+
+; Conditional command that, if defined, needs to exit successfully
+; before the main exec command is invoked.
+; Default: ""
+;;exec-if = ""
+
+; Will the script output continous content?
+; Default: false
+tail = true
+
+; Seconds to sleep between updates
+; Default: 2 (0 if `tail = true`)
+interval = 5
+
+format-background = ${colors.mb}
+format-underline = ${colors.background}
+format-overline = ${colors.background}
+format-padding = 2
+
+label =  %output:0:15:...%
+
+click-left = networkmanager_dmenu &
+click-middle = networkmanager_dmenu &
+click-right = networkmanager_dmenu &
+;-------------------------------------------------------------------------------
+; BATTERY STATUS                                                               ;
+;-------------------------------------------------------------------------------
 
 [module/battery]
 type = internal/battery
+
 battery = BAT0
-adapter = AC
-full-at = 98
+adapter = AC0
+
+poll-interval = 60
+
+format-charging-background = ${colors.mb}
+format-charging-underline = ${colors.background}
+format-charging-overline = ${colors.background}
+format-charging-padding = 2
+format-discharging-background = ${colors.mb}
+format-discharging-underline = ${colors.background}
+format-discharging-overline = ${colors.background}
+format-discharging-padding = 2
+
 
 format-charging = <animation-charging> <label-charging>
-label-carging = %percentage%%
-format-charging-underline = ${colors.yellow}
-format-charging-padding = 1
+format-discharging = <animation-discharging> <label-discharging>
 
-time-format = %H:%M
-label-discharging = %percentage%% - %time%
-format-discharging = <ramp-capacity> <label-discharging> 
-format-discharging-underline = ${colors.orange}
-format-discharging-padding = 1
+format-full = " <label-full>"
 
+label-charging = %percentage%%
+label-discharging = %percentage%%
 label-full = %percentage%%
-format-full = <ramp-capacity> <label-full>
-format-full-underline = ${self.format-charging-underline}
-format-full-overline = ${self.format-charging-underline}
-format-full-padding = 1
 
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-3 = 
-ramp-capacity-foreground = ${colors.foreground}
+animation-charging-0 = ""
+animation-charging-1 = ""
+animation-charging-2 = ""
+animation-charging-3 = ""
+animation-charging-4 = ""
+animation-charging-framerate = 250
 
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
-animation-charging-3 = 
-animation-charging-4 = 
-animation-charging-foreground = ${colors.foreground}
-animation-charging-framerate = 500
+animation-discharging-4 = ""
+animation-discharging-3 = ""
+animation-discharging-2 = ""
+animation-discharging-1 = ""
+animation-discharging-0 = ""
+animation-discharging-framerate = 750
 
 
-; vim:ft=dosini
+;-------------------------------------------------------------------------------
+; VOLUME STATUS                                                                ;
+;-------------------------------------------------------------------------------
+
+[module/volume]
+type = internal/pulseaudio
+
+format-volume = <ramp-volume> <label-volume>
+format-muted = <ramp-volume> <label-muted>
+format-muted-foreground = ${colors.alert}
+
+format-volume-background = ${colors.mb}
+format-volume-underline = ${colors.background}
+format-volume-overline = ${colors.background}
+format-volume-padding = 2
+format-muted-background = ${colors.mb}
+format-muted-underline = ${colors.background}
+format-muted-overline = ${colors.background}
+format-muted-padding = 2
+
+
+
+label-volume = "%percentage%%"
+label-muted = "%percentage%%"
+
+bar-volume-width = 10
+bar-volume-indicator = |
+bar-volume-fill = ─
+bar-volume-empty = ─
+
+ramp-volume-0 = ""
+ramp-volume-1 = ""
+ramp-volume-2 = ""
+
+click-left = pulsemixer --toggle-mute
+scroll-up = pulsemixer --change-volume +1
+scroll-down = pulsemixer --change-volume -1
+
+interval = 5
+
+;-------------------------------------------------------------------------------
+; BACKLIGHT BRIGHTNESS                                                         ;
+;-------------------------------------------------------------------------------
+
+[module/backlight]
+type = internal/backlight
+
+format = <label>
+label = " %percentage%%"
+card = intel_backlight
+bar-width = 10
+bar-indicator = |
+bar-fill = ─
+bar-empty = ─
+
+format-background = ${colors.mb}
+format-underline = ${colors.background}
+format-overline = ${colors.background}
+format-padding = 2
+
+;-------------------------------------------------------------------------------
+; SEARCH PROMPT                                                                ;
+;-------------------------------------------------------------------------------
+
+[module/launcher]
+type = custom/text
+content = ""
+
+; "content" has the same properties as "format-NAME"
+content-background = ${colors.background}
+content-foreground = ${colors.foreground}
+content-padding = 4
+
+; "click-(left|middle|right)" will be executed using "/usr/bin/env sh -c $COMMAND"
+click-left = ~/.config/polybar/scripts/launcher
+;;click-middle = ~/.config/polybar/scripts/launcher-full
+click-right = ~/.config/polybar/scripts/launcher-alt
+
+; "scroll-(up|down)" will be executed using "/usr/bin/env sh -c $COMMAND"
+;;scroll-up = ~/.config/polybar/scripts/launcher-full
+scroll-down = ~/.config/polybar/scripts/launcher-full
+
+
+[module/powersearch]
+type = custom/text
+
+content = ""
+click-left = ~/.config/rofi/prompt.sh
+
+;-------------------------------------------------------------------------------
+; POWER MENU                                                                   ;
+;-------------------------------------------------------------------------------
+[module/powermenu]
+type = custom/text
+content = ""
+click-left = ~/.config/rofi/session.sh
+
+[module/powermenu2]
+type = custom/menu
+
+; If true, <label-toggle> will be to the left of the menu items (default).
+; If false, it will be on the right of all the items.
+expand-right = true
+
+; "menu-LEVEL-N" has the same properties as "label-NAME" with
+; the additional "exec" property
+;
+; Available exec commands:
+;   menu-open-LEVEL
+;   menu-close
+; Other commands will be executed using "/usr/bin/env sh -c $COMMAND"
+menu-0-0 = reboot
+menu-0-0-exec = menu-open-1
+menu-0-1 = shutdown
+menu-0-1-exec = menu-open-2
+
+menu-1-0 = back
+menu-1-0-exec = menu-open-0
+menu-1-1 = reboot
+menu-1-1-exec = systemctl reboot
+
+menu-2-0 = shutdown
+menu-2-0-exec = systemctl poweroff
+menu-2-1 = back
+menu-2-1-exec = menu-open-0
+
+; Available tags:
+;   <label-toggle> (default) - gets replaced with <label-(open|close)>
+;   <menu> (default)
+; Note that if you use <label-toggle> you must also include
+; the definition for <label-open>
+
+;;format = <label-toggle> <menu>
+;;format-prefix = ${menu.icon-menu}
+format-spacing = 1 
+
+label-open = 
+label-close = 
+
+
+; Optional item separator
+; Default: none
+label-separator = |
+
+label-open-foreground = #f4511e
+label-close-foreground = #f4511e
+label-separator-foreground = #f4511e
+
+;-------------------------------------------------------------------------------
+; MUSIC STATUS                                                                 ;
+;-------------------------------------------------------------------------------
+
+[module/music]
+type = custom/script
+
+exec = ~/.config/polybar/music-status.sh
+interval = 1
+
+click-left = playerctl play-pause
