@@ -124,13 +124,15 @@ fi
 #
 compdef _pacman powerpill=pacman
 
+
 # ls
-alias l='ls -lh'
-alias ll='ls -lah'
-alias la='ls -A'
-alias lm='ls -m'
-alias lr='ls -R'
-alias lg='ls -l --group-directories-first'
+alias l='ls -lh --group-directories-first --color=always'
+alias ll='ls -lah --group-directories-first --color=always'
+alias la='ls -A --group-directories-first --color=always'
+alias lm='ls -m --group-directories-first --color=always'
+alias lr='ls -R --group-directories-first --color=always'
+alias lg='ls -l'
+
 # git
 alias gcl='git clone --depth 1'
 alias gi='git init'
@@ -150,18 +152,25 @@ mvdotfile() {
     stow -d ~/.dotfiles $1
 }
 
-confedit() { 
-    CONF="$HOME/.config/$1/config.in"
-    if [[ -r $CONF ]]; then
-        $EDITOR $CONF
-   elif [[ -r $HOME/.config/$1/config ]]; then
-        $EDITOR $HOME/.config/$1/config 
-   elif [[ -r $HOME/.config/$1/$1.conf ]]; then
-        $EDITOR $HOME/.config/$1/$1.conf
-   elif [[ -r $HOME/.config/$1/autostart ]]; then
-        $EDITOR $HOME/.config/$1/autostart
-   elif [[ -r $HOME/.config/$1/config.ini ]]; then
-        $EDITOR $HOME/.config/$1/config.ini 
+confedit() {
+    CONFFOLDER="$HOME/.config/$1" 
+
+    if [[ -r "$CONFFOLDER/config.in" ]]; then     # i.e. custom configs
+        $EDITOR "$CONF"
+    elif [[ -r "$CONFFOLDER/config" ]]; then      # i.e. 
+        $EDITOR "$CONFFOLDER/config"
+    elif [[ -r "$CONFFOLDER/$1.conf" ]]; then     # i.e. most configs
+        $EDITOR "$CONFFOLDER/$1.conf"
+    elif [[ -r "$CONFFOLDER/autostart" ]]; then   # i.e. herbstluftwm
+        $EDITOR "$CONFFOLDER/autostart"
+    elif [[ -r "$CONFFOLDER/config.ini"i ]]; then  # i.e. polybar
+        $EDITOR "$CONFFOLDER/config.ini"
+    elif [[ -r "$CONFFOLDER/$1rc" ]]; then      # i.e. htop
+        $EDITOR "$CONFFOLDER/$1rc"
+    elif [[ -r "$HOME/.$1rc" ]]; then           # i.e zsh
+        $EDITOR "$HOME/.$1rc"
+    elif [[ -r "$HOME/.$1/.$1rc" ]]; then       # i.e. 
+        $EDITOR "$HOME/.$1/.$1rc"
     fi
 }
 

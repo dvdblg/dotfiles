@@ -1,6 +1,8 @@
+; vim: ft=dosini
+
 include-file = ~/.config/polybar/colors.ini
-#include-file = ~/.config/polybar/modules.ini
-#include-file = ~/.config/polybar/user_modules.ini
+;include-file = ~/.config/polybar/modules.ini
+;include-file = ~/.config/polybar/user_modules.ini
 
 ;-------------------------------------------------------------------------------
 ; COLORS                                                                       ;
