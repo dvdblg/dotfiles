@@ -1,19 +1,22 @@
 ; vim: ft=dosini
-
-include-file = ~/.config/polybar/colors.ini
-;include-file = ~/.config/polybar/modules.ini
-;include-file = ~/.config/polybar/user_modules.ini
-
 ;-------------------------------------------------------------------------------
-; COLORS                                                                       ;
+; STYLE                                                                        ;
 ;-------------------------------------------------------------------------------
 
 [colors]
 background = "#292a30"
 foreground = "#dfdfe0"
-primary = "#dfdfe0"
+primary = "#ff8170"
 alert = "#ff8170"
 mb = "4c4f61"
+
+
+[style]
+padding = 2
+
+[global/wm]
+margin-bottom = 0
+margin-top = 0
 
 ;-------------------------------------------------------------------------------
 ; BOTTOM BAR                                                                   ;
@@ -22,23 +25,25 @@ mb = "4c4f61"
 [bar/bottom]
 enable-ipc = true
 monitor = eDP-1
-monitor-fallback = eDP-1
+monitor-fallback = eDP1
 
 bottom = true
 width = 100%
 height = 36
+;offset-x = 0.5%
+fixed-center = true
 
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-underline-color = ${colors.alert}
+underline-color = ${colors.primary}
 underline-size = 3
-overline-color = ${colors.alert}
+overline-color = ${colors.primary}
 overline-size = 3
 
-border-size = 0
-
-border-color = ${colors.alert}
+border-top-size = 4
+;border-top-size = 2
+border-top-color = ${colors.primary}
 
 ;padding = 2
 padding-left = 2
@@ -51,8 +56,15 @@ modules-left = launcher xwindow
 modules-center = workspaces 
 modules-right =checknetwork backlight volume battery date powermenu
 
-font-0 = "menu:size=10;1"
-font-1 = "FontAwesome:size=10;2"
+format-background = ${colors.mb}
+format-underline = ${colors.background}
+format-overline = ${colors.background}
+format-padding = ${style.padding}
+
+font-0 = "Misc Termsyn:size=14;2"
+font-1 = "Wuncon Siji:size=14;2"
+font-2 = "xos4 Terminus:size=14;1"
+font-3 = "FontAwesome:size=10;2"
 
 tray-position = right
 tray-detached = false
@@ -78,7 +90,7 @@ format = <label>
 format-foreground = ${colors.foreground}
 label = %time%
 
-format-padding = 2
+format-padding = ${style.padding}
 ;-------------------------------------------------------------------------------
 ; WORKSPACES                                                                   ;
 ;-------------------------------------------------------------------------------
@@ -92,14 +104,23 @@ enable-click = true
 enable-scroll = false
 
 format = "<label-state>"
+format-background = ${colors.mb}
+format-underline = ${colors.background}
+format-overline = ${colors.background}
+format-padding = ${style.padding}
 
-label-active = " "
-label-active-padding-right = 0
-label-active-padding-left = 0
+label-active = 
+label-active-padding = 1
 
-label-empty = " "
-label-empty-padding-right = 0
-label-empty-padding-left = 0
+label-empty = 
+label-empty-padding = 1
+
+label-occupied = 
+label-occupied-padding = 1
+
+label-urgent = 
+label-urgent-padding = 1
+
 
 ;-------------------------------------------------------------------------------
 ; WINDOW TITLE                                                                 ;
@@ -107,11 +128,11 @@ label-empty-padding-left = 0
 
 [module/xwindow]
 type = internal/xwindow
-label = "%title:0:50:...%"
+label = "%title:0:30:...%"
 format-background = ${colors.mb}
 format-underline = ${colors.background}
 format-overline = ${colors.background}
-format-padding = 2
+format-padding = ${style.padding}
 
 ;-------------------------------------------------------------------------------
 ; NETWORK INFO                                                                 ;
@@ -151,7 +172,7 @@ interval = 5
 format-background = ${colors.mb}
 format-underline = ${colors.background}
 format-overline = ${colors.background}
-format-padding = 2
+format-padding = ${style.padding}
 
 label =  %output:0:15:...%
 
@@ -173,11 +194,11 @@ poll-interval = 60
 format-charging-background = ${colors.mb}
 format-charging-underline = ${colors.background}
 format-charging-overline = ${colors.background}
-format-charging-padding = 2
+format-charging-padding = ${style.padding}
 format-discharging-background = ${colors.mb}
 format-discharging-underline = ${colors.background}
 format-discharging-overline = ${colors.background}
-format-discharging-padding = 2
+format-discharging-padding = ${style.padding}
 
 
 format-charging = <animation-charging> <label-charging>
@@ -218,11 +239,11 @@ format-muted-foreground = ${colors.alert}
 format-volume-background = ${colors.mb}
 format-volume-underline = ${colors.background}
 format-volume-overline = ${colors.background}
-format-volume-padding = 2
+format-volume-padding = ${style.padding}
 format-muted-background = ${colors.mb}
 format-muted-underline = ${colors.background}
 format-muted-overline = ${colors.background}
-format-muted-padding = 2
+format-muted-padding = ${style.padding}
 
 
 
@@ -262,7 +283,7 @@ bar-empty = ─
 format-background = ${colors.mb}
 format-underline = ${colors.background}
 format-overline = ${colors.background}
-format-padding = 2
+format-padding = ${style.padding}
 
 ;-------------------------------------------------------------------------------
 ; SEARCH PROMPT                                                                ;
@@ -275,7 +296,7 @@ content = ""
 ; "content" has the same properties as "format-NAME"
 content-background = ${colors.background}
 content-foreground = ${colors.foreground}
-content-padding = 4
+;content-padding = 4
 
 ; "click-(left|middle|right)" will be executed using "/usr/bin/env sh -c $COMMAND"
 click-left = ~/.config/polybar/scripts/launcher

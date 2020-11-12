@@ -1,7 +1,0 @@
-#WINEARCH=win32 WINEPREFIX=~/win32 
-#env WINEPREFIX=~/.wine optirun -c rgb -b primus 
-#wine C:\\windows\\command\\start.exe /Unix /home/davide/.wine/dosdevices/c:/users/Public/Start\ Menu/Programs/Battle.net/Battle.net.lnk
-
-#PRIMUS_SYNC=1 WINEDEBUG=-all WINEARCH=win32 WINEPREFIX=$HOME/win32 wine C:\\windows\\command\\start.exe /Unix '/home/davide/win32/drive_c/Program Files (x86)/Battle.net/Battle.net Launcher.exe'
-
-PRIMUS_SYNC=1 WINEDEBUG=-all WINEARCH=win32 WINEPREFIX=/home/davide/.wine32 wine .wine32/drive_c/Program\ Files/Blizzard\ App/Battle.net\ Launcher.exe

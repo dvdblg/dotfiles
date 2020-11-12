@@ -4,6 +4,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'preservim/nerdcommenter'
 Plug 'crusoexia/vim-monokai'
 Plug 'fratajczak/one-monokai-vim'
+Plug 'peterhoeg/vim-qml'
 
 call plug#end()
 

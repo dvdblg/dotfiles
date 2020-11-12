@@ -156,7 +156,7 @@ confedit() {
     CONFFOLDER="$HOME/.config/$1" 
 
     if [[ -r "$CONFFOLDER/config.in" ]]; then     # i.e. custom configs
-        $EDITOR "$CONF"
+        $EDITOR "$CONFFOLDER/config.in"
     elif [[ -r "$CONFFOLDER/config" ]]; then      # i.e. 
         $EDITOR "$CONFFOLDER/config"
     elif [[ -r "$CONFFOLDER/$1.conf" ]]; then     # i.e. most configs
@@ -171,6 +171,10 @@ confedit() {
         $EDITOR "$HOME/.$1rc"
     elif [[ -r "$HOME/.$1/.$1rc" ]]; then       # i.e. 
         $EDITOR "$HOME/.$1/.$1rc"
+    elif [[ -r "$HOME/.$1/config" ]]; then       # i.e. urxvt 
+        $EDITOR "$HOME/.$1/config"
+    elif [[ -r "$CONFFOLDER/Main.qml.in" ]]; then       # i.e. sddm custom theme
+        $EDITOR "$CONFFOLDER/Main.qml.in"
     fi
 }
 
