@@ -2,19 +2,25 @@
 ## Current setup:
 * **OS:** `Arch Linux`
 * **Shell:** `zsh`
-* **WM:** `openbox`
-* **Compositor:** `compton`
-* **Bar:** `tint2`
+* **WM:** `herbsluftwm`
+* **Compositor:** `picom`
+* **Bar:** `polybar`
 * **Theme:** `oomox`
 * **Icons:** `Vertex`
-* **Terminal:** `termite`
+* **Terminal:** `urxvt`
 * **Music player:** `mpd with ncmpcpp`
 * **Notifications:** `dunst`
-* **Display Manager:** `none`
+* **Display Manager:** `sddm`
 * **PDF viewer:** `zathura`
-* **Editor:** `vim (still learning it)`
-* **Browser:** `firefox (beta)`
+* **Editor:** `vim` (still learning it)
+* **Browser:** `firefox`
 
 ## stow / files (NetworkManager, xorg etc.)
 `sudo stow -t \ [name-of-the-folder-here]`  
 e.g.: `sudo stow -t \ NetworkManager` 
+
+## Credits
+# Some people I got inspiration from:
+[@dylanaraps](https://github.com/dylanaraps/dotfiles)
+[@calvinhenderson](https://github.com/calvinhenderson/dotfiles)
+...and obviously [r/unixporn](https:/reddit.com/r/unixporn)

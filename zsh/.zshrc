@@ -165,6 +165,8 @@ confedit() {
         $EDITOR "$CONFFOLDER/autostart"
     elif [[ -r "$CONFFOLDER/config.ini"i ]]; then  # i.e. polybar
         $EDITOR "$CONFFOLDER/config.ini"
+    elif [[ -r "$CONFFOLDER/$1rc.in" ]]; then      # i.e. htop
+        $EDITOR "$CONFFOLDER/$1rc.in"
     elif [[ -r "$CONFFOLDER/$1rc" ]]; then      # i.e. htop
         $EDITOR "$CONFFOLDER/$1rc"
     elif [[ -r "$HOME/.$1rc" ]]; then           # i.e zsh

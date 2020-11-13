@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =3
+let g:netrw_dirhistcnt =4
+let g:netrw_dirhist_4='/home/davide/.mozilla/firefox/trktth22.default-release'
 let g:netrw_dirhist_3='/home/davide'
 let g:netrw_dirhist_2='/home/davide/.dotfiles/bins/.local/bin'
 let g:netrw_dirhist_1='/home/davide/.config/autostart'
@@ -9,4 +10,3 @@ let g:netrw_dirhist_8='/home/davide/.dotfiles/i3/.config'
 let g:netrw_dirhist_7='/home/davide/.dotfiles/i3'
 let g:netrw_dirhist_6='/home/davide/.config/herbstluftwm'
 let g:netrw_dirhist_5='/home/davide/.config/yay'
-let g:netrw_dirhist_4='/home/davide/.config/autostart-scripts'

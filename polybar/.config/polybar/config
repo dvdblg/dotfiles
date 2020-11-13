@@ -8,11 +8,15 @@ background = "#292a30"
 foreground = "#dfdfe0"
 primary = "#ff8170"
 alert = "#ff8170"
-mb = "4c4f61"
+lightbg = #dfdfe0 
+;mb = "#7f8c98"
+mb = "#40424c"
+;mb = "#4c5061"
 
 
 [style]
-padding = 2
+padding = 1
+line = 4
 
 [global/wm]
 margin-bottom = 0
@@ -27,7 +31,7 @@ enable-ipc = true
 monitor = eDP-1
 monitor-fallback = eDP1
 
-bottom = true
+;bottom = true 
 width = 100%
 height = 36
 ;offset-x = 0.5%
@@ -36,35 +40,34 @@ fixed-center = true
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-underline-color = ${colors.primary}
-underline-size = 3
-overline-color = ${colors.primary}
-overline-size = 3
+line-size = ${style.line}
 
-border-top-size = 4
-;border-top-size = 2
-border-top-color = ${colors.primary}
+;border-bottom-size = ${style.line}
+;border-bottom-color = ${colors.primary}
 
-;padding = 2
-padding-left = 2
-padding-right = 2
+padding = ${style.padding}
+;padding-left = 2
+;padding-right = 2
 
 module-margin-left = 1
 module-margin-right = 1
 
 modules-left = launcher xwindow
 modules-center = workspaces 
-modules-right =checknetwork backlight volume battery date powermenu
+modules-right = gmail network backlight volume battery date powermenu
 
-format-background = ${colors.mb}
-format-underline = ${colors.background}
-format-overline = ${colors.background}
-format-padding = ${style.padding}
+format-background = ${colors.background}
+format-underline = ${colors.lightbg}
+;format-overline = ${colors.background}
+;format-padding = ${style.padding}
 
-font-0 = "Misc Termsyn:size=14;2"
+
+font-0 = "xos4 Terminus:size=14;1"
 font-1 = "Wuncon Siji:size=14;2"
-font-2 = "xos4 Terminus:size=14;1"
-font-3 = "FontAwesome:size=10;2"
+font-2 = "Misc Termsyn:size=14;2"
+font-3 = "Font Awesome 5 Pro Solid:size=10;1"
+font-4 = "FontAwesome:size=10;2"
+;font-5 = "Font Awesome 5 Pro:size=10;1"
 
 tray-position = right
 tray-detached = false
@@ -74,53 +77,41 @@ tray-offset-x = 0
 tray-offset-y = 0
 tray-padding = 1
 tray-scale = 1.0
+
 ;-------------------------------------------------------------------------------
 ; CALENDAR DATE                                                                ;
 ;-------------------------------------------------------------------------------
 
 [module/date]
 type = internal/date
-
 interval = 1.0
-
 time =  %H:%M
 time-alt = %d-%m-%Y%
-
 format = <label>
-format-foreground = ${colors.foreground}
 label = %time%
+;format-padding = ${style.padding}
+format-underline = ${colors.lightbg}
 
-format-padding = ${style.padding}
 ;-------------------------------------------------------------------------------
 ; WORKSPACES                                                                   ;
 ;-------------------------------------------------------------------------------
 
 [module/workspaces]
 type = internal/xworkspaces
-
 pin-workspaces = false
-
 enable-click = true
 enable-scroll = false
-
 format = "<label-state>"
-format-background = ${colors.mb}
-format-underline = ${colors.background}
-format-overline = ${colors.background}
-format-padding = ${style.padding}
-
+;format-padding = ${style.padding}
+format-underline = ${colors.lightbg}
 label-active = 
 label-active-padding = 1
-
 label-empty = 
 label-empty-padding = 1
-
 label-occupied = 
 label-occupied-padding = 1
-
 label-urgent = 
 label-urgent-padding = 1
-
 
 ;-------------------------------------------------------------------------------
 ; WINDOW TITLE                                                                 ;
@@ -129,10 +120,20 @@ label-urgent-padding = 1
 [module/xwindow]
 type = internal/xwindow
 label = "%title:0:30:...%"
-format-background = ${colors.mb}
-format-underline = ${colors.background}
-format-overline = ${colors.background}
-format-padding = ${style.padding}
+;format-padding = ${style.padding}
+format-underline = ${colors.lightbg}
+
+;-------------------------------------------------------------------------------
+; GMAIL                                                                        ;
+;-------------------------------------------------------------------------------
+
+[module/gmail]
+type = custom/script
+exec = ~/.config/polybar/gmail/launch.py
+tail = true
+click-left = xdg-open https://mail.google.com
+format-underline = ${colors.lightbg}
+;format-padding = ${style.padding}
 
 ;-------------------------------------------------------------------------------
 ; NETWORK INFO                                                                 ;
@@ -140,45 +141,39 @@ format-padding = ${style.padding}
 
 [module/network]
 type = internal/network
-interface = wlan1
-
-format-connected =  <label-connected>
+interface = wlan0
+format-connected = <ramp-signal> <label-connected>
+;format-connected-padding = ${style.padding}
+format-connected-underline = ${colors.lightbg}
 label-connected = "%essid%"
-
-format-disconnected = 
+format-disconnected = <label-disconnected>
+;format-disconnected-padding = ${style.padding}
+format-disconnected-underline = ${colors.lightbg}
 format-disconnected-foreground = ${colors.alert}
-
-[module/checknetwork]
-type = custom/script
-
-; Available tokens:
-;   %counter%
-; Command to be executed (using "/usr/bin/env sh -c [command]")
-exec = ~/.config/polybar/scripts/check-network
-
-; Conditional command that, if defined, needs to exit successfully
-; before the main exec command is invoked.
-; Default: ""
-;;exec-if = ""
-
-; Will the script output continous content?
-; Default: false
-tail = true
-
-; Seconds to sleep between updates
-; Default: 2 (0 if `tail = true`)
-interval = 5
-
-format-background = ${colors.mb}
-format-underline = ${colors.background}
-format-overline = ${colors.background}
-format-padding = ${style.padding}
-
-label =  %output:0:15:...%
-
+label-disconnected = "not connected"
 click-left = networkmanager_dmenu &
 click-middle = networkmanager_dmenu &
 click-right = networkmanager_dmenu &
+ramp-signal-0 = " "
+ramp-signal-1 = ""
+ramp-signal-2 = ""
+ramp-signal-3 = ""
+ramp-signal-4 = ""
+ramp-signal-5 = ""
+
+
+[module/checknetwork]
+type = custom/script
+exec = ~/.config/polybar/scripts/check-network
+tail = true
+interval = 5
+;format-padding = ${style.padding}
+format-underline = ${colors.lightbg}
+label =  %output:0:15:...%
+click-left = networkmanager_dmenu &
+click-middle = networkmanager_dmenu &
+click-right = networkmanager_dmenu &
+
 ;-------------------------------------------------------------------------------
 ; BATTERY STATUS                                                               ;
 ;-------------------------------------------------------------------------------
@@ -191,14 +186,14 @@ adapter = AC0
 
 poll-interval = 60
 
-format-charging-background = ${colors.mb}
-format-charging-underline = ${colors.background}
+format-charging-background = ${colors.background}
+format-charging-underline = ${colors.lightbg}
 format-charging-overline = ${colors.background}
-format-charging-padding = ${style.padding}
-format-discharging-background = ${colors.mb}
-format-discharging-underline = ${colors.background}
+;format-charging-padding = ${style.padding}
+format-discharging-background = ${colors.background}
+format-discharging-underline = ${colors.lightbg}
 format-discharging-overline = ${colors.background}
-format-discharging-padding = ${style.padding}
+;format-discharging-padding = ${style.padding}
 
 
 format-charging = <animation-charging> <label-charging>
@@ -236,16 +231,14 @@ format-volume = <ramp-volume> <label-volume>
 format-muted = <ramp-volume> <label-muted>
 format-muted-foreground = ${colors.alert}
 
-format-volume-background = ${colors.mb}
-format-volume-underline = ${colors.background}
+format-volume-background = ${colors.background}
+format-volume-underline = ${colors.lightbg}
 format-volume-overline = ${colors.background}
-format-volume-padding = ${style.padding}
-format-muted-background = ${colors.mb}
-format-muted-underline = ${colors.background}
+;format-volume-padding = ${style.padding}
+format-muted-background = ${colors.background}
+format-muted-underline = ${colors.alert}
 format-muted-overline = ${colors.background}
-format-muted-padding = ${style.padding}
-
-
+;format-muted-padding = ${style.padding}
 
 label-volume = "%percentage%%"
 label-muted = "%percentage%%"
@@ -273,17 +266,14 @@ interval = 5
 type = internal/backlight
 
 format = <label>
-label = " %percentage%%"
+label = " %percentage%%"
 card = intel_backlight
-bar-width = 10
+bar-width = 5
 bar-indicator = |
 bar-fill = ─
 bar-empty = ─
-
-format-background = ${colors.mb}
-format-underline = ${colors.background}
-format-overline = ${colors.background}
-format-padding = ${style.padding}
+format-underline = ${colors.lightbg}
+;format-padding = ${style.padding}
 
 ;-------------------------------------------------------------------------------
 ; SEARCH PROMPT                                                                ;
@@ -292,25 +282,15 @@ format-padding = ${style.padding}
 [module/launcher]
 type = custom/text
 content = ""
-
-; "content" has the same properties as "format-NAME"
 content-background = ${colors.background}
 content-foreground = ${colors.foreground}
-;content-padding = 4
-
-; "click-(left|middle|right)" will be executed using "/usr/bin/env sh -c $COMMAND"
+content-padding = 2
 click-left = ~/.config/polybar/scripts/launcher
-;;click-middle = ~/.config/polybar/scripts/launcher-full
 click-right = ~/.config/polybar/scripts/launcher-alt
-
-; "scroll-(up|down)" will be executed using "/usr/bin/env sh -c $COMMAND"
-;;scroll-up = ~/.config/polybar/scripts/launcher-full
-scroll-down = ~/.config/polybar/scripts/launcher-full
-
+croll-down = ~/.config/polybar/scripts/launcher-full
 
 [module/powersearch]
 type = custom/text
-
 content = ""
 click-left = ~/.config/rofi/prompt.sh
 
@@ -325,18 +305,9 @@ click-left = ~/.config/rofi/session.sh
 [module/powermenu2]
 type = custom/menu
 
-; If true, <label-toggle> will be to the left of the menu items (default).
-; If false, it will be on the right of all the items.
 expand-right = true
 
-; "menu-LEVEL-N" has the same properties as "label-NAME" with
-; the additional "exec" property
-;
-; Available exec commands:
-;   menu-open-LEVEL
-;   menu-close
-; Other commands will be executed using "/usr/bin/env sh -c $COMMAND"
-menu-0-0 = reboot
+enu-0-0 = reboot
 menu-0-0-exec = menu-open-1
 menu-0-1 = shutdown
 menu-0-1-exec = menu-open-2
@@ -351,23 +322,12 @@ menu-2-0-exec = systemctl poweroff
 menu-2-1 = back
 menu-2-1-exec = menu-open-0
 
-; Available tags:
-;   <label-toggle> (default) - gets replaced with <label-(open|close)>
-;   <menu> (default)
-; Note that if you use <label-toggle> you must also include
-; the definition for <label-open>
-
-;;format = <label-toggle> <menu>
-;;format-prefix = ${menu.icon-menu}
 format-spacing = 1 
 
 label-open = 
 label-close = 
 
-
-; Optional item separator
-; Default: none
-label-separator = |
+abel-separator = |
 
 label-open-foreground = #f4511e
 label-close-foreground = #f4511e
@@ -383,4 +343,4 @@ type = custom/script
 exec = ~/.config/polybar/music-status.sh
 interval = 1
 
-click-left = playerctl play-pause
+clck-left = playerctl play-pause
