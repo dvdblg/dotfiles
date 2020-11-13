@@ -5,6 +5,9 @@ Plug 'preservim/nerdcommenter'
 Plug 'crusoexia/vim-monokai'
 Plug 'fratajczak/one-monokai-vim'
 Plug 'peterhoeg/vim-qml'
+"Plug 'ycm-core/YouCompleteMe'
+Plug 'jiangmiao/auto-pairs'
+Plug 'ajh17/VimCompletesMe'
 
 call plug#end()
 

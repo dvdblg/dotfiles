@@ -1,7 +1,6 @@
-## Modified By Aditya Shakya ...
+# vim: ft=conf
 
 [options]
-
 allow_bold = true
 audible_bell = false
 browser = xdg-open
@@ -11,55 +10,50 @@ cursor_shape = block
 dynamic_title = true
 filter_unmatched_urls = true
 font = MesloLGS NF 12
-geometry = 480x280
+geometry = 84x32
 icon_name = terminal
 modify_other_keys = false
 mouse_autohide = false
 scroll_on_output = false
 scroll_on_keystroke = true
 scrollback_lines = 15000
-size_hints = false
+size_hints = true
 search_wrap = true
 urgent_on_bell = true
-highlight = #30343e
-#internalBorder:	10
 
 [colors]
-
 foreground = ${xrdb:foreground}
 background = ${xrdb:background}
-foreground_bold = #A9ABB0
-cursor = #01B58A
-cursor_foreground = #01B58A
+#foreground_bold = ${xrdb:foreground}
 
 # black
 color0  = ${xrdb:color0}
-color8  = ${xrdb:color8} 
+color8  = ${xrdb:color8}
 
 # red
-color1  = ${xrdb:color1} 
-color9  = ${xrdb:color9} 
+color1  = ${xrdb:color1}
+color9  = ${xrdb:color9}
 
 # green
-color2  = ${xrdb:color2} 
-color10 = ${xrdb:color10} 
+color2  = ${xrdb:color2}
+color10 = ${xrdb:color10}
 
 # yellow
-color3  = ${xrdb:color3} 
-color11 = ${xrdb:color11} 
+color3  = ${xrdb:color3}
+color11 = ${xrdb:color11}
 
 # blue
-color4  = ${xrdb:color4} 
-color12 = ${xrdb:color12} 
+color4  = ${xrdb:color4}
+color12 = ${xrdb:color12}
 
 # magenta
-color5  = ${xrdb:color5} 
-color13 = ${xrdb:color13} 
+color5  = ${xrdb:color5}
+color13 = ${xrdb:color13}
 
 # cyan
-color6  = ${xrdb:color6} 
-color14 = ${xrdb:color14} 
+color6  = ${xrdb:color6}
+color14 = ${xrdb:color14}
 
 # white
-color7  = ${xrdb:color7} 
-color15 = ${xrdb:color15} 
+color7  = ${xrdb:color7}
+color15 = ${xrdb:color15}

@@ -153,34 +153,68 @@ mvdotfile() {
 }
 
 confedit() {
-    CONFFOLDER="$HOME/.config/$1" 
-
-    if [[ -r "$CONFFOLDER/config.in" ]]; then     # i.e. custom configs
-        $EDITOR "$CONFFOLDER/config.in"
-    elif [[ -r "$CONFFOLDER/config" ]]; then      # i.e. 
-        $EDITOR "$CONFFOLDER/config"
-    elif [[ -r "$CONFFOLDER/$1.conf" ]]; then     # i.e. most configs
-        $EDITOR "$CONFFOLDER/$1.conf"
-    elif [[ -r "$CONFFOLDER/autostart" ]]; then   # i.e. herbstluftwm
-        $EDITOR "$CONFFOLDER/autostart"
-    elif [[ -r "$CONFFOLDER/config.ini"i ]]; then  # i.e. polybar
-        $EDITOR "$CONFFOLDER/config.ini"
-    elif [[ -r "$CONFFOLDER/$1rc.in" ]]; then      # i.e. htop
-        $EDITOR "$CONFFOLDER/$1rc.in"
-    elif [[ -r "$CONFFOLDER/$1rc" ]]; then      # i.e. htop
-        $EDITOR "$CONFFOLDER/$1rc"
-    elif [[ -r "$HOME/.$1rc" ]]; then           # i.e zsh
+    if [[ -f $1 ]]; then
+        $EDITOR $1
+        exit
+    elif [[ -f $HOME/.config/$1 ]]; then
+        $EDITOR $HOME/.config/$1
+        exit
+    elif [[ -d "$HOME/.config/$1" ]]; then
+        CONFFOLDER="$HOME/.config/$1"
+    elif [[ -r "$HOME/.$1rc" ]]; then
         $EDITOR "$HOME/.$1rc"
-    elif [[ -r "$HOME/.$1/.$1rc" ]]; then       # i.e. 
-        $EDITOR "$HOME/.$1/.$1rc"
-    elif [[ -r "$HOME/.$1/config" ]]; then       # i.e. urxvt 
-        $EDITOR "$HOME/.$1/config"
-    elif [[ -r "$CONFFOLDER/Main.qml.in" ]]; then       # i.e. sddm custom theme
-        $EDITOR "$CONFFOLDER/Main.qml.in"
+        exit
+    elif [[ -d "$HOME/$1" ]]; then
+        CONFFOLDER="$HOME/$1"
     fi
+    #if [[ -f $CONFFOLDER ]]; then
+        #$EDITOR $CONFFOLDER
+        #exit
+    #fi 
+    configs=($CONFFOLDER/*conf*)
+    #echo $configs
+    if [[ ${#configs[@]} -eq 0 ]]; then
+        ehco "No configs found." 
+    elif [[ ${#configs[@]} -eq 1 ]]; then
+        $EDITOR "${configs}"
+        exit
+    fi
+    #$EDITOR $CONFFOLDER/
+
 }
 
-compdef "_files -W $HOME/.config/" mvdotfile confedit
+#confedit_old() {
+    #CONFFOLDER="$HOME/.config/$1" 
+
+    #if [[ -r "$CONFFOLDER/config.in" ]]; then     # i.e. custom configs
+        #$EDITOR "$CONFFOLDER/config.in"
+    #elif [[ -r "$CONFFOLDER/config" ]]; then      # i.e. 
+        #$EDITOR "$CONFFOLDER/config"
+    #elif [[ -r "$CONFFOLDER/$1.conf" ]]; then     # i.e. most configs
+        #$EDITOR "$CONFFOLDER/$1.conf"
+    #elif [[ -r "$CONFFOLDER/autostart" ]]; then   # i.e. herbstluftwm
+        #$EDITOR "$CONFFOLDER/autostart"
+    #elif [[ -r "$CONFFOLDER/config.ini"i ]]; then  # i.e. polybar
+        #$EDITOR "$CONFFOLDER/config.ini"
+    #elif [[ -r "$CONFFOLDER/$1rc.in" ]]; then      # i.e. htop
+        #$EDITOR "$CONFFOLDER/$1rc.in"
+    #elif [[ -r "$CONFFOLDER/$1rc" ]]; then      # i.e. htop
+        #$EDITOR "$CONFFOLDER/$1rc"
+    #elif [[ -r "$HOME/.$1rc" ]]; then           # i.e zsh
+        #$EDITOR "$HOME/.$1rc"
+    #elif [[ -r "$HOME/.$1/.$1rc" ]]; then       # i.e. 
+        #$EDITOR "$HOME/.$1/.$1rc"
+    #elif [[ -r "$HOME/.$1/config" ]]; then       # i.e. urxvt 
+        #$EDITOR "$HOME/.$1/config"
+    #elif [[ -r "$CONFFOLDER/Main.qml.in" ]]; then       # i.e. sddm custom theme
+        #$EDITOR "$CONFFOLDER/Main.qml.in"
+    #fi
+#}
+
+
+compdef "_files -W $HOME/.config/ " mvdotfile
+CONFFOLDERS=($HOME/.config $HOME)
+compdef "_files -W CONFFOLDERS -g '*.in *conf* .*{rc,urxvt}'" confedit
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
