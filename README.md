@@ -19,8 +19,8 @@
 `sudo stow -t \ [name-of-the-folder-here]`  
 e.g.: `sudo stow -t \ NetworkManager` 
 
-## Credits
-# Some people I got inspiration from:
-[@dylanaraps](https://github.com/dylanaraps/dotfiles)
-[@calvinhenderson](https://github.com/calvinhenderson/dotfiles)
-...and obviously [r/unixporn](https:/reddit.com/r/unixporn)
+## credits
+### some people I got inspiration from:
+[@dylanaraps](https://github.com/dylanaraps/dotfiles)    
+[@calvinhenderson](https://github.com/calvinhenderson/dotfiles)    
+...and obviously [r/unixporn](https://reddit.com/r/unixporn)    
