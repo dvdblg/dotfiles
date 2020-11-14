@@ -1,21 +1,21 @@
 # dotfiles
 ## Current setup:
-|                      |                    |
-|----------------------|--------------------|
-| **OS:**              | `Arch Linux`       |
-| **shell:**           | `zsh`              |
-| **WM:**              | `herbsluftwm`      |
-| **compositor:**      | `picom`            |
-| **bar:**             | `polybar`          |
-| **theme:**           | `oomox`            |
-| **icons:**           | `Vertex`           |
-| **terminal:**        | `urxvt`            |
-| **music player:**    | `mpd with ncmpcpp` |
-| **notifications:**   | `dunst`            |
-| **display manager:** | `sddm`             |
-| **PDF viewer:**      | `zathura`          |
-| **editor:**          | `vim`              |
-| **browser:**         | `firefox`          |
+|                        |                      |
+| ---------------------- | -------------------- |
+| **OS:**                | `Arch Linux`         |
+| **shell:**             | `zsh`                |
+| **WM:**                | `herbsluftwm`        |
+| **compositor:**        | `picom`              |
+| **bar:**               | `polybar`            |
+| **theme:**             | `oomox`              |
+| **icons:**             | `Vertex`             |
+| **terminal:**          | `termite`            |
+| **music player:**      | `mpd with ncmpcpp`   |
+| **notifications:**     | `dunst`              |
+| **display manager:**   | `sddm`               |
+| **PDF viewer:**        | `zathura`            |
+| **editor:**            | `vim`                |
+| **browser:**           | `firefox`            |
 
 
 

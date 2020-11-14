@@ -4,135 +4,135 @@
 ;-------------------------------------------------------------------------------
 
 [colors]
-background = "#292a30"
-foreground = "#dfdfe0"
-primary = "#ff8170"
-alert = "#ff8170"
-lightbg = #dfdfe0 
-;mb = "#7f8c98"
-mb = "#40424c"
-;mb = "#4c5061"
+background                      = "#292a30"
+foreground                      = "#dfdfe0"
+primary                         = "#ff8170"
+alert                           = "#ff8170"
+lightbg                         = #dfdfe0
+;mb         = "#7f8c98"
+mb                              = "#40424c"
+;mb         = "#4c5061"
 
 
 [style]
-padding = 1
-line = 4
+padding                         = 1
+line                            = 4
 
 [global/wm]
-margin-bottom = 0
-margin-top = 0
+margin-bottom                   = 0
+margin-top                      = 0
 
 ;-------------------------------------------------------------------------------
 ; BOTTOM BAR                                                                   ;
 ;-------------------------------------------------------------------------------
 
 [bar/bottom]
-enable-ipc = true
-monitor = eDP-1
-monitor-fallback = eDP1
+enable-ipc                      = true
+monitor                         = eDP-1
+monitor-fallback                = eDP1
 
 ;bottom = true 
-width = 100%
-height = 36
+width                           = 100%
+height                          = 36
 ;offset-x = 0.5%
-fixed-center = true
+fixed-center                    = true
 
-background = ${colors.background}
-foreground = ${colors.foreground}
+background                      = ${colors.background}
+foreground                      = ${colors.foreground}
 
-line-size = ${style.line}
+line-size                       = ${style.line}
 
 ;border-bottom-size = ${style.line}
 ;border-bottom-color = ${colors.primary}
 
-padding = ${style.padding}
+padding                         = ${style.padding}
 ;padding-left = 2
 ;padding-right = 2
 
-module-margin-left = 1
-module-margin-right = 1
+module-margin-left              = 1
+module-margin-right             = 1
 
-modules-left = launcher xwindow
-modules-center = workspaces 
-modules-right = gmail network backlight volume battery date powermenu
+modules-left                    = launcher xwindow
+modules-center                  = workspaces
+modules-right                   = gmail network backlight volume battery date powermenu
 
-format-background = ${colors.background}
-format-underline = ${colors.lightbg}
+format-background               = ${colors.background}
+format-underline                = ${colors.lightbg}
 ;format-overline = ${colors.background}
 ;format-padding = ${style.padding}
 
 
-font-0 = "xos4 Terminus:size=14;1"
-font-1 = "Wuncon Siji:size=14;2"
-font-2 = "Misc Termsyn:size=14;2"
-font-3 = "Font Awesome 5 Pro Solid:size=10;1"
-font-4 = "FontAwesome:size=10;2"
+font-0                          = "xos4 Terminus:size=14;1"
+font-1                          = "Wuncon Siji:size=14;2"
+font-2                          = "Misc Termsyn:size=14;2"
+font-3                          = "Font Awesome 5 Pro Solid:size=10;1"
+font-4                          = "FontAwesome:size=10;2"
 ;font-5 = "Font Awesome 5 Pro:size=10;1"
 
-tray-position = right
-tray-detached = false
-tray-maxsize = 20
-tray-background = ${colors.background}
-tray-offset-x = 0
-tray-offset-y = 0
-tray-padding = 1
-tray-scale = 1.0
+tray-position                   = right
+tray-detached                   = false
+tray-maxsize                    = 20
+tray-background                 = ${colors.background}
+tray-offset-x                   = 0
+tray-offset-y                   = 0
+tray-padding                    = 1
+tray-scale                      = 1.0
 
 ;-------------------------------------------------------------------------------
 ; CALENDAR DATE                                                                ;
 ;-------------------------------------------------------------------------------
 
 [module/date]
-type = internal/date
-interval = 1.0
-time =  %H:%M
-time-alt = %d-%m-%Y%
-format = <label>
-label = %time%
+type                            = internal/date
+interval                        = 1.0
+time                            =  %H:%M
+time-alt                        = %d-%m-%Y%
+format                          = <label>
+label                           = %time%
 ;format-padding = ${style.padding}
-format-underline = ${colors.lightbg}
+format-underline                = ${colors.lightbg}
 
 ;-------------------------------------------------------------------------------
 ; WORKSPACES                                                                   ;
 ;-------------------------------------------------------------------------------
 
 [module/workspaces]
-type = internal/xworkspaces
-pin-workspaces = false
-enable-click = true
-enable-scroll = false
-format = "<label-state>"
+type                            = internal/xworkspaces
+pin-workspaces                  = false
+enable-click                    = true
+enable-scroll                   = false
+format                          = "<label-state>"
 ;format-padding = ${style.padding}
-format-underline = ${colors.lightbg}
-label-active = 
-label-active-padding = 1
-label-empty = 
-label-empty-padding = 1
-label-occupied = 
-label-occupied-padding = 1
-label-urgent = 
-label-urgent-padding = 1
+format-underline                = ${colors.lightbg}
+label-active                    = 
+label-active-padding            = 1
+label-empty                     = 
+label-empty-padding             = 1
+label-occupied                  = 
+label-occupied-padding          = 1
+label-urgent                    = 
+label-urgent-padding            = 1
 
 ;-------------------------------------------------------------------------------
 ; WINDOW TITLE                                                                 ;
 ;-------------------------------------------------------------------------------
 
 [module/xwindow]
-type = internal/xwindow
-label = "%title:0:30:...%"
+type                            = internal/xwindow
+label                           = "%title:0:30:...%"
 ;format-padding = ${style.padding}
-format-underline = ${colors.lightbg}
+format-underline                = ${colors.lightbg}
 
 ;-------------------------------------------------------------------------------
 ; GMAIL                                                                        ;
 ;-------------------------------------------------------------------------------
 
 [module/gmail]
-type = custom/script
-exec = ~/.config/polybar/gmail/launch.py
-tail = true
-click-left = xdg-open https://mail.google.com
-format-underline = ${colors.lightbg}
+type                            = custom/script
+exec                            = ~/.config/polybar/gmail/launch.py
+tail                            = true
+click-left                      = xdg-open https://mail.google.com
+format-underline                = ${colors.lightbg}
 ;format-padding = ${style.padding}
 
 ;-------------------------------------------------------------------------------
@@ -140,83 +140,83 @@ format-underline = ${colors.lightbg}
 ;-------------------------------------------------------------------------------
 
 [module/network]
-type = internal/network
-interface = wlan0
-format-connected = <ramp-signal> <label-connected>
+type                            = internal/network
+interface                       = wlan0
+format-connected                = <ramp-signal> <label-connected>
 ;format-connected-padding = ${style.padding}
-format-connected-underline = ${colors.lightbg}
-label-connected = "%essid%"
-format-disconnected = <label-disconnected>
+format-connected-underline      = ${colors.lightbg}
+label-connected                 = "%essid%"
+format-disconnected             = <label-disconnected>
 ;format-disconnected-padding = ${style.padding}
-format-disconnected-underline = ${colors.lightbg}
-format-disconnected-foreground = ${colors.alert}
-label-disconnected = "not connected"
-click-left = networkmanager_dmenu &
-click-middle = networkmanager_dmenu &
-click-right = networkmanager_dmenu &
-ramp-signal-0 = " "
-ramp-signal-1 = ""
-ramp-signal-2 = ""
-ramp-signal-3 = ""
-ramp-signal-4 = ""
-ramp-signal-5 = ""
+format-disconnected-underline   = ${colors.lightbg}
+format-disconnected-foreground  = ${colors.alert}
+label-disconnected              = "not connected"
+click-left                      = networkmanager_dmenu &
+click-middle                    = networkmanager_dmenu &
+click-right                     = networkmanager_dmenu &
+ramp-signal-0                   = " "
+ramp-signal-1                   = ""
+ramp-signal-2                   = ""
+ramp-signal-3                   = ""
+ramp-signal-4                   = ""
+ramp-signal-5                   = ""
 
 
 [module/checknetwork]
-type = custom/script
-exec = ~/.config/polybar/scripts/check-network
-tail = true
-interval = 5
+type                            = custom/script
+exec                            = ~/.config/polybar/scripts/check-network
+tail                            = true
+interval                        = 5
 ;format-padding = ${style.padding}
-format-underline = ${colors.lightbg}
-label =  %output:0:15:...%
-click-left = networkmanager_dmenu &
-click-middle = networkmanager_dmenu &
-click-right = networkmanager_dmenu &
+format-underline                = ${colors.lightbg}
+label                           =  %output:0:15:...%
+click-left                      = networkmanager_dmenu &
+click-middle                    = networkmanager_dmenu &
+click-right                     = networkmanager_dmenu &
 
 ;-------------------------------------------------------------------------------
 ; BATTERY STATUS                                                               ;
 ;-------------------------------------------------------------------------------
 
 [module/battery]
-type = internal/battery
+type                            = internal/battery
 
-battery = BAT0
-adapter = AC0
+battery                         = BAT0
+adapter                         = AC0
 
-poll-interval = 60
+poll-interval                   = 60
 
-format-charging-background = ${colors.background}
-format-charging-underline = ${colors.lightbg}
-format-charging-overline = ${colors.background}
+format-charging-background      = ${colors.background}
+format-charging-underline       = ${colors.lightbg}
+format-charging-overline        = ${colors.background}
 ;format-charging-padding = ${style.padding}
-format-discharging-background = ${colors.background}
-format-discharging-underline = ${colors.lightbg}
-format-discharging-overline = ${colors.background}
+format-discharging-background   = ${colors.background}
+format-discharging-underline    = ${colors.lightbg}
+format-discharging-overline     = ${colors.background}
 ;format-discharging-padding = ${style.padding}
 
 
-format-charging = <animation-charging> <label-charging>
-format-discharging = <animation-discharging> <label-discharging>
+format-charging                 = <animation-charging> <label-charging>
+format-discharging              = <animation-discharging> <label-discharging>
 
-format-full = " <label-full>"
+format-full                     = " <label-full>"
 
-label-charging = %percentage%%
-label-discharging = %percentage%%
-label-full = %percentage%%
+label-charging                  = %percentage%%
+label-discharging               = %percentage%%
+label-full                      = %percentage%%
 
-animation-charging-0 = ""
-animation-charging-1 = ""
-animation-charging-2 = ""
-animation-charging-3 = ""
-animation-charging-4 = ""
-animation-charging-framerate = 250
+animation-charging-0            = ""
+animation-charging-1            = ""
+animation-charging-2            = ""
+animation-charging-3            = ""
+animation-charging-4            = ""
+animation-charging-framerate    = 250
 
-animation-discharging-4 = ""
-animation-discharging-3 = ""
-animation-discharging-2 = ""
-animation-discharging-1 = ""
-animation-discharging-0 = ""
+animation-discharging-4         = ""
+animation-discharging-3         = ""
+animation-discharging-2         = ""
+animation-discharging-1         = ""
+animation-discharging-0         = ""
 animation-discharging-framerate = 750
 
 
@@ -225,54 +225,53 @@ animation-discharging-framerate = 750
 ;-------------------------------------------------------------------------------
 
 [module/volume]
-type = internal/pulseaudio
+type                            = internal/pulseaudio
 
-format-volume = <ramp-volume> <label-volume>
-format-muted = <ramp-volume> <label-muted>
-format-muted-foreground = ${colors.alert}
+format-volume                   = <ramp-volume> <label-volume>
+format-muted                    = <ramp-volume> <label-muted>
+format-muted-foreground         = ${colors.alert}
 
-format-volume-background = ${colors.background}
-format-volume-underline = ${colors.lightbg}
-format-volume-overline = ${colors.background}
+format-volume-background        = ${colors.background}
+format-volume-underline         = ${colors.lightbg}
+format-volume-overline          = ${colors.background}
 ;format-volume-padding = ${style.padding}
-format-muted-background = ${colors.background}
-format-muted-underline = ${colors.alert}
-format-muted-overline = ${colors.background}
+format-muted-background         = ${colors.background}
+format-muted-underline          = ${colors.alert}
+format-muted-overline           = ${colors.background}
 ;format-muted-padding = ${style.padding}
 
-label-volume = "%percentage%%"
-label-muted = "%percentage%%"
+label-volume                    = "%percentage%%"
+label-muted                     = "%percentage%%"
 
-bar-volume-width = 10
-bar-volume-indicator = |
-bar-volume-fill = ─
-bar-volume-empty = ─
+bar-volume-width                = 10
+bar-volume-indicator            = |
+bar-volume-fill                 = ─
+bar-volume-empty                = ─
 
-ramp-volume-0 = ""
-ramp-volume-1 = ""
-ramp-volume-2 = ""
+ramp-volume-0                   = ""
+ramp-volume-1                   = ""
+ramp-volume-2                   = ""
 
-click-left = pulsemixer --toggle-mute
-scroll-up = pulsemixer --change-volume +1
-scroll-down = pulsemixer --change-volume -1
+click-left                      = pulsemixer --toggle-mute
+scroll-up                       = pulsemixer --change-volume +1
+scroll-down                     = pulsemixer --change-volume -1
 
-interval = 5
+interval                        = 5
 
 ;-------------------------------------------------------------------------------
 ; BACKLIGHT BRIGHTNESS                                                         ;
 ;-------------------------------------------------------------------------------
 
 [module/backlight]
-type = internal/backlight
-
-format = <label>
-label = " %percentage%%"
-card = intel_backlight
-bar-width = 5
-bar-indicator = |
-bar-fill = ─
-bar-empty = ─
-format-underline = ${colors.lightbg}
+type                            = internal/backlight
+format                          = <label>
+label                           = " %percentage%%"
+card                            = intel_backlight
+bar-width                       = 5
+bar-indicator                   = |
+bar-fill                        = ─
+bar-empty                       = ─
+format-underline                = ${colors.lightbg}
 ;format-padding = ${style.padding}
 
 ;-------------------------------------------------------------------------------
@@ -280,67 +279,36 @@ format-underline = ${colors.lightbg}
 ;-------------------------------------------------------------------------------
 
 [module/launcher]
-type = custom/text
-content = ""
-content-background = ${colors.background}
-content-foreground = ${colors.foreground}
-content-padding = 2
-click-left = ~/.config/polybar/scripts/launcher
-click-right = ~/.config/polybar/scripts/launcher-alt
-croll-down = ~/.config/polybar/scripts/launcher-full
+type                            = custom/text
+content                         = ""
+content-background              = ${colors.background}
+content-foreground              = ${colors.foreground}
+content-padding                 = 2
+click-left                      = ~/.config/polybar/scripts/launcher
+click-right                     = ~/.config/polybar/scripts/launcher-alt
+croll-down                      = ~/.config/polybar/scripts/launcher-full
 
 [module/powersearch]
-type = custom/text
-content = ""
-click-left = ~/.config/rofi/prompt.sh
+type                            = custom/text
+content                         = ""
+click-left                      = ~/.config/rofi/prompt.sh
 
 ;-------------------------------------------------------------------------------
 ; POWER MENU                                                                   ;
 ;-------------------------------------------------------------------------------
 [module/powermenu]
-type = custom/text
-content = ""
-click-left = ~/.config/rofi/session.sh
-
-[module/powermenu2]
-type = custom/menu
-
-expand-right = true
-
-enu-0-0 = reboot
-menu-0-0-exec = menu-open-1
-menu-0-1 = shutdown
-menu-0-1-exec = menu-open-2
-
-menu-1-0 = back
-menu-1-0-exec = menu-open-0
-menu-1-1 = reboot
-menu-1-1-exec = systemctl reboot
-
-menu-2-0 = shutdown
-menu-2-0-exec = systemctl poweroff
-menu-2-1 = back
-menu-2-1-exec = menu-open-0
-
-format-spacing = 1 
-
-label-open = 
-label-close = 
-
-abel-separator = |
-
-label-open-foreground = #f4511e
-label-close-foreground = #f4511e
-label-separator-foreground = #f4511e
+type                            = custom/text
+content                         = ""
+click-left                      = ~/.config/rofi/session.sh
 
 ;-------------------------------------------------------------------------------
 ; MUSIC STATUS                                                                 ;
 ;-------------------------------------------------------------------------------
 
 [module/music]
-type = custom/script
+type                            = custom/script
 
-exec = ~/.config/polybar/music-status.sh
-interval = 1
+exec                            = ~/.config/polybar/music-status.sh
+interval                        = 1
 
-clck-left = playerctl play-pause
+clck-left                       = playerctl play-pause
