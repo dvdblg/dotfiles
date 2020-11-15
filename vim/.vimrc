@@ -8,6 +8,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'jiangmiao/auto-pairs'
     Plug 'ajh17/VimCompletesMe'
     Plug 'junegunn/vim-easy-align'
+    Plug 'vim-airline/vim-airline'
 call plug#end()
 
 """ Options
@@ -55,3 +56,6 @@ nmap ga <Plug>(EasyAlign)
 
 """ Colors
 "colorscheme one-monokai
+
+" airline options
+let g:airline_powerline_fonts = 1

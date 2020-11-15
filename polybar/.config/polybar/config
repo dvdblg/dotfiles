@@ -1,21 +1,19 @@
 ; vim: ft=dosini
+
 ;-------------------------------------------------------------------------------
 ; STYLE                                                                        ;
 ;-------------------------------------------------------------------------------
 
 [colors]
-background                      = "#292a30"
-foreground                      = "#dfdfe0"
-primary                         = "#ff8170"
-alert                           = "#ff8170"
+background                      = #292a30
+foreground                      = #dfdfe0
+primary                         = #ff8170
+alert                           = #ff8170
 lightbg                         = #dfdfe0
-;mb         = "#7f8c98"
-mb                              = "#40424c"
-;mb         = "#4c5061"
 
 
 [style]
-padding                         = 1
+padding                         = 2
 line                            = 4
 
 [global/wm]
@@ -46,11 +44,9 @@ line-size                       = ${style.line}
 ;border-bottom-color = ${colors.primary}
 
 padding                         = ${style.padding}
-;padding-left = 2
-;padding-right = 2
-
-module-margin-left              = 1
-module-margin-right             = 1
+spacing                         = 0
+module-margin                   = 1
+dim-value                       = 1.0
 
 modules-left                    = launcher xwindow
 modules-center                  = workspaces
@@ -62,11 +58,10 @@ format-underline                = ${colors.lightbg}
 ;format-padding = ${style.padding}
 
 
-font-0                          = "xos4 Terminus:size=14;1"
-font-1                          = "Wuncon Siji:size=14;2"
-font-2                          = "Misc Termsyn:size=14;2"
-font-3                          = "Font Awesome 5 Pro Solid:size=10;1"
-font-4                          = "FontAwesome:size=10;2"
+font-0                          = "Roboto Condensed:style=Regular:size=11;4"
+font-1                          = "xos4 Terminus:size=12;1"
+font-2                          = "Font Awesome 5 Pro Solid:size=10;3"
+font-3                          = "FontAwesome:size=10;4"
 ;font-5 = "Font Awesome 5 Pro:size=10;1"
 
 tray-position                   = right
@@ -89,7 +84,7 @@ time                            =  %H:%M
 time-alt                        = %d-%m-%Y%
 format                          = <label>
 label                           = %time%
-;format-padding = ${style.padding}
+format-padding                  = ${style.padding}
 format-underline                = ${colors.lightbg}
 
 ;-------------------------------------------------------------------------------
@@ -103,7 +98,7 @@ enable-click                    = true
 enable-scroll                   = false
 format                          = "<label-state>"
 ;format-padding = ${style.padding}
-format-underline                = ${colors.lightbg}
+;format-underline                = ${colors.lightbg}
 label-active                    = 
 label-active-padding            = 1
 label-empty                     = 
@@ -120,7 +115,7 @@ label-urgent-padding            = 1
 [module/xwindow]
 type                            = internal/xwindow
 label                           = "%title:0:30:...%"
-;format-padding = ${style.padding}
+format-padding                  = ${style.padding}
 format-underline                = ${colors.lightbg}
 
 ;-------------------------------------------------------------------------------
@@ -133,7 +128,7 @@ exec                            = ~/.config/polybar/gmail/launch.py
 tail                            = true
 click-left                      = xdg-open https://mail.google.com
 format-underline                = ${colors.lightbg}
-;format-padding = ${style.padding}
+format-padding                  = ${style.padding}
 
 ;-------------------------------------------------------------------------------
 ; NETWORK INFO                                                                 ;
@@ -142,12 +137,12 @@ format-underline                = ${colors.lightbg}
 [module/network]
 type                            = internal/network
 interface                       = wlan0
-format-connected                = <ramp-signal> <label-connected>
-;format-connected-padding = ${style.padding}
+format-connected                = <ramp-signal><label-connected>
+format-connected-padding        = ${style.padding}
 format-connected-underline      = ${colors.lightbg}
 label-connected                 = "%essid%"
 format-disconnected             = <label-disconnected>
-;format-disconnected-padding = ${style.padding}
+format-disconnected-padding     = ${style.padding}
 format-disconnected-underline   = ${colors.lightbg}
 format-disconnected-foreground  = ${colors.alert}
 label-disconnected              = "not connected"
@@ -189,11 +184,11 @@ poll-interval                   = 60
 format-charging-background      = ${colors.background}
 format-charging-underline       = ${colors.lightbg}
 format-charging-overline        = ${colors.background}
-;format-charging-padding = ${style.padding}
+format-charging-padding         = ${style.padding}
 format-discharging-background   = ${colors.background}
 format-discharging-underline    = ${colors.lightbg}
 format-discharging-overline     = ${colors.background}
-;format-discharging-padding = ${style.padding}
+format-discharging-padding      = ${style.padding}
 
 
 format-charging                 = <animation-charging> <label-charging>
@@ -234,11 +229,11 @@ format-muted-foreground         = ${colors.alert}
 format-volume-background        = ${colors.background}
 format-volume-underline         = ${colors.lightbg}
 format-volume-overline          = ${colors.background}
-;format-volume-padding = ${style.padding}
+format-volume-padding           = ${style.padding}
 format-muted-background         = ${colors.background}
 format-muted-underline          = ${colors.alert}
 format-muted-overline           = ${colors.background}
-;format-muted-padding = ${style.padding}
+format-muted-padding            = ${style.padding}
 
 label-volume                    = "%percentage%%"
 label-muted                     = "%percentage%%"
@@ -272,7 +267,7 @@ bar-indicator                   = |
 bar-fill                        = ─
 bar-empty                       = ─
 format-underline                = ${colors.lightbg}
-;format-padding = ${style.padding}
+format-padding                  = ${style.padding}
 
 ;-------------------------------------------------------------------------------
 ; SEARCH PROMPT                                                                ;
@@ -298,7 +293,7 @@ click-left                      = ~/.config/rofi/prompt.sh
 ;-------------------------------------------------------------------------------
 [module/powermenu]
 type                            = custom/text
-content                         = ""
+content                         = "  "
 click-left                      = ~/.config/rofi/session.sh
 
 ;-------------------------------------------------------------------------------

@@ -97,7 +97,8 @@ source $ZSH/oh-my-zsh.sh
 #   export EDITOR='mvim'
 # fi
 
-export EDITOR='vim'
+export EDITOR='nvim'
+export VISUAL='nvim'
 
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ] ; then
@@ -156,38 +157,40 @@ confedit() {
     # author: OrionDB5
     if [[ -f $1 ]]; then
         $EDITOR $1
-        exit
-    elif [[ -f $HOME/.config/$1 ]]; then
-        $EDITOR $HOME/.config/$1
-        exit
+    elif [[ -f "$HOME/.config/$1" ]]; then
+        $EDITOR "$HOME/.config/$1"
     elif [[ -d "$HOME/.config/$1" ]]; then
         CONFFOLDER="$HOME/.config/$1"
-    elif [[ -r "$HOME/.$1rc" ]]; then
-        $EDITOR "$HOME/.$1rc"
-        exit
     elif [[ -d "$HOME/$1" ]]; then
         CONFFOLDER="$HOME/$1"
+    else
+        CONFFOLDER="$HOME"
     fi
-    #if [[ -f $CONFFOLDER ]]; then
-        #$EDITOR $CONFFOLDER
-        #exit
-    #fi 
-    #configs=($CONFFOLDER/*conf*)
-    configs=($(find  $CONFFOLDER/  -maxdepth 1 -type f -regex '.*/\(conf.*\|.+\.conf.*\|Main.qml.*\|autostart\)$'))
+    pattern=".*/(.*config.*|.+\.conf|Main\.qml.*|.*autostart.*|(\.)?($1)rc.*)"
+    configs=($(find $CONFFOLDER/ -maxdepth 1 -regextype posix-extended -regex $pattern))
+    #echo $configs      # debug
     if [[ ${#configs[@]} -eq 0 ]]; then
-        echo "No configs found." 
     elif [[ ${#configs[@]} -eq 1 ]]; then
         $EDITOR "${configs}"
-        exit
     else
         for c in "${configs[@]}"; do
-            if [[ $c =~ .*\.in$ ]]; then
-                $EDITOR $c;
+            if [[ $c =~ .*\.in$ && -r $c ]]; then
+                FILE=$c;
+                break
+            elif [[ $c =~ $1rc\$ && -r $c ]]; then
+                FILE=$c
+                break
             fi
-        done    
+        done
+        if [[ -v FILE ]]; then
+            $EDITOR $FILE
+        else
+            $EDITOR $CONFFOLDER
+        fi
     fi
-    #$EDITOR $CONFFOLDER/
-
+    unset CONFFOLDER
+    unset configs
+    unset pattern
 }
 
 compdef "_files -W $HOME/.config/ " mvdotfile
