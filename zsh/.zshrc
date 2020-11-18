@@ -155,19 +155,21 @@ mvdotfile() {
 
 confedit() {
     # author: OrionDB5
-    if [[ -f $1 ]]; then
+    if [[ -z $1 ]]; then
+        echo "No config specified."
+    elif [[ -f $1 ]]; then
         $EDITOR $1
     elif [[ -f "$HOME/.config/$1" ]]; then
         $EDITOR "$HOME/.config/$1"
     elif [[ -d "$HOME/.config/$1" ]]; then
-        CONFFOLDER="$HOME/.config/$1"
+        local CONFFOLDER="$HOME/.config/$1"
     elif [[ -d "$HOME/$1" ]]; then
-        CONFFOLDER="$HOME/$1"
+        local CONFFOLDER="$HOME/$1"
     else
-        CONFFOLDER="$HOME"
+        local CONFFOLDER="$HOME"
     fi
-    pattern=".*/(.*config.*|.+\.conf|Main\.qml.*|.*autostart.*|(\.)?($1)rc.*)"
-    configs=($(find $CONFFOLDER/ -maxdepth 1 -regextype posix-extended -regex $pattern))
+    local pattern=".*/(.*config.*|.+\.conf|Main\.qml.*|.*autostart.*|(\.)?($1)rc.*)"
+    local configs=($(find -L $CONFFOLDER/ -maxdepth 1 -type f -regextype posix-extended -regex $pattern))
     #echo $configs      # debug
     if [[ ${#configs[@]} -eq 0 ]]; then
     elif [[ ${#configs[@]} -eq 1 ]]; then
@@ -175,10 +177,10 @@ confedit() {
     else
         for c in "${configs[@]}"; do
             if [[ $c =~ .*\.in$ && -r $c ]]; then
-                FILE=$c;
+                local FILE=$c;
                 break
             elif [[ $c =~ $1rc\$ && -r $c ]]; then
-                FILE=$c
+                local FILE=$c
                 break
             fi
         done
@@ -187,14 +189,11 @@ confedit() {
         else
             $EDITOR $CONFFOLDER
         fi
-    fi
-    unset CONFFOLDER
-    unset configs
-    unset pattern
+    fi    
 }
 
 compdef "_files -W $HOME/.config/ " mvdotfile
-CONFFOLDERS=($HOME/.config $HOME)
+local CONFFOLDERS=($HOME/.config $HOME)
 compdef "_files -W CONFFOLDERS -g '*:directories *.in *conf* .*{rc,urxvt}'" confedit
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.

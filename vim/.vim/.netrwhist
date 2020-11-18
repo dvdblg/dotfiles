@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =4
+let g:netrw_dirhistcnt =5
+let g:netrw_dirhist_5='/home/davide'
 let g:netrw_dirhist_4='/home/davide/.config/nvim'
 let g:netrw_dirhist_3='/home/davide'
 let g:netrw_dirhist_2='/home/davide/.config/dunst'
@@ -9,4 +10,3 @@ let g:netrw_dirhist_9='/home/davide/.dotfiles/herbstluftwm/.config/herbstluftwm'
 let g:netrw_dirhist_8='/home/davide'
 let g:netrw_dirhist_7='/home/davide/.config/termite'
 let g:netrw_dirhist_6='/home/davide/.config/herbstluftwm'
-let g:netrw_dirhist_5='/home/davide/.urxvt'
