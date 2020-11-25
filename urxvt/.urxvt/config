@@ -1,0 +1,96 @@
+! vim: set ft=xdefaults:
+
+! Window
+URxvt*termName:                     rxvt-unicode-256color
+URxvt.geometry:                     84x32
+URxvt.depth:                        32
+URxvt*iso14755:                     false
+URxvt.saveLines:                    15000
+URxvt.loginShell:                   true
+
+! Font
+URxvt*font:                         xft:MesloLGS NF:regular:size=12:antialias=true:hinting=true, \
+                                    xft:DejaVu Sans Mono:size=12:antialias=true:hinting=true, \
+                                    xft:emoji, \
+                                    xft:Unifont, \
+!URxvt*italicFont:                   xft:MesloLGS NF:italic:size=12:antialias=true:hinting=true, \
+!URxvt*boldFont:                     xft:MesloLGS NF:bold:size=12:antialias=true:hinting=true, \
+!URxvt*boldItalicFont:               xft:MesloLGS NF:bolditalic:size=12:antialias=true:hinting=true, \
+URxvt*letterSpace:                  -1
+
+! Border
+URxvt.border:                       0
+URxvt.borderLess:                   false
+URxvt.internalBorder:               25
+URxvt.externalBorder:               0
+
+! Scrollbar
+URxvt.scrollBar:                    false
+URxvt.thickness:                    0
+URxvt.scrollBar_right:              false
+URxvt.scrollBar_floating:           true
+URxvt.scrollTtyOutput:              true
+URxvt.scrollWithBuffer:             false
+URxvt.scrollTtyKeypress:            true
+
+! Cursor
+URxvt.cursorBlink:                  true
+URxvt.cursorUnderline:              false
+
+! Bell
+URxvt*urgentOnBell:                 true
+
+! Extensions
+URxvt.perl-ext-common:              default,tabbedex,matcher,resize-font,config-reload,vtwheel,resize-font
+!URxvt.perl-lib:                     ~/.urxvt/ext/font-size
+URxvt.url-launcher:                 /usr/bin/xdg-open
+URxvt.underlineURLs:                true
+URxvt.matcher.rend.0:               Uline Bold foreground
+URxvt.url-button:                    1
+
+
+!
+! Resize-font
+URxvt.keysym.C-minus:               resize-font:smaller
+URxvt.keysym.C-plus:                resize-font:bigger
+URxvt.keysym.C-equal:               resize-font:reset
+URxvt.keysym.C-question:            resize-font:show
+
+! Tabbed
+URxvt.tabbed.no-tabbedex-keys:      true
+URxvt.tabbed.reopen-on-close:       yes
+URxvt.tabbed.autohide:              true
+URxvt.resize-font.step:             1
+
+URxvt.keysym.C-t:                   perl:tabbedex:new_tab
+URxvt.keysym.C-left:                perl:tabbedex:prev_tab
+URxvt.keysym.C-right:               perl:tabbedex:next_tab
+
+! Matcher
+URxvt.matcher.button:               1
+URxvt.matcher.pattern.1:            \\bwww\\.[\\w-]+\\.[\\w./?&@#-]*[\\w/-]
+
+URxvt.keysym.C-Delete:              perl:matcher:last
+URxvt.keysym.M-Delete:              perl:matcher:list
+
+! Move between words
+URxvt.keysym.C-Up:                  \033[1;5A
+URxvt.keysym.C-Down:                \033[1;5B
+URxvt.keysym.C-Left:                \033[1;5D
+URxvt.keysym.C-Right:               \033[1;5C
+URxvt.keysym.M-Up:                  \033[1;5A
+URxvt.keysym.M-Down:                \033[1;5B
+URxvt.keysym.M-Left:                \033[1;5D
+URxvt.keysym.M-Right:               \033[1;5C
+
+! Copy-paste
+URxvt.copyCommand:                  eval:paste_clipboard
+URxvt.pasteCommand:                 eval:paste_clipboard
+URxvt.keysym.M-u:                   perl:url-select:select_next
+!URxvt.keysym.Shift-Control-C:       perl:clipboard:copy
+!URxvt.keysym.Shift-Control-V:       perl:clipboard:paste
+URxvt.keysym.Shift-Control-C:       eval:selection_to_clipboard
+URxvt.keysym.Shift-Control-V:       eval:paste_clipboard
+
+! Char Keysyms
+URxvt.keysym.C-Tab:                 \033[27;5;9~

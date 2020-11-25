@@ -1,0 +1,53 @@
+#!/bin/bash
+[[ $(pgrep read_hook | wc -l) -gt 2 ]] && exit
+touch ~/.smart_focus
+
+focus_frame () {
+  tag=$(herbstclient list_monitors | grep '\[FOCUS\]' | cut -d'"' -f2)
+
+  herbstclient cycle_frame -1
+  for i in $(seq 1 $(herbstclient attr tags.by-name.$tag.frame_count))
+  do
+    herbstclient cycle_frame 1
+    (( $(herbstclient attr tags.by-name.$tag.curframe_wcount) )) || break
+  done
+}
+
+
+focus_window () {
+  tag=$(herbstclient list_monitors | grep '\[FOCUS\]' | cut -d'"' -f2)
+  frames=$(herbstclient attr tags.by-name.$tag.frame_count)
+
+  herbstclient cycle_frame -1
+  for i in $(seq 1 $frames)
+  do
+    herbstclient cycle_frame 1
+    (( $(herbstclient attr tags.by-name.$tag.curframe_wcount) )) && break
+    [[ $i -eq $frames ]] && herbstclient cycle_frame 1
+  done
+}
+
+one_per_frame () {
+  tag=$(herbstclient list_monitors | grep '\[FOCUS\]' | cut -d'"' -f2)
+  if [[ $(herbstclient layout | grep '\[FOCUS\]' | awk '/:/ { print $2}') = 'max:' ]]; then
+    #echo "yes"
+    if [ 'herbstclient compare tags.by-name.$tag.curframe_wcount gt 1' ]; then
+      echo "yes"
+      herbstclient split explode && herbstclient shift r
+    fi
+  fi
+}
+
+explode () {
+  herbstclient split explode && herbstclient focus r
+}
+
+herbstclient --idle '(focus_window|focus_changed|rule|focus_frame|launcher_called)' | while read hook winid title
+do
+    case $hook in
+      focus_window)   [[ -e ~/.smart_focus ]] && focus_window & ;;
+      #focus_changed)  echo $title && [[ "$title" != "herbstluftwm" ]] && [[ "$title" != "" ]] && one_per_frame & ;;
+      #launcher_called)  explode & ;;
+      focus_frame)    [[ -e ~/.smart_focus ]] && focus_frame & ;;
+    esac
+done

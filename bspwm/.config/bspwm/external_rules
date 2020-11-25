@@ -1,0 +1,46 @@
+#!/bin/bash
+
+id=$1
+class=$2
+instance=$3
+consequences=$4
+#title=$(xprop -id $wid '\t$0' _NET_WM_NAME | cut -f 2)
+title="$(xprop -id "$id" WM_NAME | sed -nE 's,^WM_NAME[(]STRING[)] = "(.*)"$,\1,p')"
+
+# Telegram
+if [ "$class" = "TelegramDesktop" ]; then
+  if [ "$title" = "Media viewer" ]; then
+    echo "state=floating desktop=chat"
+  else
+    echo "state=pseudo_tiled desktop=chat rectangle=380x1080+0+0"
+  fi
+fi
+
+# Emoji Selector
+if [ "$title" = "Emoji selector" ]; then
+  echo "state=floating"
+fi
+
+# Microsoft Teams
+if [[ $class =~ [Mm]icrosoft.*[Tt]eams.* ]]; then
+  echo "desktop=uni focus=off follow=off"
+fi
+
+
+# Plasma
+#if [[ $title = "Desktop - Plasma" ]]; then
+
+#fi
+
+if [[ $class = "plasmashell" ]]; then
+  echo "state=floating"
+fi
+
+if [[ $class = "Plasma" ]]; then
+  echo "state=floating"
+fi
+
+if [[ $class = "plasma-desktop" ]]; then
+  echo "state=floating"
+fi
+

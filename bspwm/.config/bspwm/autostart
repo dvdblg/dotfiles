@@ -1,0 +1,37 @@
+#!/bin/sh
+
+"$HOME/.profile"
+"$HOME/.local/bin/preprocess_configs.sh"
+
+killall -q sxhkd
+killall -q polybar
+killall -q picom
+killall -q dunst
+killall -q fusuma
+killall -q notify_battery
+killall -q flashfocus
+killall -q xautolock
+#killall -q plasmashell
+killall gnome-flashback
+pkill redshift
+
+xrdb -merge "$HOME/.config/rofi/xresources"
+xrdb -merge "$HOME/.urxvt/config"
+img="Pictures/Wallpapers/mountain-sunset.jpg"
+
+sxhkd &
+#dunst &
+picom --experimental-backends --config ~/.config/picom/picom.conf -b
+#polybar bar &
+#"$HOME/.config/herbstluftwm/notify_battery" &
+fusuma -d
+#flashfocus &
+#xautolock -time 20 -detectsleep -locker "$HOME/.config/herbstluftwm/lock.sh" &
+xautolock -time 10 -detectsleep -locker locker &
+#gnome-flashback &
+#redshift &
+feh --no-fehbg --bg-scale $HOME/$img &
+
+# plasma
+#wmctrl -c Plasma
+bspc config top_padding 36

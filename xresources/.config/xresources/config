@@ -1,0 +1,24 @@
+! vim: ft=xdefaults
+
+!------------------------------------------------------------------------------!
+! Display settings                                                             !
+!------------------------------------------------------------------------------!
+*.dpi:                      96
+*.autohint:                 0
+*.lcdfilter:                lcdlight
+*.hintstyle:                hintnone
+*.hinting:                  false
+*.antialias:                true
+*.rgba:                     rgb
+
+!------------------------------------------------------------------------------!
+! Style settings                                                               !
+!------------------------------------------------------------------------------!
+style.padding:              10
+style.frame_gap:            0
+style.window_gap:           10
+style.frame_width:          4
+!style.font_face:            SF Pro Display
+style.font_face:            Inter
+style.font_face_mono:       SF Mono
+style.font_size:            12

@@ -1,0 +1,85 @@
+#!/bin/sh
+
+get_watts() {
+    {
+    cat /sys/class/power_supply/BAT0/current_now &&
+    cat /sys/class/power_supply/BAT0/voltage_now
+    } |
+        xargs -n 2 |
+        awk '{print $1 * 0.000001 * $2 * 0.000001 " W"}'
+}
+
+get_capacity() {
+    awk '{print $1"%"}' < /sys/class/power_supply/BAT0/capacity
+}
+
+get_status() {
+    cat /sys/class/power_supply/BAT0/status
+}
+
+get_remaining() {
+    current=$(cat /sys/class/power_supply/BAT0/current_now)
+
+    if [ "$(cat /sys/class/power_supply/BAT0/status)" = "Charging" ]; then
+        charge=$(echo "$(cat /sys/class/power_supply/BAT0/charge_full) - $(cat /sys/class/power_supply/BAT0/charge_now)" | bc)
+    else
+        charge=$(cat /sys/class/power_supply/BAT0/charge_now)
+    fi
+
+    if [ "$current" -eq 0 ]; then
+        echo "00:00:00"
+        return 0;
+    fi
+
+    bc << ____EOF |
+        # calculate the remaining decimal time in hours
+        scale=4; r=($charge / $current)
+        scale=0;
+
+        # hours
+        (r + 0.5) / 1
+
+        # minutes
+        ((r % 1) * 60 + 0.5) / 1
+
+        # seconds
+        (((r % 1) * 60) % 1 * 60 + 0.5) / 1
+____EOF
+    xargs -n 3 printf '%.2d:%.2d:%.2d'
+}
+
+get_host() {
+    if [ -d /sys/class/power_supply/BAT0 ]; then
+        echo "$(cat /etc/hostname)|$(get_capacity)|$(get_watts)|$(get_remaining)|$(get_status)"
+    else
+        echo "$(cat /etc/hostname)||||AC"
+    fi
+}
+
+get_android() {
+    if [ -n "$(pgrep adb)" ]; then
+        devices=$( adb devices | tail -n +2 )
+        if [ -n "$devices" ]; then
+            device="$(adb shell dumpsys settings | grep "name:device_name" | sed "s/.*pkg:android value:\([^default:]*\).*/\1/")"
+            level="$(adb shell dumpsys battery | grep level | xargs -n 2 | awk '{print $2"%"}')"
+            state="Discharging"
+            if adb shell dumpsys battery | grep -q "powered: true"; then
+                state="Charging"
+            fi
+
+            #if adb shell dumpsys user | grep -q "mHoldingDisplaySuspendBlocker=true"; then
+            #    state="Unlocked"
+            #else
+            #    state="Locked"
+            #fi
+            echo "$device|$level|||$state"
+        fi
+    fi
+}
+
+{
+    echo "Host|Capacity|Wattage|Remaining|Status"
+    get_host
+    get_android
+
+} | column -t -s "|"

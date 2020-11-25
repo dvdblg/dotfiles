@@ -1,0 +1,12 @@
+rofi.color-window: ${xrdb:background}, ${xrdb:color1},     ${xrdb:color8}
+rofi.color-normal: ${xrdb:background}, ${xrdb:foreground}, ${xrdb:background}, ${xrdb:foreground},     ${xrdb:background}
+rofi.color-urgent: ${xrdb:background}, ${xrdb:color1},     ${xrdb:background}, ${xrdb:background}, ${xrdb:color1}
+rofi.color-active: ${xrdb:background}, ${xrdb:color4}, ${xrdb:background}, ${xrdb:background}, ${xrdb:foreground}
+rofi.font:         FontAwesome,Inter,menu ${xrdb:style.font_size}
+rofi.bw:           ${xrdb:style.frame_width}
+rofi.line-padding: ${xrdb:style.padding}
+rofi.padding:      ${xrdb:style.padding}
+rofi.location:     0
+rofi.opacity:      80
+rofi.fullscreen:   false
+rofi.width:        800

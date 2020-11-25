@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=bspwm-gnome
+NoDisplay=true
+Comment=Tiling window manager based on binary space partitioning
+Exec=bspwm-gnome
+X-GNOME-WMName=bspwm-gnome
+X-GNOME-Autostart-Phase=WindowManager
+X-GNOME-Provides=windowmanager
+X-GNOME-Autostart-Notify=false

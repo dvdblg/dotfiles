@@ -1,0 +1,15 @@
+[Unit]
+Description=Disable NVIDIA card after resume
+After=suspend.target
+
+[Service]
+User=root
+Type=oneshot
+#ExecStart=/usr/bin/sleep 8
+#ExecStartPost=/usr/local/bin/optimus.sh
+ExecStart=/usr/local/bin/optimus.sh
+TimeoutSec=0
+StandardOutput=syslog
+
+[Install]
+WantedBy=suspend.target

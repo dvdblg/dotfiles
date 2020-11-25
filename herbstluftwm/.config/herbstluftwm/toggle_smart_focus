@@ -1,0 +1,10 @@
+#!/bin/bash
+
+if [[ -e ~/.smart_focus ]]; then
+  rm -f ~/.smart_focus
+  notify “Smart Focus” Off
+else
+  touch ~/.smart_focus
+  notify “Smart Focus” On
+  focus_window
+fi

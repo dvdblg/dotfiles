@@ -5,19 +5,19 @@
 ;-------------------------------------------------------------------------------
 
 [colors]
-background                      = #2E3440
-foreground                      = #D8DEE9
-primary                         = #BF616A
-alert                           = #BF616A
-lightbg                         = #ECEFF4
-color1                          = #BF616A
-color8                          = #4C566A
-color2                          = #A3BE8C
-color3                          = #EBCB8B
+background                      = ${xrdb:background}
+foreground                      = ${xrdb:foreground}
+primary                         = ${xrdb:color1}
+alert                           = ${xrdb:color1}
+lightbg                         = ${xrdb:color15}
+color1                          = ${xrdb:color1}
+color8                          = ${xrdb:color8}
+color2                          = ${xrdb:color2}
+color3                          = ${xrdb:color3}
 
 [style]
 padding                         = 2
-line                            = 4
+line                            = ${xrdb:style.frame_width}
 
 [global/wm]
 margin-bottom                   = 0

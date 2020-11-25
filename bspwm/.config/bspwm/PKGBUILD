@@ -1,0 +1,38 @@
+# Maintainer: Chris MB <https://github.com/Chris-1101>
+pkgname='bspwm-gnome-git'
+pkgver=3.36.0.r16.ge4f5071
+pkgrel=1
+pkgdesc='bspwm with gnome session integration'
+arch=('any')
+url='https://github.com/Chris-1101/bspwm-gnome'
+license=('MIT')
+depends=(
+	'bspwm'
+	'gnome-session'
+	'gnome-settings-daemon'
+)
+makedepends=('git')
+optdepends=(
+	'gdm: default gnome display manager'
+	'gnome-flashback: integrate additional gnome features'
+)
+provides=("bspwm-gnome=${pkgver%%.r*}")
+conflicts=('bspwm-gnome')
+source=(git+https://github.com/Chris-1101/bspwm-gnome.git)
+md5sums=('SKIP')
+
+pkgver() {
+    cd "${pkgname%%-git}"
+    git describe --long --tags | sed 's/\([^-]*-g\)/r\1/; s/-/./g'
+}
+
+build() {
+  cd "${pkgname%%-git}"
+  make
+}
+
+package() {
+  cd "${pkgname%%-git}"
+  make DESTDIR="$pkgdir/" install
+}
+

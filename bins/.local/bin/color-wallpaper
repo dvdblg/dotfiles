@@ -1,0 +1,40 @@
+#!/bin/sh
+
+color() {
+  echo "$colors" | awk '/*.?color'"$1"':/{print $2}'
+}
+
+circle() {
+  echo "$pos" | xargs -n3 | sed -n "$1"p | awk '{print "translate "$1", "$2"circle 0,0 "$3",0"}'
+}
+
+size="160x90"
+file="/tmp/wallpaper-$(date +%F-%H%M%S_$size).png"
+colors="$(xrdb -query | grep color)"
+
+# calculate circle positions
+pos=$(bc <<_EOF
+  scale=4;
+  width=$(echo "$size" | cut -d'x' -f1);
+  height=$(echo "$size" | cut -d'x' -f2);
+  width * 0.10; width  * 0.10; width * 0.50; # top left
+  width * 0.75; height * 0.30; width * 0.40; # top right
+  width * 0.10; height * 0.70; width * 0.20; # bottom left
+  width * 0.50; height * 0.90; width * 0.15; # bottom middle
+  width * 0.80; height * 0.70; width * 0.25; # bottom right
+_EOF
+)
+
+convert \
+  -size "160x90" xc:"$(color 0)" \
+    -stroke white -strokewidth 0 \
+    -fill "$(color 1)" -draw "$(circle 1)" \
+    -fill "$(color 3)" -draw "$(circle 2)" \
+    -fill "$(color 6)" -draw "$(circle 3)" \
+    -fill "$(color 4)" -draw "$(circle 4)" \
+    -fill "$(color 2)" -draw "$(circle 5)" \
+    -blur 0x30 \
+    -bordercolor "$(color 0)" -border 1x1 \
+    -blur 0x6 \
+  "$file"
+feh --no-fehbg --bg-fill "$file" && exit 0

@@ -1,0 +1,12 @@
+rofi.color-window: #2E3440, #BF616A,     #4C566A
+rofi.color-normal: #2E3440, #D8DEE9, #2E3440, #D8DEE9,     #2E3440
+rofi.color-urgent: #2E3440, #BF616A,     #2E3440, #2E3440, #BF616A
+rofi.color-active: #2E3440, #81A1C1, #2E3440, #2E3440, #D8DEE9
+rofi.font:         FontAwesome,Inter,menu 12
+rofi.bw:           4
+rofi.line-padding: 10
+rofi.padding:      10
+rofi.location:     0
+rofi.opacity:      80
+rofi.fullscreen:   false
+rofi.width:        800

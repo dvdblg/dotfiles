@@ -1,0 +1,52 @@
+#!/usr/bin/env bash
+
+dest_dir="$HOME/.local/share/plasma/desktoptheme/"
+dest_file="Xresources.colors"
+
+[[ -d "$dest_dir" ]] || mkdir -pv "$dest_dir"
+
+get_xres_rgb() {
+	hex=$(xrdb -query | grep "$1" | awk '{print $2}' | cut -d# -f2)
+	printf "%d,%d,%d\n" "0x${hex:0:2}" "0x${hex:2:2}" "0x${hex:4:2}"
+}
+
+output="$(cat << THEME
+[ColorEffects:Disabled]
+Color=$(get_xres_rgb color8:)
+
+[ColorEffects:Inactive]
+Color=$(get_xres_rgb color8:)
+
+[Colors:Button]
+BackgroundNormal=$(get_xres_rgb color2:)
+ForegroundNormal=$(get_xres_rgb background:)
+
+[Colors:Complementary]
+
+[Colors:Selection]
+
+[Colors:Tooltip]
+
+[Colors:View]
+
+[Colors:Window]
+
+[General]
+ColorScheme=MyTheme
+Name=MyTheme
+shadeSortColumn=true
+
+[KDE]
+contrast=0
+
+[WM]
+activeBackground=$(get_xres_rgb background:)
+activeForeground=$(get_xres_rgb foreground:)
+inactiveBackground=$(get_xres_rgb background:)
+inactiveForeground=$(get_xres_rgb color15:)
+THEME
+)"
+
+printf '%s' "$output" > "${dest_dir}${dest_file}"
+
+echo "Generated KDE theme: ${dest_dir}${dest_file}"

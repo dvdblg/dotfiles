@@ -1,0 +1,36 @@
+
+! --- special values ---
+
+*wallpaper: yosemite.jpg
+
+! --- special colors ---
+
+*foreground: #cacacc
+*background: #1C1E27
+*cursorColor: #cacacc
+
+! --- standard colors ---
+
+*color0: #1C1E27
+*color8: #6C6F93
+
+*color1: #E4436F
+*color9: #D95882
+
+*color2: #24e39d
+*color10: #68DDC4
+
+*color3: #EDA685
+*color11: #E8AEAA
+
+*color4: #2095B4
+*color12: #64A4BF
+
+*color5: #B367CF
+*color13: #B382CF
+
+*color6: #00A5AF
+*color14: #54AEB8
+
+*color7: #b5b5ba
+*color15: #cacacc

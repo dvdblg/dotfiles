@@ -1,0 +1,18 @@
+#!/bin/sh
+
+print_color() {
+    for i in $(seq 0 4); do
+        for j in $(seq 0 7); do
+            if [ "$i" -eq 0 ]; then
+                printf '%02d\33[%dm     \33[m ' "$(($2 + j))" "$(($1 + j))"
+            else
+                printf '\33[%dm       \33[m ' "$(($1 + j))"
+            fi
+        done
+        printf '\n'
+    done
+    printf '\n'
+}
+
+print_color 40  0
+print_color 100 8
