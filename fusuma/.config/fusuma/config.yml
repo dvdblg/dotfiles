@@ -1,13 +1,13 @@
 swipe:
   3:
     left:
-      sendkey: "LEFTALT+RIGHT" # History forward 
+      sendkey: "LEFTALT+RIGHT" # History forward
     right:
       sendkey: "LEFTALT+LEFT" # History back
-    up:
-      sendkey: "LEFTMETA+M" # Maximize
-    down:
-      sendkey: "LEFTMETA+H" # Minimize
+    #up:
+      #sendkey: "LEFTMETA+M" # Maximize
+    #down:
+      #sendkey: "LEFTMETA+H" # Minimize
   4:
     left:
       #sendkey: "LEFTCTRL+LEFTALT+RIGHT" # Switch to next workspace

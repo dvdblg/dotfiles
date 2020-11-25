@@ -125,14 +125,17 @@ fi
 #
 compdef _pacman powerpill=pacman
 
+alias kitty="kitty --single-instance"
+alias vim="nvim"
+#alias hc="herbstclient"
 
 # ls
-alias l='ls -lh --group-directories-first --color=always'
-alias ll='ls -lah --group-directories-first --color=always'
-alias la='ls -A --group-directories-first --color=always'
-alias lm='ls -m --group-directories-first --color=always'
-alias lr='ls -R --group-directories-first --color=always'
-alias lg='ls -l'
+alias l='exa -lh --group-directories-first --color=always'
+alias ll='exa -lah --group-directories-first --color=always'
+alias la='exa -A --group-directories-first --color=always'
+alias lm='exa -m --group-directories-first --color=always'
+alias lr='exa -R --group-directories-first --color=always'
+alias lg='exa -l'
 
 # git
 alias gcl='git clone --depth 1'
@@ -149,7 +152,7 @@ mkmv() {
 
 mvdotfile() {
     mkdir -p -- $HOME/.dotfiles/$1/.config
-    mv ~/.config/$1 $HOME/.dotfiles/$1/.config/ 
+    mv ~/.config/$1 $HOME/.dotfiles/$1/.config/
     stow -d ~/.dotfiles $1
 }
 
@@ -189,7 +192,7 @@ confedit() {
         else
             $EDITOR $CONFFOLDER
         fi
-    fi    
+    fi
 }
 
 compdef "_files -W $HOME/.config/ " mvdotfile

@@ -4,24 +4,44 @@
 set selection-clipboard clipboard
 set smooth-scroll "true"
 set scroll-step 80
-set adjut-open "best-fit"
+set adjut-open "fit-width"
 
 # theme
 set font "MesloLGS NF 12"
-set default-bg "#292a30"
-set default-fg "#dfdfe0"
-set statusbar-bg "#7f8c98"
-set statusbar-fg "#dfdfe0"
-set inputbar-bg "#7f8c98"
-set inputbar-fg "#dfdfe0"
-set highlight-color "#d9c97c"
-
-set recolor "true"
-set recolor-lightcolor "#292a30"
-set recolor-darkcolor "#dfdfe0"
-set recolor-reverse-video "true"
+#set recolor-lightcolor "#292a30"
+#set recolor-darkcolor "#dfdfe0"
+#set recolor-reverse-video "true"
 set recolor-keephue "true"
 
+set recolor "true"
+set completion-bg "#292a30"
+set completion-fg "#dfdfe0"
+set completion-group-bg "#292a30"
+set completion-group-fg "#78c2b3"
+set completion-highlight-bg "#dfdfe0"
+set completion-highlight-fg "#292a30"
+set recolor-lightcolor "#292a30"
+set recolor-darkcolor "#dfdfe0"
+set default-bg "#292a30"
+set inputbar-bg "#292a30"
+set inputbar-fg "#dfdfe0"
+set notification-bg "#292a30"
+set notification-fg "#dfdfe0"
+set notification-error-bg "#ff8170"
+set notification-error-fg "#dfdfe0"
+set notification-warning-bg "#ff8170"
+set notification-warning-fg "#dfdfe0"
+set statusbar-bg "#292a30"
+set statusbar-fg "#dfdfe0"
+set index-bg "#292a30"
+set index-fg "#dfdfe0"
+set index-active-bg "#dfdfe0"
+set index-active-fg "#292a30"
+set render-loading-bg "#292a30"
+set render-loading-fg "#dfdfe0"
+set window-title-home-tilde true
+set statusbar-basename true
+set selection-clipboard clipboard
 
 unmap f
 map f toggle_fullscreen

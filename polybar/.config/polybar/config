@@ -32,11 +32,11 @@ enable-ipc                      = true
 monitor                         = eDP-1
 monitor-fallback                = eDP1
 
-;bottom = true 
+;bottom = true
 width                           = 100%
 height                          = 36
 ;offset-x = 0.5%
-fixed-center                    = true
+fixed-left                    = true
 
 background                      = ${colors.background}
 foreground                      = ${colors.foreground}
@@ -51,8 +51,8 @@ spacing                         = 0
 module-margin                   = 1
 dim-value                       = 1.0
 
-modules-left                    = launcher xwindow
-modules-center                  = bspwm
+modules-left                    = xwindow
+modules-center                  = hlwm bspwm
 modules-right                   = gmail network cpu memory backlight volume battery date
 
 format-background               = ${colors.background}
@@ -62,6 +62,7 @@ format-underline                = ${colors.lightbg}
 
 
 font-0                          = "Roboto Condensed:style=Regular:size=11;2"
+;font-0                          = "Noto Sans Condensed:style=Regular:size=11;2"
 font-1                          = "xos4 Terminus:size=12;1"
 font-2                          = "Font Awesome 5 Pro Solid:size=10;1"
 font-3                          = "FontAwesome:size=10;2"
@@ -123,15 +124,15 @@ enable-scroll                   = false
 format                          = "<label-state>"
 ;format-padding = ${style.padding}
 ;format-underline                = ${colors.lightbg}
-label-focused                    = %index%
+label-focused                    = %name%
 label-focused-padding            = 1
 label-focused-foreground         = ${colors.color3}
-label-empty                     = %index%
+label-empty                     = %name%
 label-empty-padding             = 1
 label-empty-foreground          = ${colors.color8}
-label-occupied                  = %index%
+label-occupied                  = %name%
 label-occupied-padding          = 1
-label-urgent                    = %index%
+label-urgent                    = %name%
 label-urgent-padding            = 1
 label-urgent-foreground         = ${colors.alert}
 
@@ -159,10 +160,10 @@ format-underline                = ${colors.lightbg}
 
 [module/gmail]
 type                            = custom/script
-exec                            = ~/.config/polybar/gmail/launch.py
+exec                            = ~/.config/polybar/gmail/launch.py -c $(xrdb -query | awk '/\*?.?color1:/ {print $2 }')
 tail                            = true
 click-left                      = xdg-open https://mail.google.com
-format-underline                = ${colors.lightbg}
+;format-underline                = ${colors.lightbg}
 format-padding                  = ${style.padding}
 
 ;-------------------------------------------------------------------------------
@@ -172,15 +173,15 @@ format-padding                  = ${style.padding}
 [module/network]
 type                            = internal/network
 interface                       = wlan0
-format-connected                = <ramp-signal><label-connected>
+format-connected                = %{A1: gnome-control-center wifi:}<ramp-signal><label-connected>%{A}
 format-connected-padding        = ${style.padding}
 format-connected-underline      = ${colors.lightbg}
-label-connected                 = "%essid%"
-format-disconnected             = <label-disconnected>
+label-connected                 = %essid%
+format-disconnected             = %{A1: gnome-control-center wifi:}<label-disconnected>%{A}
 format-disconnected-padding     = ${style.padding}
 format-disconnected-underline   = ${colors.lightbg}
 format-disconnected-foreground  = ${colors.alert}
-label-disconnected              = "not connected"
+label-disconnected              = %ifname% not connected
 click-left                      = networkmanager_dmenu &
 click-middle                    = networkmanager_dmenu &
 click-right                     = networkmanager_dmenu &
@@ -247,9 +248,9 @@ format-discharging-overline     = ${colors.background}
 format-discharging-padding      = ${style.padding}
 
 
-format-charging                 = CHR <label-charging>
-format-discharging              = BAT <label-discharging>
-format-full                     = FULL <label-full>
+format-charging                 = %{A1: gnome-control-center power:}CHR <label-charging>%{A}
+format-discharging              = %{A1: gnome-control-center power:}BAT <label-discharging>%{A}
+format-full                     = %{A1: gnome-control-center power:}FULL <label-full>%{A}
 
 label-charging                  = %percentage%%
 label-discharging               = %percentage%%
@@ -277,8 +278,8 @@ animation-discharging-framerate = 750
 [module/volume]
 type                            = internal/pulseaudio
 
-format-volume                   = VOL <label-volume>
-format-muted                    = MUTE <label-muted>
+format-volume                   = %{A1: gnome-control-center sound:}VOL <label-volume>%{A}
+format-muted                    = %{A1: gnome-control-center sound:}MUTE <label-muted>%{A}
 format-muted-foreground         = ${colors.alert}
 
 format-volume-background        = ${colors.background}
