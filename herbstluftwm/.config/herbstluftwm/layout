@@ -1,7 +1,7 @@
 1: (clients grid:0 0xa00003)
 2: (clients grid:1 0x1800003 0x2800003)
 3: (split horizontal:0.21:0 (clients vertical:0 0x2400006) (clients grid:0))
-4: (split horizontal:0.38:0 (clients vertical:0) (clients grid:0))
+4: (split horizontal:0.38:0 (clients vertical:0) (clients vertical:0))
 5: (clients grid:0)
 6: (clients grid:0)
 7: (clients grid:0)

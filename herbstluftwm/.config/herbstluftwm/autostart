@@ -1,38 +1,7 @@
 #!/bin/sh
 
-"$HOME/.profile"
-
-"$HOME/.local/bin/preprocess_configs.sh"
-
+"$HOME/.local/bin/autostart.sh"
 "$HOME/.config/herbstluftwm/config"
-
-#killall -q herbstclient
-killall -q polybar
-killall -q picom
-killall -q dunst
-killall -q fusuma
-#killall -q notify_battery
-#killall -q flashfocus
-#killall -q xautolock
-#killall -q plasmashell
-#killall gnome-flashback
-killall -q redshift
-
-xrdb -merge "$HOME/.config/rofi/xresources"
-xrdb -merge "$HOME/.urxvt/config"
-img="Pictures/Wallpapers/mountain-sunset.jpg"
-
-#dunst &
-picom --experimental-backends --config ~/.config/picom/picom.conf -b &
-#polybar bar &
-#"$HOME/.config/herbstluftwm/notify_battery" &
-fusuma -d &
-#flashfocus &
-#xautolock -time 20 -detectsleep -locker "$HOME/.config/herbstluftwm/lock.sh" &
-#xautolock -time 20 -detectsleep -locker locker &
-feh --no-fehbg --bg-scale $HOME/$img &
-#gnome-flashback &
-#redshift &
 
 # load layout
 while read -r line; do

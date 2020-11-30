@@ -1,11 +1,12 @@
 #!/bin/bash
 
-id=$1
+wid=$1
 class=$2
 instance=$3
 consequences=$4
 #title=$(xprop -id $wid '\t$0' _NET_WM_NAME | cut -f 2)
-title="$(xprop -id "$id" WM_NAME | sed -nE 's,^WM_NAME[(]STRING[)] = "(.*)"$,\1,p')"
+title="$(xprop -id "$wid" WM_NAME | sed -nE 's,^WM_NAME[(]STRING[)] = "(.*)"$,\1,p')"
+wintype="$(xprop -id "$wid" _NET_WM_WINDOW_TYPE)"
 
 # Telegram
 if [ "$class" = "TelegramDesktop" ]; then
@@ -33,14 +34,18 @@ fi
 #fi
 
 if [[ $class = "plasmashell" ]]; then
-  echo "state=floating"
+  echo "state=floating border=off layer=normal center=off"
 fi
 
 if [[ $class = "Plasma" ]]; then
-  echo "state=floating"
+  echo "state=floating border=off layer=normal"
 fi
 
 if [[ $class = "plasma-desktop" ]]; then
-  echo "state=floating"
+  echo "state=floating border=off layer=normal"
+fi
+
+if [[ $title = "Desktop - Plasma" ]]; then
+  echo "state=floating border=off layer=normal"
 fi
 

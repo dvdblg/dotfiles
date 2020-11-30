@@ -55,7 +55,7 @@ hc keybind $Mod-q                           chain , close , emit_hook focus_wind
 hc keybind $Mod-c                           spawn  switch-colors --prompt
 hc keybind Control-space                    spawn  $HOME/.config/rofi/prompt.sh
 hc keybind $Mod-Return                      chain , emit_hook focus_frame , spawn $myTerm
-hc keybind Control-Alt-l                    spawn  locker
+hc keybind $Mod-Alt-l                    spawn  locker
 hc keybind Control-Alt-Return               spawn  $HOME/.config/rofi/session.sh
 
 savelayout() {
@@ -213,13 +213,14 @@ hc unrule -F
 # generic rules
 hc rule focus=on                                                       # normally focus new clients
 hc rule switchtag=on
-hc rule ewmhnotify=off                                                 # don't notify clients that they've been fullscreened
+hc rule floatplacement=smart
+hc rule ewmhnotify=on                                                 # don't notify clients that they've been fullscreened
 hc rule windowtype~'_NET_WM_WINDOW_TYPE_(DIALOG|UTILITY|SPLASH)'       pseudotile=on
 hc rule windowtype='_NET_WM_WINDOW_TYPE_DIALOG'                        focus=on
 hc rule windowtype~'_NET_WM_WINDOW_TYPE_(NOTIFICATION|DOCK|DESKTOP)'   manage=off
 hc rule class~'(.*[Rr]xvt.*|.*[Tt]erm.*|Konsole)'                      focus=on
 hc rule class~'[Vv]iewnior'                                            floating=on floatplacement=center
-hc rule class~'[Sx]xiv'                                                floating=on floatplacement=center
+hc rule class~'[Ss]xiv'                                                floating=on floatplacement=center
 hc rule class~'.*NautilusPrevier.*'                                    floating=on floatplacement=center
 hc rule instance~'[Pp]laces'                                           floating=on floatplacement=center
 hc rule title~'Emoji.*Selector'                                        floating=on floatplacement=center
@@ -227,9 +228,9 @@ hc rule class~'[Zz]athura' index=1
 #hc rule class='TelegramDesktop' title="Media viewer"
 
 # kde plasma rules
-hc rule class='Plasma'                                                 floating=on manage=off
-hc rule class='plasmashell'                                            floating=on manage=on
-hc rule title~'Desktop.*Plasma'                                        floating=on
+hc rule title='Plasma'                                                 floating=on manage=on floatplacement=none
+hc rule class='plasmashell'                                            floating=on floatplacement=none
+hc rule title~'Desktop.*Plasma'                                        floating=on floatplacement=none
 hc rule title='plasma-desktop'                                         floating=on
 hc rule title='win7'                                                   floating=on
 hc rule class='krunner'                                                floating=on
@@ -237,10 +238,11 @@ hc rule class='Kmix'                                                   floating=
 hc rule class='Klipper'                                                floating=on
 hc rule class='Plasmoidviewer'                                         floating=on manage=off
 hc rule class='plasmawindowed'                                         floating=on manage=off
-hc rule class='plasmashell'                                            windowtype='_NET_WM_WINDOW_TYPE_NOTIFICATION' floating=on focus=off switchtag=off
+hc rule class='plasmashell'                                            windowtype='_NET_WM_WINDOW_TYPE_NOTIFICATION' floating=on focus=off switchtag=off floatplacement=none
+hc rule class='plasmashell'                                            windowtype='_KDE_NET_WM_WINDOW_TYPE_ON_SCREEN_DISPLAY' floating=on focus=off switchtag=off floatplacement=none
 
 # window->tag rules
-hc rule class~'firefox'                                                tag='1' switchtag=on focus=on ewmhnotify=on
+hc rule class~'firefox'                                                tag='1' switchtag=on focus=on ewmhnotify=on floating=off
 hc rule class~'[Cc]hrom.*'                                             tag='1' switchtag=on focus=on ewmhnotify=on
 hc rule class='spotify'                                                tag='8' switchtag=off
 hc rule class='TelegramDesktop'                                        tag='3' switchtag=on index=0
@@ -261,7 +263,7 @@ hc attr settings.auto_detect_monitors true
 hc attr settings.auto_detect_panels true
 hc detect_monitors
 #hc set_layout grid
-hc pad 0 0
+#hc pad 0 36 0 0 0
 
 # polybar height
 #bar_border=$(grep "^border-size" $HOME/.config/polybar/config | awk '{print $3}')
@@ -274,6 +276,6 @@ hc detect_monitors
 hc set auto_detect_monitors true
 hc set mouse_recenter_gap 1
 
-herbstclient chain $cmds
+herbstclient chain $cmds&
 
 #"$HOME/.config/herbstluftwm/read_hook" &

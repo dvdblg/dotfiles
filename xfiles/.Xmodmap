@@ -1,5 +1,0 @@
-! xmodmap config file
-
-! map menu key (135) to Win_R
-keycode 135 = Super_R
-!keycode 135 = Menu

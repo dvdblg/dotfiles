@@ -30,6 +30,7 @@ echo "$COLOR" > ~/.theme
 # Save the WM layout and reload
 ~/.config/herbstluftwm/save-layout
 herbstclient reload
+bspc wm -r
 
 # There's probably a better way to do this, but....MEH
 sleep 2
@@ -50,11 +51,12 @@ if [ -z "$(xrdb -query | grep '*borderColor')" ]; then
 fi
 
 # reload terminal colors
-killall urxvt -HUP
+#killall urxvt -HUP
 
 
 # change gtk and icon theme
 wpg -ns mountain-sunset.jpg
+plasma-theme -c $HOME/.local/share/color-schemes/Xresources.colors
 
 function reload_gtk_theme() {
   theme=$(gsettings get org.gnome.desktop.interface gtk-theme)
@@ -70,4 +72,5 @@ function reload_icon_theme() {
   gsettings set org.gnome.desktop.interface icon-theme $theme
 }
 
-reload_icon_theme
+#reload_icon_theme
+

@@ -2,9 +2,9 @@
 
 # options
 set selection-clipboard clipboard
-set smooth-scroll "true"
+#set smooth-scroll "true"
 set scroll-step 80
-set adjut-open "fit-width"
+set adjust-open "best-fit"
 
 # theme
 set font "MesloLGS NF 12"
