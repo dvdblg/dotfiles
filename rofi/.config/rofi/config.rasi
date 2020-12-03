@@ -1,6 +1,0 @@
-/* vim: set ft=css : */
-
-configuration {
- /* font: "SF Pro Display 12";  */
- font: "Inter 12 ";
-}

@@ -112,8 +112,8 @@ contrast=0
 
 [WM]
 activeBackground=${xrdb:background}
-!activeBlend=255,255,255
+activeBlend=${xrdb:foreground}
 activeForeground=${xrdb:foreground}
 inactiveBackground=${xrdb:color0}
-!inactiveBlend=75,71,67
+inactiveBlend=${xrdb:color0}
 inactiveForeground=${xrdb:color15}

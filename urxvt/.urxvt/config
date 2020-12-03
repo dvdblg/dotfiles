@@ -9,7 +9,7 @@ URxvt.saveLines:                    15000
 URxvt.loginShell:                   true
 
 ! Font
-URxvt*font:                         xft:MesloLGS NF:regular:size=12:antialias=true:hinting=true, \
+URxvt*font:                         xft:SFMono:regular:size=12:antialias=true:hinting=true, \
                                     xft:DejaVu Sans Mono:size=12:antialias=true:hinting=true, \
                                     xft:emoji, \
                                     xft:Unifont, \

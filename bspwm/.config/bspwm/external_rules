@@ -13,12 +13,12 @@ if [ "$class" = "TelegramDesktop" ]; then
   if [ "$title" = "Media viewer" ]; then
     echo "state=floating desktop=chat"
   else
-    echo "state=pseudo_tiled desktop=chat rectangle=380x1080+0+0"
+    echo "state=pseudo_tiled desktop=chat follow=off rectangle=380x1080+0+0"
   fi
 fi
 
 # Emoji Selector
-if [ "$title" = "Emoji selector" ]; then
+if [ "$class" = "plasma.emojier" ]; then
   echo "state=floating"
 fi
 

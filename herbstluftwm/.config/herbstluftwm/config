@@ -19,7 +19,7 @@ myTerm=$TERMINAL
 myFM=dolphin
 
 # rofi
-hc keybind $Mod-d spawn $HOME/.config/polybar/scripts/launcher
+hc keybind $Mod-d spawn $HOME/.config/rofi/launcher
 
 # file manager
 hc keybind $Mod-a spawn $myFM
@@ -200,11 +200,11 @@ hc attr theme.inner_width               0
 hc attr theme.floating.outer_width      0
 hc attr theme.border_width              4
 hc attr theme.floating.border_width     4
-hc attr theme.normal.color              "#282a2e"
-hc attr theme.active.color              "#a54242"
-hc attr theme.urgent.color              "#c5c8c6"
-hc attr theme.floating.normal.color     "#282a2e"
-hc attr theme.floating.active.color     "#a54242"
+hc attr theme.normal.color              "#1A1929"
+hc attr theme.active.color              "#d26161"
+hc attr theme.urgent.color              "#bfc1d5"
+hc attr theme.floating.normal.color     "#1A1929"
+hc attr theme.floating.active.color     "#d26161"
 
 
 # clear all rules

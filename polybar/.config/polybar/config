@@ -5,15 +5,15 @@
 ;-------------------------------------------------------------------------------
 
 [colors]
-background                      = #1D1F21
-foreground                      = #c5c8c6
-primary                         = #a54242
-alert                           = #a54242
-lightbg                         = #c5c8c6
-color1                          = #a54242
-color8                          = #373b41
-color2                          = #8c9440
-color3                          = #de935f
+background                      = #141321
+foreground                      = #bfc1d5
+primary                         = #d26161
+alert                           = #d26161
+lightbg                         = #bfc1d5
+color1                          = #d26161
+color8                          = #434366
+color2                          = #a8b67a
+color3                          = #cf9b6a
 
 [style]
 padding                         = 2

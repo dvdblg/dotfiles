@@ -27,6 +27,8 @@ fi
 # Update our theme file with the current theme
 echo "$COLOR" > ~/.theme
 
+"$HOME/.local/bin/preprocess_configs.sh" && sleep 0.1
+
 # Save the WM layout and reload
 ~/.config/herbstluftwm/save-layout
 herbstclient reload

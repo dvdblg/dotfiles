@@ -1,15 +1,54 @@
+# make zsh usable
 autoload -Uz compinit
 compinit
+
 autoload -U promptinit; promptinit
 prompt spaceship
 
-export EDITOR='nvim'
-export VISUAL='nvim'
+autoload -U select-word-style
+select-word-style bash
+export WORDCHARS='.-'
+
+source .key-bindings.zsh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
 setopt appendhistory
+
+
+# window title, source: http://blog.bstpierre.org/zsh-prompt
+function title() {
+    # escape '%' chars in $1, make nonprintables visible
+    local a=${(V)1//\%/\%\%}
+
+    # Truncate command, and join lines.
+    a=$(print -Pn "%40>...>$a" | tr -d "\n")
+    case $TERM in
+        screen*)
+            print -Pn "\e]2;$a @ $2\a" # plain xterm title
+            print -Pn "\ek$a\e\\"      # screen title (in ^A")
+            print -Pn "\e_$2   \e\\"   # screen location
+            ;;
+        xterm*)
+            print -Pn "\e]2;$a @ $2\a" # plain xterm title
+            ;;
+    esac
+}
+
+# precmd is called just before the prompt is printed
+function precmd() {
+    title "zsh" "%m:%55<...<%~"
+}
+# preexec is called just before any command line is executed
+function preexec() {
+    title "$1" "%m:%35<...<%~"
+}
+
+# variables
+export EDITOR='nvim'
+export VISUAL='nvim'
 
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ] ; then
@@ -51,52 +90,75 @@ mkmv() {
 }
 
 mvdotfile() {
-    mkdir -p -- $HOME/.dotfiles/$1/.config
-    mv ~/.config/$1 $HOME/.dotfiles/$1/.config/
-    stow -d ~/.dotfiles $1
+  if [[ -d $HOME/.config/$1 ]]; then
+    $CONFIG = $1
+    mkdir -p -- $HOME/.dotfiles/$CONFIG/.config
+    mv ~/.config/$1 $HOME/.dotfiles/$CONFIG/.config/
+  else
+    local $CONFIG
+    $CONFIG = $("echo $1 | cut -d'.' -f 1")
+    mkdir -p -- $HOME/.dotfiles/$CONFIG/.config
+    mv ~/.config/$1 $HOME/.dotfiles/$CONFIG/.config/
+  fi
+  stow -d ~/.dotfiles $CONFIG
 }
 
 confedit() {
     # author: OrionDB5
-    if [[ -z $1 ]]; then
-        echo "No config specified."
-    elif [[ -f $1 ]]; then
-        $EDITOR $1
-    elif [[ -f "$HOME/.config/$1" ]]; then
-        $EDITOR "$HOME/.config/$1"
-    elif [[ -d "$HOME/.config/$1" ]]; then
-        local CONFFOLDER="$HOME/.config/$1"
-    elif [[ -d "$HOME/$1" ]]; then
-        local CONFFOLDER="$HOME/$1"
-    else
-        local CONFFOLDER="$HOME"
-    fi
-    local pattern=".*/(.*config.*|.+\.conf|Main\.qml.*|.*autostart.*|(\.)?($1)rc.*)"
-    local configs=($(find -L $CONFFOLDER/ -maxdepth 1 -type f -regextype posix-extended -regex $pattern))
-    #echo $configs      # debug
-    if [[ ${#configs[@]} -eq 0 ]]; then
-    elif [[ ${#configs[@]} -eq 1 ]]; then
-        $EDITOR "${configs}"
-    else
-        for c in "${configs[@]}"; do
-            if [[ $c =~ .*\.in$ && -r $c ]]; then
-                local FILE=$c;
-                break
-            elif [[ $c =~ $1rc\$ && -r $c ]]; then
-                local FILE=$c
-                break
-            fi
-        done
-        if [[ -v FILE ]]; then
-            $EDITOR $FILE
-        else
-            $EDITOR $CONFFOLDER
+
+    # handle special cases
+    case $1 in
+      autostart)  $EDITOR "$HOME/.local/bin/autostart.sh" ;;
+      preprocess) $EDITOR "$HOME/.local/bin/preprocess_configs.sh" ;;
+      firefox)    $EDITOR "$HOME/.mozilla.mozilla/firefox/trktth22.default-release/chrome/userChrome.css.in" ;;
+      nm)         $EDITOR "$HOME/.dotfiles/NetworkManager/etc/NetworkManager/NetworkManager.conf" ;;
+      tlp)        sudo $EDITOR "/etc/tlp.conf" ;;
+      *)
+        # handle common configs
+        if [[ -z $1 ]]; then
+          echo "No config specified."
+        elif [[ -f $1 ]]; then
+          $EDITOR $1
+        elif [[ -f "$HOME/.config/$1" ]]; then
+          $EDITOR "$HOME/.config/$1"
+        elif [[ -d "$HOME/.config/$1" ]]; then
+          local CONFFOLDER="$HOME/.config/$1"
+        elif [[ -d "$HOME/$1" ]]; then
+          local CONFFOLDER="$HOME/$1"
+        elif [[ -f "$HOME/.$1rc" ]]; then
+          local CONFFOLDER="$HOME"
+        # create config if it doesn't exists
+        elif [[ ! -f $1 ]]; then
+          $EDITOR config.tmp
+          [[ -f config.tmp ]] && mkdir "$HOME/.config/$1" && mv config.tmp "$HOME/.config/$1/config"
         fi
-    fi
+        local pattern=".*/(.*config.*|.+\.conf|Main\.qml.*|.*autostart.*|(\.)?($1)rc.*)"
+        local configs=($(find -L $CONFFOLDER/ -maxdepth 1 -type f -regextype posix-extended -regex $pattern))
+        #echo $configs      # debug
+        if [[ ${#configs[@]} -eq 0 ]]; then
+        elif [[ ${#configs[@]} -eq 1 ]]; then
+          $EDITOR "${configs}"
+        else
+          for c in "${configs[@]}"; do
+            if [[ $c =~ .*\.in$ && -r $c ]]; then
+              local FILE=$c;
+              break
+            elif [[ $c =~ $1rc\$ && -r $c ]]; then
+              local FILE=$c
+              break
+            fi
+          done
+          if [[ -v FILE ]]; then
+            $EDITOR $FILE
+          else
+            $EDITOR $CONFFOLDER
+          fi
+        fi
+        ;;
+    esac
 }
 
 compdef "_files -W $HOME/.config/ " mvdotfile
 local CONFFOLDERS=($HOME/.config $HOME)
 compdef "_files -W CONFFOLDERS -g '*:directories *.in *conf* .*{rc,urxvt}'" confedit
-
 

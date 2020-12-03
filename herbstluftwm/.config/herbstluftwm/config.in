@@ -19,7 +19,7 @@ myTerm=$TERMINAL
 myFM=dolphin
 
 # rofi
-hc keybind $Mod-d spawn $HOME/.config/polybar/scripts/launcher
+hc keybind $Mod-d spawn $HOME/.config/rofi/launcher
 
 # file manager
 hc keybind $Mod-a spawn $myFM

@@ -17,8 +17,6 @@ INFILES=$(tr '\n' ' ' <<-ENDINFILES
   $HOME/.mozilla/firefox/trktth22.default-release/chrome/userChrome.css
   $HOME/.config/wpg/schemes/_home_da__config_wpg_wallpapers_mountain-sunset_jpg_dark_wal__1.1.0.json
   $HOME/.local/share/color-schemes/Xresources.colors
-  $HOME/.config/awesome/theme.lua
-  $HOME/.config/qtile/config.py
 ENDINFILES
 )
 for file in $INFILES; do

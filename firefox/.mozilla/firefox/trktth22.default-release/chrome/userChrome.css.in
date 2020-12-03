@@ -13,7 +13,7 @@
   --mff-tab-font-weight: 400;
   --mff-tab-height: 32px;
   --mff-tab-pinned-bg: ${xrdb:color4};
-  --mff-tab-selected-bg: ${xrdb:color8};
+  --mff-tab-selected-bg: ${xrdb:color0};
   --mff-tab-soundplaying-bg: ${xrdb:color4};
   --mff-urlbar-color: ${xrdb:foreground};
   --mff-urlbar-focused-color: ${xrdb:foreground};
@@ -52,7 +52,7 @@
 }
 
 .tab-background:not[visuallyselected] {
-  background: ${xrdb:color8} !important;
+  background: var(--mff-tab-selected-bg) !important;
   opacity: 0.5 !important;
 }
 
@@ -240,12 +240,12 @@ toolbar {
 }
 
 #urlbar-input-container {
-  background-color: ${xrdb:color8} !important;
+  background-color: ${xrdb:color0} !important;
   opacity: .98 !important;
 }
 #navigator-toolbox, toolbaritem {
   border: initial !important;
-  --tabs-border-color: ${xrdb:color8} !important;
+  --tabs-border-color: ${xrdb:color0} !important;
 }
 
 #urlbar-background {

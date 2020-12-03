@@ -1,8 +1,10 @@
-rofi.color-window: #1D1F21, #a54242,     #373b41
-rofi.color-normal: #1D1F21, #c5c8c6, #1D1F21, #c5c8c6,     #1D1F21
-rofi.color-urgent: #1D1F21, #a54242,     #1D1F21, #1D1F21, #a54242
-rofi.color-active: #1D1F21, #5f819d, #1D1F21, #1D1F21, #c5c8c6
-rofi.font:         FontAwesome,Inter,menu 12
+! vim: set ft=xdefaults :
+
+rofi.color-window: #141321, #d26161,     #434366
+rofi.color-normal: #141321, #bfc1d5, #141321, #bfc1d5,     #141321
+rofi.color-urgent: #141321, #d26161,     #141321, #141321, #d26161
+rofi.color-active: #141321, #8497cf, #141321, #141321, #bfc1d5
+rofi.font:         FontAwesome,Inter, 14
 rofi.bw:           4
 rofi.line-padding: 10
 rofi.padding:      10
