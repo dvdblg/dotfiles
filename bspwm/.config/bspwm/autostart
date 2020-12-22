@@ -1,8 +1,5 @@
-#!/bin/sh
+#!/bin/bash
 
 "$HOME/.local/bin/autostart.sh"
 killall -q sxhkd
 sxhkd &
-
-# plasma
-bspc config top_padding 36

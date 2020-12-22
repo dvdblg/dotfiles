@@ -10,7 +10,7 @@ select-word-style bash
 export WORDCHARS='.-'
 
 source .key-bindings.zsh
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
@@ -64,8 +64,12 @@ fi
 # aliases
 compdef _pacman powerpill=pacman
 
+alias chromium="chromium $(tr '\n' ' ' < ~/.config/chromium-flags.conf)"
 alias kitty="kitty --single-instance"
 alias vim="nvim"
+alias xis="~/void-packages/xbps-src"
+alias xir="xbps-remove"
+
 #alias hc="herbstclient"
 
 ## ls
@@ -90,16 +94,14 @@ mkmv() {
 }
 
 mvdotfile() {
-  if [[ -d $HOME/.config/$1 ]]; then
-    $CONFIG = $1
-    mkdir -p -- $HOME/.dotfiles/$CONFIG/.config
-    mv ~/.config/$1 $HOME/.dotfiles/$CONFIG/.config/
+  local CONFIG
+  if [ -d "$HOME/.config/$1" ]; then
+    CONFIG=$1
   else
-    local $CONFIG
-    $CONFIG = $("echo $1 | cut -d'.' -f 1")
-    mkdir -p -- $HOME/.dotfiles/$CONFIG/.config
-    mv ~/.config/$1 $HOME/.dotfiles/$CONFIG/.config/
+    CONFIG=$(echo "$1" | cut -d'.' -f 1)
   fi
+  mkdir -p -- $HOME/.dotfiles/$CONFIG/.config
+  mv ~/.config/$1 $HOME/.dotfiles/$CONFIG/.config/
   stow -d ~/.dotfiles $CONFIG
 }
 
@@ -110,7 +112,8 @@ confedit() {
     case $1 in
       autostart)  $EDITOR "$HOME/.local/bin/autostart.sh" ;;
       preprocess) $EDITOR "$HOME/.local/bin/preprocess_configs.sh" ;;
-      firefox)    $EDITOR "$HOME/.mozilla.mozilla/firefox/trktth22.default-release/chrome/userChrome.css.in" ;;
+      firefox)    $EDITOR "$HOME/.mozilla/firefox/trktth22.default-release/chrome/userChrome.css.in" ;;
+      user.js)    $EDITOR "$HOME/.mozilla/firefox/trktth22.default-release/user.js" ;;
       nm)         $EDITOR "$HOME/.dotfiles/NetworkManager/etc/NetworkManager/NetworkManager.conf" ;;
       tlp)        sudo $EDITOR "/etc/tlp.conf" ;;
       *)
@@ -162,3 +165,5 @@ compdef "_files -W $HOME/.config/ " mvdotfile
 local CONFFOLDERS=($HOME/.config $HOME)
 compdef "_files -W CONFFOLDERS -g '*:directories *.in *conf* .*{rc,urxvt}'" confedit
 
+fpath=($fpath "/home/da/.zfunctions")
+fpath=($fpath "/home/da/.zfunctions")

@@ -1,0 +1,22 @@
+! Colour scheme: magus (dark variant)
+! By Protesilaos Stavrou
+! https://protesilaos.com/magus
+*background: #322a29
+*foreground: #a29a99
+*cursorColor: #a29a99
+*color0: #322a29
+*color1: #bd5956
+*color2: #8b972a
+*color3: #c1a222
+*color4: #5c8caa
+*color5: #b881a8
+*color6: #65ab85
+*color7: #e2ddd6
+*color8: #423a39
+*color9: #bb7321
+*color10: #625d56
+*color11: #726a69
+*color12: #a29d96
+*color13: #7a7da7
+*color14: #a29a99
+*color15: #f2ede6

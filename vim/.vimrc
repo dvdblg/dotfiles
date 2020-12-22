@@ -6,9 +6,11 @@ call plug#begin('~/.vim/plugged')
   Plug 'peterhoeg/vim-qml'
   Plug 'junegunn/vim-easy-align'
   Plug 'vim-airline/vim-airline'
+  Plug 'vim-airline/vim-airline-themes'
   Plug 'neoclide/coc.nvim'
   Plug 'preservim/nerdtree'
   Plug 'baskerville/vim-sxhkdrc'
+  Plug 'arcticicestudio/nord-vim'
 call plug#end()
 
 """ Options
@@ -117,18 +119,20 @@ map <C-n> :NERDTreeToggle<CR>
 "                   / /___/ /_/ / /___/ /_/ / _, _/___/ /
 "                   \____/\____/_____/\____/_/ |_|/____/
 " colors ======================================================================
-if has('nvim')
-  colo desert_v2
-endif
 
+"colorscheme nord
+
+hi PmenuSel        ctermfg=5 ctermbg=8
 hi StatusLine      cterm=bold,italic    gui=bold,italic
 hi StatusLineNC    cterm=none           gui=none
 hi VertSplit       cterm=none           gui=none
 hi PmenuSel        cterm=reverse        gui=reverse
 hi Visual          cterm=reverse        gui=reverse
 
+
 " airline options
-let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts = 0
+let g:airline_theme='base16'
 
 
 " Open NERDTree automatically when vim starts up if no files were specified

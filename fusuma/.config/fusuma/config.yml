@@ -20,13 +20,14 @@ swipe:
     down:
       sendkey: "ESC" # Switch to previous workspace
 pinch:
-  #2:
-    in:
-      command: "xdotool keydown ctrl click 4 keyup ctrl" # Zoom in
-      #sendkey: "LEFTCTRL+RIGHTBRACE"
-    out:
-      command: "xdotool keydown ctrl click 5 keyup ctrl" # Zoom out
-      #sendkey: "LEFTCTRL+SLASH"
+  in:
+    command: "xdotool keydown ctrl click 4 keyup ctrl" # Zoom in
+    #sendkey: "LEFTCTRL+RIGHTBRACE"
+    #sendkey: "ZOOMOUT"
+  out:
+    command: "xdotool keydown ctrl click 5 keyup ctrl" # Zoom out
+    #sendkey: "LEFTCTRL+SLASH"
+    #sendkey: "ZOOMIN"
 
 threshold:
   swipe: 0.5
@@ -36,3 +37,11 @@ interval:
   swipe: 0.9
   pinch: 0.4
 
+
+plugin:
+  inputs:
+    libinput_command_input:
+      enable-tap: true
+      enable-dwt: true
+      verbose: true
+      show-keycodes: true

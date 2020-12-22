@@ -28,10 +28,10 @@ ENDPARAMS
 
 case "$(echo "$PROMPT" | rofi $PARAMS | awk '{print $2}')" in
 	"Poweroff")
-		systemctl poweroff
+		loginctl poweroff
 		;;
 	"Reboot")
-		systemctl reboot
+		loginctl reboot
 		;;
 	"Logout")
 		loginctl terminate-session $XDG_SESSION_ID || herbstclient quit || bspc quit

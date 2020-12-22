@@ -20,12 +20,13 @@ bspc monitor \^2 -d VIII IX X
 
 _() { bspc config "$@";  }
 R() { bspc rule -a "$@"; }
-
+L() { bsp-layout remove "$3"; bsp-layout "$@"; }
 
 # theme
+_ top_padding                 36
 _ border_width                "${xrdb:style.frame_width}"
 _ window_gap                  "${xrdb:style.window_gap}"
-_ normal_border_color         "${xrdb:color0}"
+_ normal_border_color         "${xrdb:background}"
 _ focused_border_color        "${xrdb:color1}"
 _ active_border_color         "${xrdb:color5}"
 #_ floating.normal.color       "${xrdb:color8}"
@@ -64,14 +65,12 @@ function receptacles () {
     #$TERMINAL &
   fi
 }
+#receptacles
 
-# reset layouts
-bsp-layout remove chat
-bsp-layout remove pdf
 
 # set layouts
-#bsp-layout set rtall chat -- --master-size 0.2
-bsp-layout set rtall pdf -- --master-size 0.64
+L set rtall pdf -- --master-size 0.64
+#L set tall chat -- --master-size 0.21
 
 # window->tag rules
 R 'firefox'                             desktop=www focus=on
@@ -90,7 +89,11 @@ R "Zathura" state=tiled node=@pdf:/2
 R "Viewnior" state=floating
 #R "TelegramDesktop:telegram-desktop:Media viewer" state=fullscreen
 #R "TelegramDesktop" -o node=@chat:/1 state=pseudo_tiled desktop=chat rectangle=360x1080+0+0
-R "Alacritty" -o node=@chat:/2 state=tiled
+#R "kitty" -o node=@chat:/2 state=tiled
+R "dolphin" state=pseudo_tiled
+
+# window sizes
+R 'kitty' rectangle=800x600+0+0
 
 # other floating windows
 R "Eog"                state=floating

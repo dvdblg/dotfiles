@@ -1,0 +1,43 @@
+
+! -- Title:     scag
+! -- Author:    dkeg
+! -- Created:   2015
+
+#define bg     #252326
+#define fg     #c4bbb0
+#define blk    #282528
+#define bblk   #413f43
+#define red    #93503e
+#define ylw    #9d8554
+#define grn    #7a8648
+#define blu    #5f656a
+#define mag    #7b6064
+#define cyn    #566e6b
+#define wht    #c4bbb0
+#define bred   #93503e
+#define bylw   #9d8554
+#define bgrn   #7a8648
+#define bblu   #5f656a
+#define bmag   #7b6064
+#define bcyn   #566e6b
+#define bwht   #c4bbb0
+
+! Colors
+*background:   bg
+*foreground:   fg
+*color0:      blk
+*color8:      bblk
+*color1:      red
+*color9:      bred
+*color2:      grn
+*color10:     bgrn
+*color3:      ylw
+*color11:     bylw
+*color4:      blu
+*color12:     bblu
+*color5:      mag
+*color13:     bmag
+*color6:      cyn
+*color14:     bcyn
+*color7:      wht
+*color15:     bwht

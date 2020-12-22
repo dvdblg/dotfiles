@@ -33,14 +33,14 @@ Rectangle {
     LayoutMirroring.childrenInherit: true
 
     property alias sessionIndex: session.index
-    property color background: "#141321"
-    property color foreground: "#bfc1d5"
-    property color color0: "#1A1929"
-    property color color8: "#434366"
+    property color background: "#2E3440"
+    property color foreground: "#D8DEE9"
+    property color color0: "#3B4252"
+    property color color8: "#4C566A"
 
     property color background_active: root.background
-    property color foreground_active: "#d26161"
-    property color foreground_error: "#d26161"
+    property color foreground_active: "#BF616A"
+    property color foreground_error: "#BF616A"
 
     property int font_size: 12 * 1.8
     property int padding: 10

@@ -71,11 +71,11 @@
 
 
 .tab-background {
-  border: initial !important;
-  border-color: ${xrdb:color8} !important;
-  background: ${xrdb:background} !important;
-  margin-left: 4px !important;
-  margin-right: 4px !important;
+  border: none !important;
+  /*border-color: ${xrdb:color8} !important;*/
+  /*background: ${xrdb:background} !important;*/
+  /*margin-left: 4px !important;*/
+  /*margin-right: 4px !important;*/
 }
 
 .tabbrowser-arrowscrollbox {

@@ -1,0 +1,22 @@
+! Colour scheme: playa (dark variant)
+! By Protesilaos Stavrou
+! https://protesilaos.com/playa
+*background: #234154
+*foreground: #93b9b4
+*cursorColor: #93b9b4
+*color0: #234154
+*color1: #ca6e6a
+*color2: #7db97a
+*color3: #ccb45d
+*color4: #65afcd
+*color5: #cb7e9a
+*color6: #4dc4b7
+*color7: #eae1d0
+*color8: #335f64
+*color9: #cb8d6a
+*color10: #5a7160
+*color11: #868265
+*color12: #7c949d
+*color13: #aa85cb
+*color14: #93b9b4
+*color15: #faf1e0

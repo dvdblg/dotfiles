@@ -75,16 +75,16 @@ ForegroundPositive=${xrdb:color2}
 !ForegroundVisited=127,140,141
 
 [Colors:View]
-BackgroundAlternate=${xrdb:background}
+BackgroundAlternate=${xrdb:color8}
 BackgroundNormal=${xrdb:color0}
 DecorationFocus=${xrdb:color1}
 DecorationHover=${xrdb:color1}
-ForegroundActive=${xrdb:foreground}
+ForegroundActive=${xrdb:color15}
 ForegroundInactive=189,195,199
 ForegroundLink=${xrdb:color4}
 ForegroundNegative=${xrdb:color1}
 ForegroundNeutral=${xrdb:color11}
-ForegroundNormal=${xrdb:foreground}
+ForegroundNormal=${xrdb:color15}
 ForegroundPositive=${xrdb:color2}
 ForegroundVisited=127,140,141
 

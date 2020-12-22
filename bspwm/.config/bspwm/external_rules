@@ -34,18 +34,18 @@ fi
 #fi
 
 if [[ $class = "plasmashell" ]]; then
-  echo "state=floating border=off layer=normal center=off"
+  echo "state=floating border=off center=off layer=normal"
 fi
 
 if [[ $class = "Plasma" ]]; then
-  echo "state=floating border=off layer=normal"
+  echo "state=floating border=off layer=below"
 fi
 
 if [[ $class = "plasma-desktop" ]]; then
-  echo "state=floating border=off layer=normal"
+  echo "state=floating border=off layer=below"
 fi
 
 if [[ $title = "Desktop - Plasma" ]]; then
-  echo "state=floating border=off layer=normal"
+  echo "state=floating border=off layer=below"
 fi
 

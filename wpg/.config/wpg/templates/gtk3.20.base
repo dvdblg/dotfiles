@@ -1,6 +1,9 @@
 /* vim: set ft=sass : */
 
 /* Default color scheme */
+@define-color background {background};
+@define-color foreground {foreground};
+@define-color color0 {color0};
 @define-color color0 {color0};
 @define-color color1 {color1};
 @define-color color2 {color2};
@@ -21,10 +24,10 @@
 @define-color bg_color {background} /*mix(@color0, @color15, 0.12)*/ ;
 @define-color tooltip_bg_color mix(@bg_color, @color15, 0.04);
 @define-color base_color mix(@bg_color, @color15, 0);
-@define-color fg_color @color15;
-@define-color text_color @color15;
-@define-color selected_fg_color @color15;
-@define-color tooltip_fg_color @color15;
+@define-color fg_color @foreground;
+@define-color text_color @foreground;
+@define-color selected_fg_color @foreground;
+@define-color tooltip_fg_color @foreground;
 
 /* colormap actually used by the theme, to be overridden in other css files */
 @define-color theme_bg_color @bg_color;

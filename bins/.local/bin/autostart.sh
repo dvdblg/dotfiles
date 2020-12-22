@@ -6,11 +6,13 @@ s() { pkill -x "$1"; { sleep 0.1; "$@" & }; }
 "$HOME/.local/bin/preprocess_configs.sh" && wait
 
 
-s kglobalaccel5
+#s kglobalaccel5
+s pipewire
 s picom --experimental-backends -b
 s fusuma -d
 s xsuspender
-#s redshift
+s gnome-keyring-daemon -sd
+s redshift -P
 
 #killall -q polybar
 #killall -q picom

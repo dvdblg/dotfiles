@@ -1,0 +1,2 @@
+#!/bin/bash
+/usr/bin/chromium $(tr '\n' ' ' < ~/.config/chromium-flags.conf)

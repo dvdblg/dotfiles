@@ -1,0 +1,16 @@
+#!/bin/bash
+
+[[ ! -d $1 ]] && exit
+mount --rbind /sys $1/sys && mount --make-rslave $1/sys
+mount --rbind /dev $1/dev && mount --make-rslave $1/dev
+mount --rbind /proc $1/proc && mount --make-rslave $1/proc
+mount --rbind /home $1/home && mount --make-rslave $1/home
+mount --rbind /boot/efi $1/boot/efi && mount --make-rslave $1/boot/efi
+
+env TERM=linux PS1='(chroot @ $(sh -c pwd)) # ' chroot $1/ /bin/bash
+
+umount -R $1/sys && \
+  umount -R $1/dev && \
+  umount -R $1/proc && \
+  umount -R $1/home && \
+  umount -R $1/boot/efi

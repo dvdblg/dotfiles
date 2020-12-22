@@ -1,0 +1,43 @@
+! -- Title:     mattd
+! -- Author:    dkeg
+! -- Created:   2015
+! -- Modified:  2016
+
+#define bg      #20201f
+#define fg      #b0b0a2
+#define blk     #222221
+#define bblk    #3a3a38
+#define red     #996140
+#define ylw     #9d8554
+#define grn     #799c6a
+#define blu     #5f656a
+#define mag     #7b6064
+#define cyn     #566e6b
+#define wht     #b0b0a2
+#define bred    #996140
+#define bylw    #9d8554
+#define bgrn    #799c6a
+#define bblu    #5f656a
+#define bmag    #7b6064
+#define bcyn    #566e6b
+#define bwht    #d3d3cb
+
+! Colors
+*background:   bg
+*foreground:   fg
+*color0:      blk
+*color8:      bblk
+*color1:      red
+*color9:      bred
+*color2:      grn
+*color10:     bgrn
+*color3:      ylw
+*color11:     bylw
+*color4:      blu
+*color12:     bblu
+*color5:      mag
+*color13:     bmag
+*color6:      cyn
+*color14:     bcyn
+*color7:      wht
+*color15:     bwht
