@@ -1,0 +1,31 @@
+#!/bin/sh
+
+if [ "$EUID" -ne 0 ]
+  then echo "Please run as root"
+  exit
+fi
+
+# undervolt
+undervolt --core -200 --cache -200 --gpu -220 --uncore -100 --analogio -100 -p1 45 28 -p2 54 0.002 > /dev/null \
+  && echo "Undervolt applied."
+
+# auto power off NVIDIA card
+if [ -d "/sys/bus/pci/devices/0000:01:00.0" ]
+then
+  echo 'auto' > '/sys/bus/pci/devices/0000:01:00.0/power/control'  #adjust busid if needed
+  echo "NVIDIA card pm enabled."
+fi
+
+# unbind fingerprint reader (xps 9570)
+echo 'auto' > '/sys/bus/usb/devices/1-7/power/control'
+
+if [ -d "/sys/bus/usb/drivers/usb/1-7" ]
+then
+  echo "1-7" >> /sys/bus/usb/drivers/usb/unbind
+  echo "Fingerprint reader turned off."
+fi
+
+# turn off NVIDIA card until next reboot
+#echo '\_SB.PCI0.PEG0.PEGP._OFF' > /proc/acpi/call
+
+#sleep 60

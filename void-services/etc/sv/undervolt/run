@@ -2,4 +2,5 @@
 undervolt --core -200 --cache -200 --gpu -220 --uncore -100 --analogio -100 -p1 45 28 -p2 54 0.002 > /dev/null
 #echo '\_SB.PCI0.PEG0.PEGP._OFF' > /proc/acpi/call
 echo 'auto' > /sys/bus/pci/devices/0000:01:00.0/power/control
+echo "1-7" | tee /sys/bus/usb/drivers/usb/unbind
 sleep 60
