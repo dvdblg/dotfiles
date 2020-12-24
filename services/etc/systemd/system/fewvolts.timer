@@ -2,7 +2,7 @@
 Description=Apply undervolt settings
 
 [Timer]
-Unit=undervolt.service
+Unit=fewvolts.service
 # Wait 2 minutes after boot before first applying
 OnBootSec=1min
 # Run every 30 seconds
