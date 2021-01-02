@@ -1,15 +1,13 @@
 [Unit]
-Description=undervolt
+Description=Use less power
 After=suspend.target
 After=hibernate.target
 After=hybrid-sleep.target
 
 [Service]
 Type=oneshot
-# If you have installed undervolt globally (via sudo pip install):
-ExecStart=/usr/bin/undervolt -v --core -200 --cache -200 --gpu -220 --uncore -100 --analogio -100 -p1 45 28 -p2 54 0.002 
-# If you want to run from source:
-# ExecStart=/path/to/undervolt.py -v --core -150 --cache -150 --gpu -100
+;ExecStart=/usr/bin/undervolt -v --core -200 --cache -200 --gpu -220 --uncore -100 --analogio -100 -p1 45 28 -p2 54 0.002
+ExecStart=/home/da/.local/bin/fewvolts
 
 [Install]
 WantedBy=multi-user.target

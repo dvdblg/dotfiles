@@ -1,0 +1,9 @@
+#!/bin/bash
+
+for $a in (*.mkv); do
+  mkvextract tracks "$a" "3:$a.idx"
+  subtitleedit /convert "$a.sub" subrip
+  rm $a.sub
+  rm $a.idx
+  rm $a.srt
+done

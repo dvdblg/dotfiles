@@ -1,18 +1,26 @@
 #!/bin/sh
 
+CONTROLLER_BUS_ID=0000:00:01.0
+DEVICE_BUS_ID=0000:01:00.0
+
 if [ "$EUID" -ne 0 ]
   then echo "Please run as root"
   exit
 fi
 
 # undervolt
-undervolt --core -200 --cache -200 --gpu -220 --uncore -100 --analogio -100 -p1 45 28 -p2 54 0.002 > /dev/null \
-  && echo "Undervolt applied."
+undervolt --core -200 --cache -200 --gpu -220 --uncore -100 --analogio -100 -p1 45 28 -p2 54 0.002 && echo "Undervolt applied."
 
 # auto power off NVIDIA card
 if [ -d "/sys/bus/pci/devices/0000:01:00.0" ]
 then
-  echo 'auto' > '/sys/bus/pci/devices/0000:01:00.0/power/control'  #adjust busid if needed
+  #modprobe -r nvidia_drm
+  #modprobe -r nvidia_modeset
+  #modprobe -r nvidia_uvm
+  #modporbe -r nvidia
+  #echo 'auto' > '/sys/bus/pci/devices/0000:01:00.0/power/control'  #adjust busid if needed
+  tee /sys/bus/pci/devices/$DEVICE_BUS_ID/power/control <<<auto
+  tee /sys/bus/pci/devices/$CONTROLLER_BUS_ID/power/control <<<auto
   echo "NVIDIA card pm enabled."
 fi
 

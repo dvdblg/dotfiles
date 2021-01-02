@@ -253,7 +253,7 @@ format-discharging              = %{A1: gnome-control-center power:}BAT <label-d
 format-full                     = %{A1: gnome-control-center power:}FULL <label-full>%{A}
 
 label-charging                  = %percentage%%
-label-discharging               = %percentage%%
+label-discharging               = %percentage%% - %time%
 label-full                      = %percentage%%
 
 animation-charging-0            = ""

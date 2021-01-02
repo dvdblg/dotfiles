@@ -20,5 +20,6 @@ style.window_gap:           10
 style.frame_width:          4
 !style.font_face:            SF Pro Display
 style.font_face:            Inter
-style.font_face_mono:       SF Mono
+style.font_face_mono:       SFMono Nerd Font Mono
+style.font_face_mono:       MesloLGS NF
 style.font_size:            12

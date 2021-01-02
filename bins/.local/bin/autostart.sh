@@ -9,6 +9,10 @@ s() { pkill -x "$1"; { sleep 0.1; "$@" & }; }
 #s kglobalaccel5
 s pipewire
 s picom --experimental-backends -b
+s albert
+s nitrogen --restore
+s polybar bar
+s redshift -P
 s fusuma -d
 s xsuspender
 s gnome-keyring-daemon -sd

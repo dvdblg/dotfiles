@@ -6,7 +6,7 @@ Unit=fewvolts.service
 # Wait 2 minutes after boot before first applying
 OnBootSec=1min
 # Run every 30 seconds
-OnUnitActiveSec=30
+OnUnitActiveSec=60
 
 [Install]
 WantedBy=multi-user.target

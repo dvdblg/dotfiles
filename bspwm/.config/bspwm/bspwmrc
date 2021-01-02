@@ -103,3 +103,6 @@ R "Transmission-gtk"   state=floating
 R "systemsettings"     state=floating center=on
 R "Wpg"                state=floating
 
+# no borders
+R "albert"             border=off focus=on
+
