@@ -4,10 +4,10 @@ swipe:
       sendkey: "LEFTALT+RIGHT" # History forward
     right:
       sendkey: "LEFTALT+LEFT" # History back
-    #up:
-      #sendkey: "LEFTMETA+M" # Maximize
-    #down:
-      #sendkey: "LEFTMETA+H" # Minimize
+    up:
+      sendkey: "LEFTMETA+M" # Maximize
+    down:
+      sendkey: "LEFTMETA+H" # Minimize
   4:
     left:
       #sendkey: "LEFTCTRL+LEFTALT+RIGHT" # Switch to next workspace
@@ -16,9 +16,9 @@ swipe:
       #sendkey: "LEFTCTRL+LEFTALT+LEFT" # Switch to previous workspace
       sendkey: "LEFTMETA+LEFTCTRL+UP" # Switch to previous workspace
     up:
-      sendkey: "LEFTMETA+TAB" # Expose
+      sendkey: "LEFTMETA+TAB" # expose
     down:
-      sendkey: "ESC" # Switch to previous workspace
+      sendkey: "ESC" # close expose
 pinch:
   in:
     command: "xdotool keydown ctrl click 4 keyup ctrl" # Zoom in
