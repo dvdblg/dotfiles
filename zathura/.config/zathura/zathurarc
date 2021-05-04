@@ -2,12 +2,12 @@
 
 # options
 set selection-clipboard clipboard
-#set smooth-scroll "true"
 set scroll-step 80
-set adjust-open "best-fit"
+#set smooth-scroll "true"
+set adjust-open "width"
 
 # theme
-set font "MesloLGS NF 12"
+set font "SFMono Nerd Font Mono 12"
 #set recolor-lightcolor "#2E3440"
 #set recolor-darkcolor "#D8DEE9"
 #set recolor-reverse-video "true"
@@ -41,8 +41,7 @@ set render-loading-bg "#2E3440"
 set render-loading-fg "#D8DEE9"
 set window-title-home-tilde true
 set statusbar-basename true
-set selection-clipboard clipboard
 
-unmap f
-map f toggle_fullscreen
-map [fullscreen] f toggle_fullscreen
+#unmap f
+#map f toggle_fullscreen
+#map [fullscreen] f toggle_fullscreen

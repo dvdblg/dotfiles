@@ -3,7 +3,7 @@
 !------------------------------------------------------------------------------!
 ! Display settings                                                             !
 !------------------------------------------------------------------------------!
-*.dpi:                      96
+!*.dpi:                      96
 *.autohint:                 0
 *.lcdfilter:                lcdlight
 *.hintstyle:                hintnone
@@ -21,5 +21,5 @@ style.frame_width:          4
 !style.font_face:            SF Pro Display
 style.font_face:            Inter
 style.font_face_mono:       SFMono Nerd Font Mono
-style.font_face_mono:       MesloLGS NF
+!style.font_face_mono:       MesloLGS NF
 style.font_size:            12

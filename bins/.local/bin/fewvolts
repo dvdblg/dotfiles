@@ -2,6 +2,8 @@
 
 CONTROLLER_BUS_ID=0000:00:01.0
 DEVICE_BUS_ID=0000:01:00.0
+BUS_RESCAN_WAIT_SEC=1
+REMOVE_DEVICE=1
 
 if [ "$EUID" -ne 0 ]
   then echo "Please run as root"
@@ -9,20 +11,67 @@ if [ "$EUID" -ne 0 ]
 fi
 
 # undervolt
-undervolt --core -200 --cache -200 --gpu -220 --uncore -100 --analogio -100 -p1 45 28 -p2 54 0.002 && echo "Undervolt applied."
+undervolt --core -200 --cache -200 --gpu -220 --uncore -100 --analogio -100 -p1 45 28 -p2 90 0.002 && echo "Undervolt applied."
 
 # auto power off NVIDIA card
-if [ -d "/sys/bus/pci/devices/0000:01:00.0" ]
-then
+function execute {
+  if [[ ${DRY_RUN} -eq 1 ]]
+    then
+    echo ">>Dry run. Command: $*"
+  else
+    eval $*
+  fi
+}
+
+function turn_off_gpu {
+  if [[ ! -d /sys/bus/pci/devices/${DEVICE_BUS_ID} ]]; then
+    echo "The NVIDIA card has been already removed"
+    return 0
+  fi
+
+  if [[ "$REMOVE_DEVICE" == '1' ]]; then
+    echo 'Removing Nvidia bus from the kernel'
+    execute "sudo tee /sys/bus/pci/devices/${DEVICE_BUS_ID}/remove <<<1"
+  else
+    echo 'Enabling powersave for the graphic card'
+    execute "sudo tee /sys/bus/pci/devices/${DEVICE_BUS_ID}/power/control <<<auto"
+  fi
+
+  echo 'Enabling powersave for the PCIe controller'
+  execute "sudo tee /sys/bus/pci/devices/${CONTROLLER_BUS_ID}/power/control <<<auto"
+}
+
+function turn_on_gpu {
+  echo 'Turning the PCIe controller on to allow card rescan'
+  execute "sudo tee /sys/bus/pci/devices/${CONTROLLER_BUS_ID}/power/control <<<on"
+
+  echo 'Waiting 1 second'
+  execute "sleep 1"
+
+  if [[ ! -d /sys/bus/pci/devices/${DEVICE_BUS_ID} ]]; then
+    echo 'Rescanning PCI devices'
+    execute "sudo tee /sys/bus/pci/rescan <<<1"
+    echo "Waiting ${BUS_RESCAN_WAIT_SEC} second for rescan"
+    execute "sleep ${BUS_RESCAN_WAIT_SEC}"
+  fi
+
+  echo 'Turning the card on'
+  execute "sudo tee /sys/bus/pci/devices/${DEVICE_BUS_ID}/power/control <<<on"
+}
+
+#turn_off_gpu
+
+#if [ -d "/sys/bus/pci/devices/0000:01:00.0" ]
+#then
   #modprobe -r nvidia_drm
   #modprobe -r nvidia_modeset
   #modprobe -r nvidia_uvm
-  #modporbe -r nvidia
+  #modprobe -r nvidia
   #echo 'auto' > '/sys/bus/pci/devices/0000:01:00.0/power/control'  #adjust busid if needed
-  tee /sys/bus/pci/devices/$DEVICE_BUS_ID/power/control <<<auto
-  tee /sys/bus/pci/devices/$CONTROLLER_BUS_ID/power/control <<<auto
-  echo "NVIDIA card pm enabled."
-fi
+  #tee /sys/bus/pci/devices/$DEVICE_BUS_ID/power/control <<<auto
+  #tee /sys/bus/pci/devices/$CONTROLLER_BUS_ID/power/control <<<auto
+  #echo "NVIDIA card pm enabled."
+#fi
 
 # unbind fingerprint reader (xps 9570)
 echo 'auto' > '/sys/bus/usb/devices/1-7/power/control'
