@@ -59,7 +59,7 @@ function turn_on_gpu {
   execute "sudo tee /sys/bus/pci/devices/${DEVICE_BUS_ID}/power/control <<<on"
 }
 
-#turn_off_gpu
+turn_off_gpu
 
 #if [ -d "/sys/bus/pci/devices/0000:01:00.0" ]
 #then

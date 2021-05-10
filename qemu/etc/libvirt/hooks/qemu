@@ -1,13 +1,90 @@
 #!/bin/bash
-GVT_PCI=0000:00:02.0
+GVT_PCI='0000:00:02.0'
 GVT_GUID=532786aa-940a-43cc-a3c5-3daa1f8a855f
 MDEV_TYPE=i915-GVTg_V5_4
 DOMAIN=win10
+CONTROLLER_BUS_ID=0000:00:01.0
+DEVICE_BUS_ID=0000:01:00.0
+BUS_RESCAN_WAIT_SEC=1
+REMOVE_DEVICE=1
+
+
+set-vm-mouse() {
+	local mouse_path=$(/home/da/.local/bin/input-device-info.sh $1)
+	sudo mkdir -p /var/lib/libvirt/inputs
+	sudo ln -sf "${mouse_path}" /var/lib/libvirt/inputs/event-mouse
+}
+
+set-vm-keyboard() {
+	local keyboard_path=$(/home/da/.local/bin/input-device-info.sh $1)
+	sudo mkdir -p /var/lib/libvirt/inputs
+	sudo ln -sf "${keyboard_path}" /var/lib/libvirt/inputs/event-kbd
+}
+
+# auto power off NVIDIA card
+function execute {
+  if [[ ${DRY_RUN} -eq 1 ]]
+    then
+    echo ">>Dry run. Command: $*"
+  else
+    eval $*
+  fi
+}
+
+function turn_off_gpu {
+  if [[ ! -d /sys/bus/pci/devices/${DEVICE_BUS_ID} ]]; then
+    echo "The NVIDIA card has been already removed"
+    return 0
+  fi
+
+  if [[ "$REMOVE_DEVICE" == '1' ]]; then
+    echo 'Removing Nvidia bus from the kernel'
+    execute "sudo tee /sys/bus/pci/devices/${DEVICE_BUS_ID}/remove <<<1"
+  else
+    echo 'Enabling powersave for the graphic card'
+    execute "sudo tee /sys/bus/pci/devices/${DEVICE_BUS_ID}/power/control <<<auto"
+  fi
+
+  echo 'Enabling powersave for the PCIe controller'
+  execute "sudo tee /sys/bus/pci/devices/${CONTROLLER_BUS_ID}/power/control <<<auto"
+}
+
+function turn_on_gpu {
+  echo 'Turning the PCIe controller on to allow card rescan'
+  execute "sudo tee /sys/bus/pci/devices/${CONTROLLER_BUS_ID}/power/control <<<on"
+
+  echo 'Waiting 1 second'
+  execute "sleep 1"
+
+  if [[ ! -d /sys/bus/pci/devices/${DEVICE_BUS_ID} ]]; then
+    echo 'Rescanning PCI devices'
+    execute "sudo tee /sys/bus/pci/rescan <<<1"
+    echo "Waiting ${BUS_RESCAN_WAIT_SEC} second for rescan"
+    execute "sleep ${BUS_RESCAN_WAIT_SEC}"
+  fi
+
+  echo 'Turning the card on'
+  execute "sudo tee /sys/bus/pci/devices/${DEVICE_BUS_ID}/power/control <<<on"
+}
+
 
 if [ $# -ge 3 ]; then
     if [ $1 = "$DOMAIN" -a $2 = "prepare" -a $3 = "begin" ]; then
-       sudo sh -c "echo $GVT_GUID > /sys/bus/pci/devices/$GVT_PCI/mdev_supported_types/$MDEV_TYPE/create"
+        
+        # Create vGPU using intel GVT-G
+        sudo sh -c "echo $GVT_GUID > /sys/bus/pci/devices/$GVT_PCI/mdev_supported_types/$MDEV_TYPE/create"
+        # Power on NVIDIA card for VFIO
+        turn_on_gpu        
+        # Set keyboard and mouse
+        set-vm-mouse "MX Master 2S"
+        set-vm-keyboard "Keychron K2"
+
     elif [ $1 = "$DOMAIN" -a $2 = "release" -a $3 = "end" ]; then
+        # Power off NVIDIA card for VFIO
+        turn_off_gpu        
+        #sudo modprobe -r vfio_pci
         sudo sh -c "echo 1 > /sys/bus/pci/devices/$GVT_PCI/$GVT_GUID/remove"
+        sudo rm /var/lib/libvirt/inputs/event-mouse
+        sudo rm /var/lib/libvirt/inputs/event-kbd
     fi
 fi
