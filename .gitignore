@@ -1,8 +1,9 @@
-/mpd/.config/mpd/log
-/mpd/.config/mpd/pid
-/mpd/.config/mpd/state
-/scripts/
+mpd/.config/mpd/log
+mpd/.config/mpd/pid
+mpd/.config/mpd/state
+scripts/
 .DS_Store
-/startpage/
-/tint2/.config/tint2/tint2rc.backup.*
-/vim/.vim/plugged
+startpage/
+tint2/.config/tint2/tint2rc.backup.*
+vim/.vim/plugged
+aconfmgr

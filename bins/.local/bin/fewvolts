@@ -3,7 +3,7 @@
 CONTROLLER_BUS_ID=0000:00:01.0
 DEVICE_BUS_ID=0000:01:00.0
 BUS_RESCAN_WAIT_SEC=1
-REMOVE_DEVICE=1
+REMOVE_DEVICE=0
 
 if [ "$EUID" -ne 0 ]
   then echo "Please run as root"
@@ -59,7 +59,7 @@ function turn_on_gpu {
   execute "sudo tee /sys/bus/pci/devices/${DEVICE_BUS_ID}/power/control <<<on"
 }
 
-turn_off_gpu
+#turn_off_gpu
 
 #if [ -d "/sys/bus/pci/devices/0000:01:00.0" ]
 #then
